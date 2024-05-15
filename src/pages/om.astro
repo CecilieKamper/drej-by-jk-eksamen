@@ -2,4 +2,252 @@
 import Menylayout from "../komponenter/layouts/Menylayout.astro";
 ---
 
-<Menylayout />
+<Menylayout>
+  <section class="grid_1_1">
+    <div class="titel">
+      <h1 class="desk_h1">MØD MANDEN <br /> BAG DREJ</h1>
+    </div>
+    <div>
+      <img class="jens" src="../../drej-billeder/drej.webp" alt="" />
+    </div>
+  </section>
+  <section class="grid">
+    <div class="boks">
+      <h1>PASSION FOR <br /> TRÆ</h1>
+    </div>
+    <div class="intro">
+      <p class="velkommen">
+        Velkommen til drej-by-jk - det hyggelige pensionistdrejeværksted i
+        hjertet af Kregme, hvor træ forvandling er vores lidenskab. Vi finder
+        glæde i at skabe unikke og smukke genstande fra det bedste danske træ,
+        lige fra skoven til vores drejebænk.
+      </p>
+    </div>
+  </section>
+  <section class="grid">
+    <div class="venstre_streg">
+      <h1>Naturens smukke former</h1>
+      <p class="max">
+        Denne røde tråd i mit liv har været en stor interesse for det grønne.
+        Fra en barndom på landet og en ungdom som skovarbejder i Canada, videre
+        til uddannelse på Landbohøjskolen og forsker på universitet og nu på
+        værkstedet i Kregme.
+      </p>
+      <p class="under_streg">
+        Hele vejen har jeg været dybt fascineret af naturens magiske former og
+        fantastiske egenskaber. Når vi mennesker arbejder med naturen, er det
+        vores vigtigste opgave at få naturen til at stå stærkere og flottere.
+      </p>
+    </div>
+    <div>
+      <section class="grid_1_1">
+        <div class="billede">
+          <img src="../../drej-billeder/marked.webp" alt="" />
+        </div>
+        <div class="billede">
+          <img src="../../drej-billeder/marked.webp" alt="" />
+        </div>
+      </section>
+    </div>
+  </section>
+  <section class="grid">
+    <div class="venstre_streg">
+      <h1>KIG FORBI</h1>
+      <p class="max">
+        Du kan lave en aftale om et besøg på vores værksted. Kom gerne forbi vi
+        og se, hvordan vi arbejder med træet. Og faktisk må du ikke bare kigge
+        på. Du får også lov til at røre.
+      </p>
+      <p class="under_streg">
+        Du kan også kigge forbi, når vi sælger vores skåle og fade på
+        Kildemarkedet i Tisvilde i august og julemarkedet på Grønnessegaard
+        Gods.
+      </p>
+    </div>
+    <div>
+      <h1>Følg med for at se hvor vi er <br /> næste gang</h1>
+      <div class="medier">
+        <img class="sociale" src="../../drej-billeder/facebook.webp" alt="" />
+        <img class="sociale" src="../../drej-billeder/insta.webp" alt="" />
+      </div>
+      <div class="boks_2">
+        <h1 class="kontakt">KONTAKT MIG</h1>
+        <img class="pil" src="../../drej-billeder/pil.png" alt="" />
+      </div>
+    </div>
+  </section>
+  <section class="grid_1_1_1">
+    <div class="billede">
+      <img src="../../drej-billeder/jens.webp" alt="" />
+    </div>
+    <div class="billede">
+      <img src="../../drej-billeder/salg.webp" alt="" />
+    </div>
+    <div class="billede">
+      <img src="../../drej-billeder/skur.webp" alt="" />
+    </div>
+  </section>
+</Menylayout>
+
+<style>
+  .grid_1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 3px solid rgb(193, 99, 31);
+  }
+
+  .intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 3px rgb(193, 99, 31);
+  }
+
+  .titel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .grid_1_1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 4%;
+    border-bottom: 3px solid rgb(193, 99, 31);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    background-color: rgb(226, 214, 198);
+    margin: 2rem;
+  }
+
+  .boks {
+    background-color: rgb(225, 134, 88);
+    padding: 1.5rem;
+    /* border: 3px solid rgb(193, 99, 31); */
+  }
+
+  .boks_2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(225, 134, 88);
+    padding: 1rem;
+  }
+
+  p {
+    line-height: 1.5rem;
+  }
+
+  img {
+    max-width: 95%;
+    margin-bottom: 0%;
+  }
+
+  .jens {
+    max-width: 95%;
+  }
+
+  .under_streg {
+    padding-bottom: 10%;
+    border-bottom: 3px solid rgb(193, 99, 31);
+  }
+
+  .sociale {
+    max-width: 10%;
+    gap: 10rem;
+    margin-bottom: 5%;
+  }
+
+  .medier {
+    display: flex;
+    justify-content: end;
+  }
+
+  .pil {
+    max-width: 25%;
+    justify-self: center;
+  }
+
+  .billede {
+    margin-bottom: 8%;
+    margin-top: 8%;
+  }
+
+  .kontakt:hover {
+    color: white;
+  }
+
+  @media screen and (min-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 3px solid rgb(193, 99, 31);
+      border-top: 0px solid rgb(193, 99, 31);
+    }
+
+    .grid_1_1 {
+      border-bottom: none;
+      place-items: center;
+    }
+
+    .desk_h1 {
+      font-size: 50px;
+      padding-left: 0%;
+    }
+
+    .boks {
+      padding: 5rem;
+      border-right: 3px solid rgb(193, 99, 31);
+      border-top: 3px solid rgb(193, 99, 31);
+    }
+
+    .max {
+      max-width: 60%;
+      padding-left: 10%;
+    }
+
+    .under_streg {
+      max-width: 60%;
+      padding-left: 10%;
+      padding-bottom: 10%;
+      border-bottom: 0px solid rgb(193, 99, 31);
+    }
+
+    h1 {
+      padding-left: 10%;
+    }
+
+    .venstre_streg {
+      padding-top: 5%;
+      border-right: 3px solid rgb(193, 99, 31);
+    }
+
+    .velkommen {
+      max-width: 60%;
+    }
+
+    .sociale {
+      max-width: 10%;
+    }
+
+    img {
+      max-width: 50%;
+    }
+
+    .billede {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 18%;
+    }
+
+    .intro {
+      border-bottom: solid 0px rgb(193, 99, 31);
+      border-top: solid 3px rgb(193, 99, 31);
+    }
+  }
+</style>
