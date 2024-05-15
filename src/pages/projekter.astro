@@ -2,4 +2,129 @@
 import Menylayout from "../komponenter/layouts/Menylayout.astro";
 ---
 
-<Menylayout />
+<Menylayout title="Projekter">
+  <div class="projekter-grid">
+    <h1>tidligere <br /> <span class="skrå-orange">projekter</span></h1>
+    <img src="/././drej-billeder/3-skaaaaale.png" alt="" />
+    <p>se hvad jeg tideligere har lavet ...</p>
+  </div>
+  <div class="projek-link-flex">
+    <div class="projekt-link projekt-link-1">
+      <a href="#"
+        ><h2>
+          <span class="skrå-sort">egeknude</span><br />
+          <span class="fed-sort">fra</span><br />
+          <span class="skrå-orange"> haslev</span>
+        </h2></a
+      >
+      <a href="#"
+        ><img class="pil-p" src="/./drej-billeder/pil-p.svg" alt="" /></a
+      >
+    </div>
+    <div class="projekt-link">
+      <a href="#"
+        ><h2>
+          <span class="skrå-sort">træet</span><br />
+          <span class="fed-sort">fra</span>
+          <br />fyen
+        </h2></a
+      >
+      <a href="#"
+        ><img class="pil-p" src="/./drej-billeder/pil-p.svg" alt="" /></a
+      >
+    </div>
+  </div>
+</Menylayout>
+
+<style>
+  h1 {
+    font-style: italic;
+    font-size: 3rem;
+    font-family: "argent-cf", serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: var(--sort);
+  }
+  .skrå-orange {
+    font-family: "argent-cf", serif;
+    font-weight: 300;
+    font-style: italic;
+    text-transform: uppercase;
+    color: var(--mørke-orange);
+  }
+  h2 {
+    font-size: 4rem;
+    font-family:
+      Argent CF,
+      sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+  /* fældes spand klassr */
+  .skrå-sort {
+    color: var(--sort);
+  }
+  .fed-sort {
+    font-style: normal;
+    color: var(--sort);
+    font-weight: 500;
+  }
+  .skrå-orange {
+    color: var(--mørke-orange);
+  }
+  .pil-p {
+    max-width: 50%;
+  }
+  .projekt-link {
+    padding: 30px;
+    border-bottom: 2px solid var(--mørke-orange);
+    display: flex;
+    justify-content: space-between;
+  }
+  .projekt-link-1 {
+    border-top: 2px solid var(--mørke-orange);
+  }
+  .projekter-grid {
+    display: grid;
+    padding: 50px 20px 20px 20px;
+  }
+  img {
+    max-width: 70%;
+  }
+  a {
+    display: flex;
+    justify-content: end;
+    align-self: flex-end;
+    text-decoration: none;
+    color: var(--mørke-orange);
+  }
+  @media only screen and (min-width: 800px) {
+    .projekter-grid {
+      display: flex;
+      padding: 50px 20px 20px 20px;
+    }
+    h1 {
+      font-size: 5rem;
+    }
+    .projek-link-flex {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 3px solid var(--mørke-orange);
+    }
+    .projekt-link-1 {
+      border-top: 0px solid;
+      border-right: 3px solid var(--mørke-orange);
+    }
+    .projekt-link {
+      padding: 100px;
+      border-bottom: 0px solid;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .pil-p {
+      max-width: 100%;
+    }
+  }
+</style>
