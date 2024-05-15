@@ -1,0 +1,43 @@
+---
+const {imgg, alt} = Astro.props;
+---
+
+
+
+
+
+
+<div class="container">
+    <a href="#">
+      <img
+        src={imgg}
+        alt={alt}
+        class="små-skåle"
+      />
+      
+      <img
+        src="/./drej-billeder/orangepil.svg"
+        alt="Pil"
+        class="pil"
+      />
+    </a>
+
+<style>
+
+.container {
+display: flex;
+}
+
+.stor-skål {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pil a {
+display: flex;
+align-items: flex-end;
+
+}
+    
+</style>

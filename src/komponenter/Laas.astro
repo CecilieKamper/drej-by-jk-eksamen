@@ -1,0 +1,43 @@
+<div class="border-1">
+  <h3>
+    Læs <span class="fed-orange">processen </span>
+    <br /> herunder
+  </h3>
+
+  <p class="håndskrift">hold musen over billed for at læse mere</p>
+</div>
+<style>
+  h3 {
+    font-style: italic;
+    font-size: 3rem;
+    font-family: "argent-cf", serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: var(--sort);
+  }
+  .fed-orange {
+    font-style: normal;
+    color: var(--mørke-orange);
+  }
+  .border-1 {
+    border-bottom: 2px solid var(--mørke-orange);
+  }
+  div {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .håndskrift {
+    display: flex;
+    justify-content: end;
+    align-self: flex-end;
+  }
+  @media only screen and (min-width: 800px) {
+    .border-1 {
+      border-bottom: 3px solid var(--mørke-orange);
+    }
+    h3 {
+      font-size: 2rem;
+    }
+  }
+</style>

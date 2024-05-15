@@ -1,0 +1,85 @@
+---
+const { sorttext, hvidtext } = Astro.props;
+---
+
+<section>
+  <div class="orangebagrund border-1">
+    <h2>
+      <span class="skrå-sort">{sorttext}</span><br /><span class="skrå-hvid">
+        {hvidtext}</span
+      >
+    </h2>
+  </div>
+  <div class="text">
+    <slot />
+  </div>
+</section>
+<style>
+  .text {
+    padding: 30px 25px 30px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  p {
+    font-family: Arimo, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+  section {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-top: 2px solid var(--mørke-orange);
+    border-bottom: 2px solid var(--mørke-orange);
+  }
+  h2 {
+    font-size: 2.5rem;
+    font-family:
+      Argent CF,
+      sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+  .orangebagrund {
+    background-color: #e18658;
+    padding: 10px 30px 10px 30px;
+  }
+  .border-1 {
+    border-bottom: 2px solid var(--mørke-orange);
+  }
+  .skrå-sort {
+    color: var(--sort);
+  }
+
+  .skrå-hvid {
+    color: var(--lysegrå);
+  }
+  @media only screen and (min-width: 800px) {
+    h2 {
+      font-size: 3.5rem;
+      padding-left: 30px;
+    }
+    .orangebagrund {
+      justify-items: center;
+      align-content: space-evenly;
+    }
+    .border-1 {
+      border-bottom: 0px solid;
+    }
+    section {
+      grid-template-columns: 1fr 1fr;
+      border-top: 3px solid var(--mørke-orange);
+      border-bottom: 3px solid var(--mørke-orange);
+    }
+    .text {
+      padding: 50px 70px 50px 70px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+</style>
