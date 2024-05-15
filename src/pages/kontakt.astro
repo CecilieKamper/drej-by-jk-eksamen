@@ -2,4 +2,155 @@
 import Menylayout from "../komponenter/layouts/Menylayout.astro";
 ---
 
-<Menylayout />
+<Menylayout>
+  <section>
+    <h1 class="h1_kontakt">KONTAKT <span class="os">OS</span></h1>
+    <h3 class="h2_kontakt">
+      Vi vil meget gerne høre fra dig, så kontakt os endelig.
+    </h3>
+  </section>
+  <section class="kontaktgrid2_2">
+    <img
+      class="kontakt_billede"
+      src="/drej-billeder/kontakt_frugt.svg"
+      alt=""
+    />
+    <div class="border_kontakt">
+      <p class="navn">FULDE NAVN</p>
+      <p class="email">E-MAIL</p>
+      <!-- <p class="besked">BESKED</p>
+      <p class="skriv_her"></p> -->
+
+      <div class="kontakt_os">
+        <h3>BESKED</h3>
+        <form>
+          <input type="email" placeholder="Skriv her" required />
+          <button type="submit">KONTAKT OS</button>
+        </form>
+      </div>
+
+      <style>
+        .h1_kontakt {
+          margin-top: 2rem;
+          margin-left: 5rem;
+        }
+
+        .os {
+          color: #e18658;
+        }
+
+        .h2_kontakt {
+          margin-left: 7rem;
+        }
+
+        .kontakt_billede {
+          display: none;
+        }
+
+        .border_kontakt {
+          border: solid 2px #e18658;
+          background-color: #e18658;
+          padding: 4rem;
+          margin-top: 2rem;
+        }
+
+        .navn {
+          color: #e2d6c6;
+          border-bottom: solid 2px #e2d6c6;
+          padding-bottom: 2rem;
+        }
+
+        .email {
+          color: #e2d6c6;
+          border-bottom: solid 2px #e2d6c6;
+          padding-bottom: 2rem;
+          padding-top: 2rem;
+        }
+
+        /* .besked {
+          color: #e2d6c6;
+          margin-bottom: 1rem;
+          margin-top: 1rem;
+        } */
+
+        /* .skriv_her {
+          border: solid 2px #e2d6c6;
+          padding: 3rem;
+        } */
+
+        /* .kontakt_os {
+          border: solid 2px #e2d6c6;
+          background-color: #e2d6c6;
+          margin-top: 1rem;
+          padding: 1rem;
+          margin-right: 20rem;
+          border-radius: 25px;
+        } */
+
+        .kontakt_os form {
+          display: flex;
+          flex-direction: column;
+          align-items: left;
+          gap: 5px;
+        }
+
+        .kontakt_os input,
+        .kontakt_os button {
+          width: 50%; /* Gør input og knap bredde til 50% af containeren */
+          padding: 8px;
+          border: 2px solid #e18658;
+          border-radius: 4px;
+        }
+
+        .kontakt_os button {
+          margin-top: 10px; /* Tilføj lidt mellemrum mellem input og knap */
+          background-color: #c1631f;
+          color: #ffffff;
+          cursor: pointer;
+          width: 10rem;
+          height: 4rem;
+          border-radius:10%;
+        }
+
+        @media screen and (min-width: 768px) {
+          .h1_kontakt {
+            margin-top: 2rem;
+            margin-left: 7rem;
+          }
+
+          .os {
+            color: #e18658;
+          }
+
+          .h2_kontakt {
+            margin-left: 10rem;
+          }
+
+          .kontaktgrid2_2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 5rem;
+          }
+
+          .kontakt_billede {
+            display: block;
+          }
+
+          .border_kontakt {
+            border: solid 2px #e18658;
+            background-color: #e18658;
+          }
+
+          .kontakt_os {
+            border: solid 2px #e2d6c6;
+            background-color: #e2d6c6;
+            margin-top: 1rem;
+            padding: 1rem;
+            margin-right: 28rem;
+            border-radius: 25px;
+          }
+        }
+      </style>
+    </div>
+  </section>
+</Menylayout>
