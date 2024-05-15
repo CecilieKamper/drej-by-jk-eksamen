@@ -6,3 +6,25 @@
   --lysegrå: #ece4de;
   --mørkegrå: #cec0b5;
 }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background-color: var(--baggrund);
+}
+html {
+  font-size: 12px;
+}
+
+@media only screen and (min-width: 800px) {
+  html {
+    font-size: 16px;
+  }
+}
