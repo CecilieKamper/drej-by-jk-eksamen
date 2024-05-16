@@ -1,0 +1,53 @@
+---
+const { billed, alttext, h11, h12, h13 } = Astro.props;
+---
+
+<div>
+  <h1>
+    <span class="skrå-sort">{h11}</span><br />
+    <span class="fed-sort">{h12}</span><br />
+    <span class="skrå-orange"> {h13}</span>
+  </h1>
+
+  <img src={billed} alt={alttext} />
+</div>
+<style>
+  div {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+  }
+
+  h1 {
+    font-style: italic;
+    font-size: 3rem;
+    font-family: "argent-cf", serif;
+    font-weight: 300;
+
+    text-transform: uppercase;
+    color: var(--sort);
+  }
+  .skrå-sort {
+    color: var(--sort);
+  }
+  .fed-sort {
+    font-style: normal;
+    color: var(--sort);
+    font-weight: bold;
+  }
+  .skrå-orange {
+    color: var(--mørke-orange);
+  }
+  @media only screen and (min-width: 800px) {
+    div {
+      padding: 100px;
+    }
+    h1 {
+      font-size: 5rem;
+    }
+  }
+</style>

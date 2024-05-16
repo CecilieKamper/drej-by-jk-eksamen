@@ -1,5 +1,75 @@
 ---
 import Menylayout from "../komponenter/layouts/Menylayout.astro";
+import Pro01 from "../komponenter/Pro01.astro";
+import Boks from "../komponenter/Boks.astro";
+import Laas from "../komponenter/Laas.astro";
 ---
 
-<Menylayout />
+<Menylayout>
+  <Pro01
+    billed="/./drej-billeder/egeknude.png"
+    alttext="egeknudeskål"
+    h11="egeknude"
+    h12="fra"
+    h13="haslev"
+  />
+  <Boks sorttext="fra træ last til" hvidtext=" drejebænk">
+    <p>
+      Vi besøgte Hårdttrælasten i Haslev og købte en imponerende egeknude i
+      september 2019. Efter næsten et års venten begyndte jeg at arbejde på den
+      i maj 2020. Efter at have fjernet porøse områder og skåret den til en mere
+      håndterbar størrelse, drejede jeg en skål ud af den.
+    </p>
+    <p>
+      Efterbehandlingen og tørringen tog et stykke tid, og i oktober begyndte
+      jeg findrejningen med et særligt vinkelanlæg. Skålen blev drejet færdig,
+      pudset og behandlet, og bunden blev drejet til at stå på en lille fod. Jeg
+      endte med kun at bruge epoxy på de største revner og huller, selvom jeg
+      oprindeligt havde planlagt at fylde dem alle.
+    </p>
+  </Boks>
+  <Laas />
+  <div>
+    <img src="/./drej-billeder/egeknude.png" alt="" />
+    <p>
+      endte med kun at bruge epoxy på de største revner og huller, selvom jeg
+      oprindeligt havde planlagt at fylde dem alle.
+    </p>
+  </div>
+</Menylayout>
+<style>
+  div {
+    display: grid;
+    width: 300px;
+    height: 400x;
+    transition: all 0.2s ease-in-out;
+    place-items: center;
+    p {
+      display: none;
+      grid-row: 1;
+      grid-column: 1;
+      padding: 30px;
+    }
+  }
+  div:hover {
+    background: rgba(225, 134, 88, 0.75);
+
+    img {
+      z-index: -1;
+    }
+    p {
+      display: block;
+    }
+  }
+  img {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  p {
+    font-family: Arimo, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+</style>
