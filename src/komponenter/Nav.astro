@@ -12,9 +12,9 @@
         <div class="line"></div>
       </div>
       <ul class="nav-links" id="nav-links">
-        <li><a href="produktliste.astro">Produkter</a></li>
-        <li><a href="projekter.astro">Projekter</a></li>
-        <li><a href="om.astro">Mød Mig</a></li>
+        <li><a href="/produktliste">Produkter</a></li>
+        <li><a href="/projekter">Projekter</a></li>
+        <li><a href="/om">Mød Mig</a></li>
       </ul>
     </nav>
     
@@ -39,6 +39,7 @@
   color: #000000;
   padding: 1.5rem;
   border-bottom: solid 3px #c1631f;
+  z-index: 1000;
 }
 
 .logo {
@@ -53,6 +54,7 @@
   width: 25px;
   height: 25px;
   cursor: pointer;
+  
 }
 
 .burger-menu .line {
@@ -76,6 +78,7 @@
   border: solid 2px #c1631f;
   margin: 0;
   padding: 0;
+  z-index: 1000;
 }
 
 .nav-links.show {

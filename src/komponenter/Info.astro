@@ -31,12 +31,24 @@ const { data } = Astro.props;
 </div>
 
 <style>
+  <<<<<<< HEAD .tabel {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
   .tabel {
     display: flex;
     flex-direction: column;
-    padding: 5rem;
+    padding: 0px 50px 0px 50px;
   }
 
+  .row {
+    display: flex;
+    justify-content: space-between; /* Placerer svaret helt til højre */
+    margin-bottom: 10px; /* Mellemrum mellem hver række */
+    border-bottom: 1px solid black; /* Border under spørgsmålet */
+    padding-bottom: 5px; /* Afstand mellem spørgsmål og border */
+  }
   .row {
     display: flex;
     justify-content: space-between; /* Placerer svaret helt til højre */
@@ -55,6 +67,20 @@ const { data } = Astro.props;
     text-transform: uppercase; /* Gør teksten i h3 til store bogstaver */
   }
 
+  /* styl til ul skal i general */
+  .info {
+    text-transform: uppercase;
+    font-family: Arimo, sans-serif;
+    padding-left: 50px; /* Gør teksten i h3 til store bogstaver */
+    font-style: normal;
+  }
+
+  @media (min-width: 769px) {
+    .tabel {
+      display: flex;
+      flex-direction: column;
+    }
+  }
   @media (min-width: 769px) {
     .tabel {
       display: flex;
