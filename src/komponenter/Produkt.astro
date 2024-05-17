@@ -1,43 +1,30 @@
 ---
-const {imgg, alt} = Astro.props;
+const { imgg, alt } = Astro.props;
+
+const { data } = Astro.props;
 ---
 
-
-
-
-
-
 <div class="container">
-    <a href="#">
-      <img
-        src={imgg}
-        alt={alt}
-        class="små-skåle"
-      />
-      
-      <img
-        src="/./drej-billeder/orangepil.svg"
-        alt="Pil"
-        class="pil"
-      />
-    </a>
+  <a href={`produktliste/${data.slug}`}>
+    <img src={imgg} alt={alt} class="små-skåle" />
+
+    <img src="/./drej-billeder/orangepil.svg" alt="Pil" class="pil" />
+  </a>
+</div>
 
 <style>
+  .container {
+    display: flex;
+  }
 
-.container {
-display: flex;
-}
+  .stor-skål {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 
-.stor-skål {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.pil a {
-display: flex;
-align-items: flex-end;
-
-}
-    
+  .pil a {
+    display: flex;
+    align-items: flex-end;
+  }
 </style>
