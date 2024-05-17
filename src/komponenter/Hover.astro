@@ -1,0 +1,39 @@
+---
+const { billed, alt, text } = Astro.props;
+---
+
+<article>
+  <img src={billed} alt={alt} />
+  <p>
+    {text}
+  </p>
+</article>
+
+<style>
+  article {
+    display: grid;
+    width: 300px;
+    height: 400x;
+    transition: all 0.2s ease-in-out;
+    place-items: center;
+    p {
+      display: none;
+      grid-row: 1;
+      grid-column: 1;
+      padding: 30px;
+    }
+  }
+  article:hover {
+    background: rgba(225, 134, 88, 0.75);
+    img {
+      z-index: -1;
+    }
+    p {
+      display: block;
+    }
+  }
+  img {
+    grid-row: 1;
+    grid-column: 1;
+  }
+</style>
