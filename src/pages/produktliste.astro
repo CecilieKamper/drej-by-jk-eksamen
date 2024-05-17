@@ -1,25 +1,37 @@
 ---
 import Menylayout from "../komponenter/layouts/Menylayout.astro";
-import Produkt from "../komponenter/Produkt.astro"
----
+import Produkt from "../komponenter/Produkt.astro";
+const data = await fetch(
+  "https://uskcthmuobdstnsivsiv.supabase.co/rest/v1/drej",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVza2N0aG11b2Jkc3Ruc2l2c2l2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1OTAwMDgsImV4cCI6MjAzMTE2NjAwOH0.AaBaR388ZPdzoK-avsNriP8NkPbdx-uW7sGJwaw6aIA",
+    },
+  }
+).then((res) => res.json());
 
+// console.log(data);
+---
 
 <Menylayout>
   <div class="gridlol">
-  <Produkt
-  imgg="/./drej-billeder/0-2.webp"/>
-  <Produkt
-  imgg="/./drej-billeder/0-2.webp"/>
-  <Produkt
-  imgg="/./drej-billeder/0-2.webp"/>
-  <Produkt
-  imgg="/./drej-billeder/0-2.webp"/>
-  <Produkt
-  imgg="/./drej-billeder/0-2.webp"/> <Produkt
-  imgg="/./drej-billeder/0-2.webp"/> <Produkt
-  imgg="/./drej-billeder/0-2.webp"/> <Produkt
-  imgg="/./drej-billeder/0-2.webp"/> <Produkt
-  imgg="/./drej-billeder/0-2.webp"/></div>
+    {
+      data.map((bowl) => {
+        return <Produkt imgg="/./drej-billeder/0-2.webp" data={bowl} />;
+      })
+    }
+    <!-- <Produkt imgg="/./drej-billeder/0-2.webp" />
+    <Produkt imgg="/./drej-billeder/0-2.webp" />
+    <Produkt imgg="/./drej-billeder/0-2.webp" />
+    <Produkt imgg="/./drej-billeder/0-2.webp" />
+    <Produkt imgg="/./drej-billeder/0-2.webp" />
+    <Produkt imgg="/./drej-billeder/0-2.webp" />
+    <Produkt imgg="/./drej-billeder/0-2.webp" />
+    <Produkt imgg="/./drej-billeder/0-2.webp" />
+    <Produkt imgg="/./drej-billeder/0-2.webp" /> -->
+  </div>
   <!-- <section class="grid_1">
     <section>
       <h1>Hvert produkt er <span class="orange">UNIKT</span></h1>
@@ -111,153 +123,143 @@ import Produkt from "../komponenter/Produkt.astro"
       </div>
     </div>
      -->
-  </div> 
-</main>
-<footer></footer>
-</body>
-</html>
-
-
-
 </Menylayout>
 
+<footer></footer>
+
 <style>
-  .gridlol{
+  .gridlol {
     display: grid;
-    grid-template-columns: repeat(4, minmax(250px, 1fr) );
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
     place-items: center;
-   /*  grid-template-rows: repeat(6 1fr);
+    /*  grid-template-rows: repeat(6 1fr);
     gri */
   }
-  .gridlol{
-    div:first-child{
+  .gridlol {
+    div:first-child {
       grid-row: span 2;
       grid-column: span 2;
     }
 
-    div:nth-child(8){
+    div:nth-child(8) {
       grid-row: span 2;
       grid-column: span 2;
     }
-
   }
   .gridlol > :nth-child(5) {
     grid-area: 2/4/3/5;
   }
   h1 {
-  font-size: 24px;
-  font-weight: bold;
-}
-.orange {
-  color: #c1631f;
-  text-transform: uppercase;
-}
-h1 {
-  font-size: 20px;
-  text-transform: uppercase;
-}
-h2,
-h3 {
-  text-transform: uppercase;
-}
-p {
-  font-size: 10px;
-}
-.skaal {
-  max-width: 100%;
-  transition: transform 0.3s ease;
-}
-.grid_1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.grid_2 {
-  display: flex;
-  align-items: center; /* Centrer elementer vertikalt */
-}
-h2 {
-  font-size: 1rem;
-}
-
-.burger-menu-container {
-  margin-left: auto; /* Flyt containeren med burgermenuen helt til højre */
-}
-
-.produkt-liste {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  padding: 10px;
-}
-
-.stor-billede-container {
-  position: relative;
-  padding: 20px;
-  border: 1px solid #c1631f; /* Tilføjet border */
-  box-sizing: border-box;
-}
-
-.stor-skål {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.pil.stor {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-}
-
-.små-produktbilleder {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.små-billede-container {
-  position: relative;
-  padding: 20px;
-  border: 1px solid #c1631f; /* Tilføjet border */
-  box-sizing: border-box;
-}
-
-.små-skåle {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.pil {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-
-  transition: transform 0.3s ease; /* Transition for smooth scaling */
-}
-.pil:hover {
-  transform: scale(1.2); /* Makes the pil 20% larger */
-}
-.skaal:hover {
-  transform: scale(1.1);
-}
-
-/* Responsivitet */
-@media (min-width: 768px) {
-  .produkt-liste {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .orange {
+    color: #c1631f;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  h2,
+  h3 {
+    text-transform: uppercase;
+  }
+  p {
+    font-size: 10px;
+  }
+  .skaal {
+    max-width: 100%;
+    transition: transform 0.3s ease;
+  }
+  .grid_1 {
+    display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
+  .grid_2 {
+    display: flex;
+    align-items: center; /* Centrer elementer vertikalt */
+  }
+  h2 {
+    font-size: 1rem;
+  }
+
+  .burger-menu-container {
+    margin-left: auto; /* Flyt containeren med burgermenuen helt til højre */
+  }
+
+  .produkt-liste {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px;
+  }
+
   .stor-billede-container {
-    grid-column: span 1;
+    position: relative;
+    padding: 20px;
+    border: 1px solid #c1631f; /* Tilføjet border */
+    box-sizing: border-box;
+  }
+
+  .stor-skål {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .pil.stor {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
   }
 
   .små-produktbilleder {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
-}
 
+  .små-billede-container {
+    position: relative;
+    padding: 20px;
+    border: 1px solid #c1631f; /* Tilføjet border */
+    box-sizing: border-box;
+  }
 
+  .små-skåle {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 
+  .pil {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+
+    transition: transform 0.3s ease; /* Transition for smooth scaling */
+  }
+  .pil:hover {
+    transform: scale(1.2); /* Makes the pil 20% larger */
+  }
+  .skaal:hover {
+    transform: scale(1.1);
+  }
+
+  /* Responsivitet */
+  @media (min-width: 768px) {
+    .produkt-liste {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .stor-billede-container {
+      grid-column: span 1;
+    }
+
+    .små-produktbilleder {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 </style>

@@ -1,0 +1,22 @@
+---
+export async function getStaticPaths() {
+  const data = await fetch(
+    "https://uskcthmuobdstnsivsiv.supabase.co/rest/v1/drej",
+    {
+      method: "GET",
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVza2N0aG11b2Jkc3Ruc2l2c2l2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1OTAwMDgsImV4cCI6MjAzMTE2NjAwOH0.AaBaR388ZPdzoK-avsNriP8NkPbdx-uW7sGJwaw6aIA",
+      },
+    }
+  ).then((response) => response.json());
+
+  return data.map((bowl) => {
+    return {
+      params: { slug: bowl.slug },
+      props: { myData: bowl },
+    };
+  });
+}
+const { myData } = Astro.props;
+---
