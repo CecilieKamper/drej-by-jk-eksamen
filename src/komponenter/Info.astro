@@ -1,62 +1,65 @@
 ---
-const {pris, træ, mål, nummer}= Astro.props;
----
-<div>
-<h3>INFO</h3>
-<ul class="tabel">
-  <li class="row">
-    <div class="spørgsmål">Fødevaregodkendt</div>
-    <div class="svar">Ja</div>
-  </li>
-  <li class="row">
-    <div class="spørgsmål">Pris</div>
-    <div class="svar">{pris}</div>
-  </li>
-  <li class="row">
-    <div class="spørgsmål">Træ</div>
-    <div class="svar">{træ}</div>
-  </li>
-  <li class="row">
-    <div class="spørgsmål">Mål</div>
-    <div class="svar">{mål}</div>
-  </li>
-  <li class="row">
-    <div class="spørgsmål">Produktnummer</div>
-    <div class="svar">{nummer}</div>
-  </li>
-</ul></div>
+const { pris, træ, mål, nummer } = Astro.props;
 
+const { data } = Astro.props;
+---
+
+<div>
+  <h3>INFO</h3>
+  <ul class="tabel">
+    <li class="row">
+      <div class="spørgsmål">Fødevaregodkendt</div>
+      <div class="svar">Ja</div>
+    </li>
+    <li class="row">
+      <div class="spørgsmål">Pris</div>
+      <div class="svar">{pris}</div>
+    </li>
+    <li class="row">
+      <div class="spørgsmål">Træ</div>
+      <div class="svar">{træ}</div>
+    </li>
+    <li class="row">
+      <div class="spørgsmål">Mål</div>
+      <div class="svar">{mål}</div>
+    </li>
+    <li class="row">
+      <div class="spørgsmål">Produktnummer</div>
+      <div class="svar">{nummer}</div>
+    </li>
+  </ul>
+</div>
 
 <style>
- .tabel {
-  display: flex;
-  flex-direction: column;
-  padding: 5rem;
-}
+  .tabel {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+  }
 
-.row {
-  display: flex;
-  justify-content: space-between; /* Placerer svaret helt til højre */
-  margin-bottom: 10px; /* Mellemrum mellem hver række */
-  border-bottom: 1px solid black; /* Border under spørgsmålet */
-  padding-bottom: 5px; /* Afstand mellem spørgsmål og border */
-}
+  .row {
+    display: flex;
+    justify-content: space-between; /* Placerer svaret helt til højre */
+    margin-bottom: 10px; /* Mellemrum mellem hver række */
+    border-bottom: 1px solid black; /* Border under spørgsmålet */
+    padding-bottom: 5px; /* Afstand mellem spørgsmål og border */
+  }
 
-.spørgsmål {
-  flex: 1; /* Spørgsmålet tager så meget plads som muligt */
-  text-transform: uppercase; /* Gør teksten til store bogstaver */
-}
+  .spørgsmål {
+    flex: 1; /* Spørgsmålet tager så meget plads som muligt */
+    text-transform: uppercase; /* Gør teksten til store bogstaver */
+  }
 
-/* styl til ul skal i general */
-h3 {
-  text-transform: uppercase; /* Gør teksten i h3 til store bogstaver */
-}
+  /* styl til ul skal i general */
+  h3 {
+    text-transform: uppercase; /* Gør teksten i h3 til store bogstaver */
+  }
 
-@media (min-width: 769px) {
-.tabel {
-  display: flex;
-  flex-direction: column;
-  padding: 5rem;
-}}
-
+  @media (min-width: 769px) {
+    .tabel {
+      display: flex;
+      flex-direction: column;
+      padding: 5rem;
+    }
+  }
 </style>

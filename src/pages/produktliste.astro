@@ -11,8 +11,9 @@ const data = await fetch(
     },
   }
 ).then((res) => res.json());
+          
+console.log(data);
 
-// console.log(data);
 ---
 
 <Menylayout>
@@ -53,7 +54,7 @@ const data = await fetch(
   <div class="gridlol">
     {
       data.map((bowl) => {
-        return <Produkt imgg="/./drej-billeder/0-2.webp" data={bowl} />;
+        return <Produkt data={bowl} />;
       })
     }
     <!-- <Produkt imgg="/./drej-billeder/0-2.webp" />

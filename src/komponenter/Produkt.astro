@@ -5,8 +5,8 @@ const { data } = Astro.props;
 ---
 
 <div class="container">
-  <a href={`produktliste/${data.slug}`}>
-    <img src={imgg} alt={alt} class="små-skåle" />
+  <a href={`produktliste/${data.number}`}>
+    <img src={data.img2} alt={alt} class="små-skåle" />
 
     <img src="/./drej-billeder/orangepil.svg" alt="Pil" class="pil" />
   </a>
