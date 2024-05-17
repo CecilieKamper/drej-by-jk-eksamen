@@ -50,7 +50,6 @@ const data = await fetch(
 
 
 
-
   <div class="gridlol">
     {
       data.map((bowl) => {
@@ -148,20 +147,24 @@ const data = await fetch(
 <footer></footer>
 
 <style>
-  .gridlol {
+ 
 /* burgermenu med sortering */
 
-
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
 header {
     position: relative;
 }
 
 .grid_2 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 10px;
 }
 
 .grid_2 h2 {
@@ -185,8 +188,7 @@ header {
 .custom-menu .menu {
     display: none;
     position: fixed;
-    top: 325
-    px;
+    top: 370px;
     right: 10px;
     width: 77%;
     height: 17%;
@@ -216,12 +218,66 @@ header {
 
 .close-icon {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 0px;
+    right: 10px;
     font-size: 30px;
     cursor: pointer;
 }
 
+/* Mobil stil */
+@media (max-width: 768px) {
+    .custom-menu .menu-icon {
+        display: flex;
+        justify-self: end;
+        j
+    }
+
+    .custom-menu .menu {
+        display: none;
+    }
+}
+
+/* Desktop stil */
+@media (min-width: 769px) {
+    .custom-menu .menu {
+        display: flex;
+        position: static;
+        width: auto;
+        height: auto;
+        flex-direction: row;
+        background-color: transparent;
+        border: none;
+    }
+
+    .menu-items {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .menu-logo {
+        margin: 0 10px;
+    }
+
+    .custom-menu .menu-icon,
+    .close-icon {
+        display: none;
+    }
+}
+
+/* Responsivitet */
+@media (min-width: 768px) {
+    .produkt-liste {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stor-billede-container {
+        grid-column: span 1;
+    }
+
+    .små-produktbilleder {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 /* Mobil stil */
 @media (max-width: 768px) {
     .custom-menu .menu-icon {
@@ -318,7 +374,7 @@ h2 {
 }
 
   .grid_2 {
-    display: flex;
+    /* display: flex; */
     align-items: center; /* Centrer elementer vertikalt */
   }
   h2 {
