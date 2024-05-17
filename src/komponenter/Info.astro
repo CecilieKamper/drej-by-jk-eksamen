@@ -2,7 +2,7 @@
 const {pris, træ, mål, nummer}= Astro.props;
 ---
 <div>
-<h3>INFO</h3>
+<h3 class="info">INFO</h3>
 <ul class="tabel">
   <li class="row">
     <div class="spørgsmål">Fødevaregodkendt</div>
@@ -31,7 +31,7 @@ const {pris, træ, mål, nummer}= Astro.props;
  .tabel {
   display: flex;
   flex-direction: column;
-  padding: 5rem;
+  padding: 0px 50px 0px 50px;
 }
 
 .row {
@@ -48,15 +48,18 @@ const {pris, træ, mål, nummer}= Astro.props;
 }
 
 /* styl til ul skal i general */
-h3 {
-  text-transform: uppercase; /* Gør teksten i h3 til store bogstaver */
+.info{
+  text-transform: uppercase;
+  font-family: Arimo, sans-serif;
+  padding-left: 50px; /* Gør teksten i h3 til store bogstaver */
+  font-style: normal;
 }
 
 @media (min-width: 769px) {
 .tabel {
   display: flex;
   flex-direction: column;
-  padding: 5rem;
+ 
 }}
 
 </style>
