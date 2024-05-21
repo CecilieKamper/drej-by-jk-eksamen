@@ -1,6 +1,67 @@
+---
+import Menylayout from "../komponenter/layouts/Menylayout.astro";
+import "../styles/generel.css";
+
+---
+
+
+<div class="video">
+  <img src="../../drej-billeder/video.gif" alt="" />
+</div>
+<section class="grid_1_1">
+  <div class="venstre">
+    <a href="/forside">
+    <p class="link-tekst">DREJ-BY-JK</p></a>
+  </div>
+  <div><img class="pil" src="../../drej-billeder/pil.png" alt="" /></div>
+</section>
 
 <style>
+  body {
+    background-color: rgb(226, 214, 198);
+  }
 
+  .grid_1_1 {
+    display: flex;
+    justify-content: flex-end;
+    gap: 7%;
+  }
+
+  /* .grid_1_1 > div {
+    flex: 1;
+  } */
+
+  .venstre {
+    display: flex;
+  }
+
+  .video {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+  }
+
+  p {
+    display: flex;
+    justify-content: center;
+  }
+  .link-no-underline {
+    text-decoration: none; /* Fjerner understregning */
+    color: black; /* Sikrer sort tekstfarve */
+}
+
+.link-tekst {
+    font-size: 20px;
+    text-decoration: none; /* Fjerner understregning */
+    color: black;
+}
+  p:hover {
+    color: rgb(193, 99, 31);
+  }
+
+  .pil {
+    max-width: 30%;
+  }
 
   @media screen and (min-width: 768px) {
     .grid_1_1 {

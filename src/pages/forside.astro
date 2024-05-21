@@ -23,11 +23,8 @@ import "../styles/generel.css";
     <section class="grid1_2">
       <div class="forside_orange">
         <div class="orange_tekst">
-          <h2>
-            SKÅLE OG FADE <br />
-            <div class="mission">
-              <span class="sort_tekst">MED EN</span> MISSION
-            </div>
+          <h2 class="skrå-sort">
+           skåle og fade med en <span class="skrå-hvid">mission</span>
           </h2>
         </div>
       </div>
@@ -48,29 +45,32 @@ import "../styles/generel.css";
       <h2>UDFORSK</h2>
     </div>
     <section class="grid2_2">
-      <a href=""><img src="/drej-billeder/produkter.svg" alt="" /></a>
-      <a href=""><img src="/drej-billeder/mig.svg" alt="" /></a>
-      <a href=""><img src="/drej-billeder/projekter.svg" alt="" /></a>
-      <a href=""><img src="/drej-billeder/kontakt.svg" alt="" /></a>
+      <a href="/produktliste"><img src="/drej-billeder/produkter.svg" alt="" class="menu-logo"/></a>
+      <a href="/om"><img src="/drej-billeder/mig.svg" alt="" class="menu-logo" /></a>
+      <a href="/projekter"><img src="/drej-billeder/projekter.svg" alt="" class="menu-logo" /></a>
+      <a href="/kontakt"><img src="/drej-billeder/kontakt.svg" alt="" class="menu-logo" /></a>
     </section>
+
+
+
  </Menylayout>
 
 <style>
   img {
     width: 100%;
     height: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
   }
 
-  body {
-    background-color: #e2d6c6;
-  }
+
 
   .tekst_orange {
     color: #e18658;
   }
 
   .sort_tekst {
-    color: black;
+    color: var(--sort, #000000);
   }
 
   .h1_forside {
@@ -118,11 +118,19 @@ import "../styles/generel.css";
     max-width: 90%;
     margin-left: 2rem;
   }
+  .menu-logo {
+      transition: transform 0.3s;
+  }
+  
+  .menu-logo:hover {
+      transform: scale(1.1);
+  }
 
   @media screen and (min-width: 768px) {
     img {
       width: 100%;
       height: auto;
+      margin: 10%;
     }
     .grid {
       display: grid;
@@ -145,7 +153,7 @@ import "../styles/generel.css";
     }
 
     .forside_billede {
-      max-width: 50%;
+      max-width: 70%;
       margin-left: 4rem;
     }
 
