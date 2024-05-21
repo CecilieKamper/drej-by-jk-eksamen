@@ -1,5 +1,7 @@
 ---
+import Boks from "../komponenter/Boks.astro";
 import Menylayout from "../komponenter/layouts/Menylayout.astro";
+import Omboks from "../komponenter/Omboks.astro";
 ---
 
 <Menylayout>
@@ -11,35 +13,27 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
       <img class="jens" src="../../drej-billeder/drej.webp" alt="" />
     </div>
   </section>
-  <section class="grid">
-    <div class="boks">
-      <h1>PASSION FOR <br /> TRÆ</h1>
+
+  <Boks sorttext="PASSION FOR" hvidtext="træ">
+    <p>
+      Velkommen til drej-by-jk - det hyggelige pensionistdrejeværksted i hjertet
+      af Kregme, hvor træ forvandling er vores lidenskab.
+    </p>
+    <p>
+      Vi finder glæde i at skabe unikke og smukke genstande fra det bedste
+      danske træ, lige fra skoven til vores drejebænk.
+    </p>
+  </Boks>
+
+  <div class="grid">
+    <div class="streg-1">
+      <Omboks
+        h3text="Naturens smukke former"
+        text1="Denne røde tråd i mit liv har været en stor interesse for det grønne. Fra en barndom på landet og en ungdom som skovarbejder i Canada, videre til uddannelse på Landbohøjskolen og forsker på universitet og nu på værkstedet i Kregme."
+        text2="Hele vejen har jeg været dybt fascineret af naturens magiske former og fantastiske egenskaber. Når vi mennesker arbejder med naturen, er det vores vigtigste opgave at få naturen til at stå stærkere og flottere."
+      />
     </div>
-    <div class="intro">
-      <p class="velkommen">
-        Velkommen til drej-by-jk - det hyggelige pensionistdrejeværksted i
-        hjertet af Kregme, hvor træ forvandling er vores lidenskab. Vi finder
-        glæde i at skabe unikke og smukke genstande fra det bedste danske træ,
-        lige fra skoven til vores drejebænk.
-      </p>
-    </div>
-  </section>
-  <section class="grid">
-    <div class="venstre_streg">
-      <h1>Naturens smukke former</h1>
-      <p class="max">
-        Denne røde tråd i mit liv har været en stor interesse for det grønne.
-        Fra en barndom på landet og en ungdom som skovarbejder i Canada, videre
-        til uddannelse på Landbohøjskolen og forsker på universitet og nu på
-        værkstedet i Kregme.
-      </p>
-      <p class="under_streg">
-        Hele vejen har jeg været dybt fascineret af naturens magiske former og
-        fantastiske egenskaber. Når vi mennesker arbejder med naturen, er det
-        vores vigtigste opgave at få naturen til at stå stærkere og flottere.
-      </p>
-    </div>
-    <div>
+    <div class="streg-2">
       <section class="grid_1_1">
         <div class="billede">
           <img src="../../drej-billeder/marked.webp" alt="" />
@@ -49,23 +43,15 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
         </div>
       </section>
     </div>
-  </section>
-  <section class="grid">
-    <div class="venstre_streg">
-      <h1>KIG FORBI</h1>
-      <p class="max">
-        Du kan lave en aftale om et besøg på vores værksted. Kom gerne forbi vi
-        og se, hvordan vi arbejder med træet. Og faktisk må du ikke bare kigge
-        på. Du får også lov til at røre.
-      </p>
-      <p class="under_streg">
-        Du kan også kigge forbi, når vi sælger vores skåle og fade på
-        Kildemarkedet i Tisvilde i august og julemarkedet på Grønnessegaard
-        Gods.
-      </p>
+    <div class="streg-1">
+      <Omboks
+        h3text="KIG FORBI"
+        text1="Du kan lave en aftale om et besøg på vores værksted. Kom gerne forbi vi og se, hvordan vi arbejder med træet. Og faktisk må du ikke bare kigge på. Du får også lov til at røre."
+        text2="Du kan også kigge forbi, når vi sælger vores skåle og fade på Kildemarkedet i Tisvilde i august og julemarkedet på Grønnessegaard Gods."
+      />
     </div>
-    <div>
-      <h2>Følg med for at se hvor vi er <br /> næste gang</h2>
+    <div class="flex-kontakt">
+      <h4>Følg med for at se hvor vi er <br /> næste gang</h4>
       <div class="medier">
         <img class="sociale" src="../../drej-billeder/facebook.webp" alt="" />
         <img class="sociale" src="../../drej-billeder/insta.webp" alt="" />
@@ -75,7 +61,7 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
         <img class="pil" src="../../drej-billeder/pil.png" alt="" />
       </div>
     </div>
-  </section>
+  </div>
   <section class="grid_1_1_1">
     <div class="billede">
       <img src="../../drej-billeder/jens.webp" alt="" />
@@ -90,46 +76,36 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
 </Menylayout>
 
 <style>
-  .grid_1_1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-bottom: 3px solid rgb(193, 99, 31);
-  }
-
-  .intro {
+  .flex-kontakt {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: solid 3px rgb(193, 99, 31);
+    justify-content: space-between;
+    flex-direction: column;
+    border-bottom: 2px solid var(--mørke-orange);
+    h4 {
+      font-size: 2.4rem;
+      padding: 50px 30px 30px 50px;
+    }
+  }
+  .streg-1 {
+    border-bottom: 2px solid var(--mørke-orange);
   }
 
-  .titel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .streg-2 {
+    border-bottom: 2px solid var(--mørke-orange);
   }
-
-  .grid_1_1_1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 4%;
-    border-bottom: 3px solid rgb(193, 99, 31);
-  }
-
   .grid {
+    align-items: stretch;
     display: grid;
     grid-template-columns: 1fr;
   }
 
-  body {
-    background-color: rgb(226, 214, 198);
-    margin: 2rem;
-  }
-
-  .boks {
-    background-color: rgb(225, 134, 88);
-    padding: 1.5rem;
-    /* border: 3px solid rgb(193, 99, 31); */
+  .grid_1_1 {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    h1 {
+      padding-top: 50px;
+    }
   }
 
   .boks_2 {
@@ -139,20 +115,8 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
     padding: 1rem;
   }
 
-
-
-  img {
-    max-width: 95%;
-    margin-bottom: 0%;
-  }
-
   .jens {
     max-width: 95%;
-  }
-
-  .under_streg {
-    padding-bottom: 10%;
-    border-bottom: 3px solid rgb(193, 99, 31);
   }
 
   .sociale {
@@ -162,6 +126,7 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
   }
 
   .medier {
+    padding-right: 20px;
     display: flex;
     justify-content: end;
   }
@@ -181,71 +146,39 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
   }
 
   @media screen and (min-width: 768px) {
-    .grid {
-      grid-template-columns: 1fr 1fr;
+    /* streger til dektop */
+    .flex-kontakt {
+      border-bottom: 3px solid var(--mørke-orange);
+    }
+    .streg-1 {
+      border-bottom: 3px solid var(--mørke-orange);
+      border-right: 3px solid var(--mørke-orange);
+    }
+
+    .streg-2 {
+      border-bottom: 3px solid var(--mørke-orange);
+    }
+    .grid_1_1_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-top: 4%;
       border-bottom: 3px solid rgb(193, 99, 31);
-      border-top: 0px solid rgb(193, 99, 31);
     }
-
-    .grid_1_1 {
-      border-bottom: none;
-      place-items: center;
+    .grid {
+      align-items: stretch;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
-
-    .desk_h1 {
-      font-size: 50px;
-      padding-left: 0%;
-    }
-
     .boks {
       padding: 5rem;
       border-right: 3px solid rgb(193, 99, 31);
       border-top: 3px solid rgb(193, 99, 31);
     }
-
-    .max {
-      max-width: 60%;
-      padding-left: 10%;
-    }
-
-    .under_streg {
-      max-width: 60%;
-      padding-left: 10%;
-      padding-bottom: 10%;
-      border-bottom: 0px solid rgb(193, 99, 31);
-    }
-
-    h1 {
-      padding-left: 10%;
-    }
-
-    .venstre_streg {
-      padding-top: 5%;
-      border-right: 3px solid rgb(193, 99, 31);
-    }
-
-    .velkommen {
-      max-width: 60%;
-    }
-
-    .sociale {
-      max-width: 10%;
-    }
-
-    img {
-      max-width: 50%;
-    }
-
     .billede {
       display: flex;
       justify-content: center;
       align-items: center;
       margin-top: 18%;
-    }
-
-    .intro {
-      border-bottom: solid 0px rgb(193, 99, 31);
-      border-top: solid 3px rgb(193, 99, 31);
     }
   }
 </style>

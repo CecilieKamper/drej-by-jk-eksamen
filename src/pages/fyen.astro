@@ -31,12 +31,37 @@ import Citem from "../komponenter/Citem.astro";
     </p>
   </Boks>
   <Laas />
-
-  <Hover
-    billed="/./drej-billeder/egeknude.png"
-    text="Den grovdrejede skål virker nu meget tør, så jeg besluttede at gå igang med findrejningen. Her ses det færdige resultat efter findejningen og larkering af egeknuden fra haslev"
-  />
-  <div class="carousel">
+  <div class="grid-3 bagrund-farve">
+    <Hover
+      billed="/./drej-billeder/fyen-1.png"
+      text="Rodende kævlerne klar til afhentning. Kævlerne øverst og nederst til venstre er ask. Nederst til højre ligger rødegen. "
+    />
+    <Hover
+      billed="/./drej-billeder/fyen-2.png"
+      text="Den store askeklods på bænken. Frihøjden er 30 cm"
+    />
+    <Hover
+      billed="/./drej-billeder/fyen-3.png"
+      text="Opdeling af stor askeklods til en rondel til et fad og én til en skål."
+    />
+    <Hover
+      billed="/./drej-billeder/fyen-4.png"
+      text="Den grovdrejede skål blev sat til tørring på øverste hylde i kontoret i 25 lag avispapir 10.01.2019. Temp. 21 grader og RF>50 %. Den 5/3 var vægten konstant, med et vægtab på 28%."
+    />
+    <Hover
+      billed="/./drej-billeder/fyen-5.png"
+      text="Her er så resultatet, en tør og og hel perfrekt grovdrejet skål uden revner."
+    />
+    <Hover
+      billed="/./drej-billeder/fyen-6.png"
+      text="Hvor stor er skålen morfar? Den er 46 cm i diametter Otto, men den mangler at få bunden drejet af."
+    />
+    <Hover
+      billed="/./drej-billeder/fyen-7.png"
+      text="Den færdig lakerede skål måler måler 46,5 x 22,5 cm. Den kunne godt være blevet 49 cm. Men da skålbakkernes max diameter er 470 mm, valgte jeg at dreje skålen ned til 46,5 cm, således at jeg kunne vende skålen, spænde den op på bænken og dreje bunden af."
+    />
+  </div>
+  <!-- <div class="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <Citem
@@ -59,7 +84,7 @@ import Citem from "../komponenter/Citem.astro";
       <button class="carousel-control prev">‹</button>
       <button class="carousel-control next">›</button>
     </div>
-  </div>
+  </div> -->
   <div class="obagrund border-2"></div>
 
   <style>
@@ -95,7 +120,7 @@ import Citem from "../komponenter/Citem.astro";
       width: 80%;
       /* max-width: 300px; */
       overflow: hidden;
-      background-color: #fff;
+      /* background-color: #fff; */
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
@@ -136,6 +161,19 @@ import Citem from "../komponenter/Citem.astro";
 
     .carousel-control.next {
       right: 10px;
+    }
+    @media only screen and (min-width: 800px) {
+      .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+        padding: 30px 20px 30px 20px;
+        gap: 10px;
+      }
+      /* .bagrund-farve {
+        background-color: #e18658;
+        z-index: -1000;
+      } */
     }
   </style>
   <script>
