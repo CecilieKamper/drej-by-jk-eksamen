@@ -1,0 +1,169 @@
+---
+import Menylayout from "../komponenter/layouts/Menylayout.astro";
+import Pro01 from "../komponenter/Pro01.astro";
+import Boks from "../komponenter/Boks.astro";
+import Laas from "../komponenter/Laas.astro";
+import Hover from "../komponenter/Hover.astro";
+import Citem from "../komponenter/Citem.astro";
+import Caroself from "../komponenter/Caroself.astro";
+import Pil from "../komponenter/Pil.astro";
+---
+
+<Menylayout>
+  <Pil href="/projekter" />
+  <Pro01
+    billed="/./drej-billeder/egeknude.png"
+    alttext="egeknudeskål"
+    h11="egeknude"
+    h12="fra"
+    h13="haslev"
+  />
+  <Boks sorttext="fra træ last til" hvidtext=" drejebænk">
+    <p>
+      Vi besøgte Hårdttrælasten i Haslev og købte en imponerende egeknude i
+      september 2019. Efter næsten et års venten begyndte jeg at arbejde på den
+      i maj 2020. Efter at have fjernet porøse områder og skåret den til en mere
+      håndterbar størrelse, drejede jeg en skål ud af den.
+    </p>
+    <p>
+      Efterbehandlingen og tørringen tog et stykke tid, og i oktober begyndte
+      jeg findrejningen med et særligt vinkelanlæg. Skålen blev drejet færdig,
+      pudset og behandlet, og bunden blev drejet til at stå på en lille fod. Jeg
+      endte med kun at bruge epoxy på de største revner og huller, selvom jeg
+      oprindeligt havde planlagt at fylde dem alle.
+    </p>
+  </Boks>
+  <Laas />
+  <div class="grid-3 bagrund-farve">
+    <Hover
+      billed="/./drej-billeder/fyen-1.png"
+      text="Rodende kævlerne klar til afhentning. Kævlerne øverst og nederst til venstre er ask. Nederst til højre ligger rødegen. "
+    />
+    <Hover
+      billed="/./drej-billeder/fyen-2.png"
+      text="Den store askeklods på bænken. Frihøjden er 30 cm"
+    />
+    <Hover
+      billed="/./drej-billeder/fyen-3.png"
+      text="Opdeling af stor askeklods til en rondel til et fad og én til en skål."
+    />
+    <Hover
+      billed="/./drej-billeder/fyen-4.png"
+      text="Den grovdrejede skål blev sat til tørring på øverste hylde i kontoret i 25 lag avispapir 10.01.2019. Temp. 21 grader og RF>50 %. Den 5/3 var vægten konstant, med et vægtab på 28%."
+    />
+    <Hover
+      billed="/./drej-billeder/fyen-5.png"
+      text="Her er så resultatet, en tør og og hel perfrekt grovdrejet skål uden revner."
+    />
+    <Hover
+      billed="/./drej-billeder/fyen-6.png"
+      text="Hvor stor er skålen morfar? Den er 46 cm i diametter Otto, men den mangler at få bunden drejet af."
+    />
+    <Hover
+      billed="/./drej-billeder/fyen-7.png"
+      text="Den færdig lakerede skål måler måler 46,5 x 22,5 cm. Den kunne godt være blevet 49 cm. Men da skålbakkernes max diameter er 470 mm, valgte jeg at dreje skålen ned til 46,5 cm, således at jeg kunne vende skålen, spænde den op på bænken og dreje bunden af."
+    />
+  </div>
+  <div class="flex">
+    <Caroself />
+  </div>
+  <!-- <div class="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <Citem
+          billed="/./drej-billeder/1.webp"
+          text="Med dens betydelige vægt krævede det en sækkevogn for at håndtere den, hvilket motiverede mig til straks at skære knuden til, så den kunne passe på bænken"
+        />
+      </div>
+      <div class="carousel-item">
+        <Citem
+          billed="/./drej-billeder/billedprøve.png"
+          text="Med dens betydelige vægt krævede det en sækkevogn for at håndtere den, hvilket motiverede mig til straks at skære knuden til, så den kunne passe på bænken"
+        />
+      </div>
+      <div class="carousel-item">
+        <Citem
+          billed="/./drej-billeder/billedprøve.png"
+          text="Med dens betydelige vægt krævede det en sækkevogn for at håndtere den, hvilket motiverede mig til straks at skære knuden til, så den kunne passe på bænken"
+        />
+      </div>
+      <button class="carousel-control prev">‹</button>
+      <button class="carousel-control next">›</button>
+    </div>
+  </div> -->
+  <div class="obagrund border-2"></div>
+
+  <style>
+    .flex {
+      display: flex;
+      justify-content: center;
+    }
+    .bagrund-farve {
+      display: none;
+    }
+
+    .obagrund {
+      background-color: #e18658;
+    }
+
+    p {
+      font-family: Arimo, sans-serif;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.5rem;
+    }
+
+    @media only screen and (min-width: 800px) {
+      .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+        padding: 30px 20px 30px 20px;
+        gap: 10px;
+      }
+      .flex {
+        display: none;
+      }
+      .bagrund-farve {
+        background-color: #e18658;
+      }
+    }
+  </style>
+  <script>
+    // script.js
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const carousel = document.querySelector(".carousel");
+      const carouselInner = carousel.querySelector(".carousel-inner");
+      const items = carouselInner.querySelectorAll(".carousel-item");
+      const nextButton = carousel.querySelector(".carousel-control.next");
+      const prevButton = carousel.querySelector(".carousel-control.prev");
+
+      let currentIndex = 0;
+      const totalItems = items.length;
+
+      function showSlide(index) {
+        items.forEach((item, i) => {
+          item.classList.toggle("active", i === index);
+        });
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        showSlide(currentIndex);
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        showSlide(currentIndex);
+      }
+
+      nextButton.addEventListener("click", nextSlide);
+      prevButton.addEventListener("click", prevSlide);
+
+      // Optional: Auto-play functionality
+      // setInterval(nextSlide, 3000);
+    });
+  </script>
+</Menylayout>

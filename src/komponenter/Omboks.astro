@@ -1,0 +1,47 @@
+---
+const { h3text, text1, text2 } = Astro.props;
+---
+
+<div class="flex">
+  <div class="under">
+    <h3>{h3text}</h3>
+  </div>
+  <div class="text">
+    <p>{text1}</p>
+    <p>{text2}</p>
+  </div>
+</div>
+<style>
+  .flex {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    padding: 50px;
+  }
+  .text {
+    /* padding: 50px 70px 50px 70px; */
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+  .under {
+    border-bottom: 2px solid var(--mørke-orange);
+    h3 {
+      padding-bottom: 10px;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    .under {
+      border-bottom: 3px solid var(--mørke-orange);
+      h3 {
+        padding-bottom: 10px;
+      }
+    }
+    .flex {
+      display: flex;
+      gap: 40px;
+      flex-direction: column;
+      padding: 80px;
+    }
+  }
+</style>

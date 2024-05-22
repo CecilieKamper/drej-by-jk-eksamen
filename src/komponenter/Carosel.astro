@@ -1,0 +1,132 @@
+---
+import Citem from "./Citem.astro";
+---
+
+<div class="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <Citem
+        billed="/./drej-billeder/haslev-1.png"
+        text="Med dens betydelige vægt krævede det en sækkevogn for at håndtere den, hvilket motiverede mig til straks at skære knuden til, så den kunne passe på bænken"
+      />
+    </div>
+    <div class="carousel-item">
+      <Citem
+        billed="/./drej-billeder/haslev-2.png"
+        text="Med dens betydelige vægt krævede det en sækkevogn for at håndtere den, hvilket motiverede mig til straks at skære knuden til, så den kunne passe på bænken"
+      />
+    </div>
+    <div class="carousel-item">
+      <Citem
+        billed="/./drej-billeder/haslev-3.png"
+        text="Med dens betydelige vægt krævede det en sækkevogn for at håndtere den, hvilket motiverede mig til straks at skære knuden til, så den kunne passe på bænken"
+      />
+    </div>
+    <div class="carousel-item">
+      <Citem
+        billed="/./drej-billeder/haslev-4.png"
+        text="Med dens betydelige vægt krævede det en sækkevogn for at håndtere den, hvilket motiverede mig til straks at skære knuden til, så den kunne passe på bænken"
+      />
+    </div>
+    <div class="carousel-item">
+      <Citem
+        billed="/./drej-billeder/haslev-5.png"
+        text="Med dens betydelige vægt krævede det en sækkevogn for at håndtere den, hvilket motiverede mig til straks at skære knuden til, så den kunne passe på bænken"
+      />
+    </div>
+    <div class="carousel-item">
+      <Citem
+        billed="/./drej-billeder/haslev-6.png"
+        text="Med dens betydelige vægt krævede det en sækkevogn for at håndtere den, hvilket motiverede mig til straks at skære knuden til, så den kunne passe på bænken"
+      />
+    </div>
+    <button class="carousel-control prev">‹</button>
+    <button class="carousel-control next">›</button>
+  </div>
+</div>
+
+<style>
+  .carousel {
+    position: relative;
+    width: 80%;
+    /* max-width: 300px; */
+    overflow: hidden;
+    /* background-color: #fff; */
+    /* border-radius: 10px; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  }
+
+  .carousel-inner {
+    display: flex;
+    transition: 2s ease-in-out;
+  }
+
+  .carousel-item {
+    min-width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .carousel-item.active {
+    display: flex;
+  }
+
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #333;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .carousel-control.prev {
+    left: 10px;
+  }
+
+  .carousel-control.next {
+    right: 10px;
+  }
+</style>
+<script>
+  // script.js
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector(".carousel");
+    const carouselInner = carousel.querySelector(".carousel-inner");
+    const items = carouselInner.querySelectorAll(".carousel-item");
+    const nextButton = carousel.querySelector(".carousel-control.next");
+    const prevButton = carousel.querySelector(".carousel-control.prev");
+
+    let currentIndex = 0;
+    const totalItems = items.length;
+
+    function showSlide(index) {
+      items.forEach((item, i) => {
+        item.classList.toggle("active", i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalItems;
+      showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+      showSlide(currentIndex);
+    }
+
+    nextButton.addEventListener("click", nextSlide);
+    prevButton.addEventListener("click", prevSlide);
+
+    // Optional: Auto-play functionality
+    // setInterval(nextSlide, 3000);
+  });
+</script>

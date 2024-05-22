@@ -1,135 +1,144 @@
 <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-logo">
-        <h2>DREJ BY JK</h2>
-      </div>
-      <div class="footer-info">
-        <p>Jens Knudsen</p>
-        <p>26187560</p>
-        <p>j.k.hojvang@gmail.com</p>
-        <p>Tårnvænget 46</p>
-        <p>3300 Frederiksværk</p>
-      </div>
-  
-      <div class="footer-newsletter">
-        <h3>Skriv dig op til vores nyhedsbrev</h3>
-        <form>
-          <input type="email" placeholder="Din email" required />
-          <button type="submit">Send</button>
-          <div class="footer-social">
-            <a href="#"
-              ><img src="/./drej-billeder/face-footer.png" alt="Facebook"
-            /></a>
-            <a href="#"
-              ><img src="/./drej-billeder/insta-footer.png" alt="Instagram"
-            /></a>
-          </div>
-        </form>
-      </div>
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h2 class="logo">DREJ BY JK</h2>
     </div>
-  </footer>
+    <div class="footer-info">
+      <p>Jens Knudsen</p>
+      <p>26187560</p>
+      <p>j.k.hojvang@gmail.com</p>
+      <p>Tårnvænget 46</p>
+      <p>3300 Frederiksværk</p>
+    </div>
 
-  <style>
-    /* Footer Styles */
-/* Footer Styles */
-.footer {
-  background-color: #e2d6c6;
-  color: #000000;
-  padding: 20px;
-  border-top: solid 3px #c1631f;
-  text-align: center; /* Centerer teksten */
-}
+    <div class="footer-newsletter">
+      <h3>Skriv dig op til vores nyhedsbrev</h3>
+      <form>
+        <input type="email" placeholder="Din Mail" required />
+        <button type="submit">Send</button>
+        <div class="footer-social">
+          <a
+            href="https://www.facebook.com/profile.php?id=61559874926503&rdid=aXCWmXzfn2HaHiFW&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2FwMnQqBHEcr61M1NK"
+            ><img src="/./drej-billeder/face-footer.png" alt="Facebook" /></a
+          >
+          <a
+            href="https://www.instagram.com/drej_by_jk/?utm_source=ig_web_button_share_sheet"
+            ><img src="/./drej-billeder/insta-footer.png" alt="Instagram" /></a
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+</footer>
 
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto; /* Centrerer indholdet */
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.footer-logo h2 {
-  margin: 0;
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.footer-info p {
-  margin: 0;
-  line-height: 1.5; /* Tilføj mere mellemrum mellem linjerne */
-}
-
-.footer-newsletter form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.footer-newsletter input,
-.footer-newsletter button {
-  width: 50%; /* Gør input og knap bredde til 50% af containeren */
-  padding: 8px;
-  border: 1px solid #c1631f;
-  border-radius: 4px;
-}
-
-.footer-newsletter button {
-  margin-top: 10px; /* Tilføj lidt mellemrum mellem input og knap */
-  background-color: #c1631f;
-  color: #ffffff;
-  cursor: pointer;
-  width: 20%;
-}
-
-.footer-newsletter button:hover {
-  background-color: #a14a15;
-}
-
-.footer-social a {
-  margin: 0 10px;
-}
-
-.footer-social img {
-  width: 24px;
-  height: 24px;
-}
-
-/* Desktop */
-@media (min-width: 769px) {
-  .footer-content {
-    justify-content: center; /* Centrerer indholdet vandret */
-    align-items: center; /* Centrerer indholdet lodret */
+<style>
+  /* Footer Styles */
+  /* Footer Styles */
+  .footer {
+    background-color: #e2d6c6;
+    color: #000000;
+    padding: 20px;
+    /* border-top: solid 3px #c1631f; */
+    text-align: center; /* Centerer teksten */
+  }
+  .logo {
+    font-style: normal;
   }
 
-  .footer-info {
-    text-align: center; /* Centrerer teksten */
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto; /* Centrerer indholdet */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-logo h2 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .footer-info p {
+    margin: 0;
+    line-height: 1.5; /* Tilføj mere mellemrum mellem linjerne */
+  }
+  input {
+    font-family: Arimo, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
   }
 
   .footer-newsletter form {
-    align-self: center; /* Centrerer formularcontaineren */
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
   }
 
   .footer-newsletter input,
   .footer-newsletter button {
-    width: 100%; /* Gør input og knap bredde til 100% af formularcontaineren */
+    width: 50%; /* Gør input og knap bredde til 50% af containeren */
+    padding: 8px;
+    border: 1px solid #c1631f;
+    border-radius: 4px;
   }
+
   .footer-newsletter button {
-    width: 40%;
-  }
-  .footer-info {
-    display: inline; /* Placerer elementerne på en linje */
+    margin-top: 10px; /* Tilføj lidt mellemrum mellem input og knap */
+    background-color: #c1631f;
+    color: #ffffff;
+    cursor: pointer;
+    width: 20%;
   }
 
-  .footer-info p {
-    margin: 30px;
-    line-height: 1.5; /* Tilføj mere mellemrum mellem linjerne */
-    display: inline; /* Placerer hvert <p> på en linje */
+  .footer-newsletter button:hover {
+    background-color: #a14a15;
   }
-}
 
-  </style>
-  
+  .footer-social a {
+    margin: 0 10px;
+  }
+
+  .footer-social img {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Desktop */
+  @media (min-width: 769px) {
+    .footer-content {
+      justify-content: center; /* Centrerer indholdet vandret */
+      align-items: center; /* Centrerer indholdet lodret */
+    }
+
+    .footer-info {
+      text-align: center; /* Centrerer teksten */
+    }
+
+    .footer-newsletter form {
+      align-self: center; /* Centrerer formularcontaineren */
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-newsletter input,
+    .footer-newsletter button {
+      width: 100%; /* Gør input og knap bredde til 100% af formularcontaineren */
+    }
+    .footer-newsletter button {
+      width: 40%;
+    }
+    .footer-info {
+      display: inline; /* Placerer elementerne på en linje */
+    }
+
+    .footer-info p {
+      margin: 30px;
+      line-height: 1.5; /* Tilføj mere mellemrum mellem linjerne */
+      display: inline; /* Placerer hvert <p> på en linje */
+    }
+  }
+</style>

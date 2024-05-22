@@ -4,13 +4,15 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
 
 <Menylayout title="Projekter">
   <div class="projekter-grid">
-    <h1>tidligere <br /> <span class="skrå-orange">projekter</span></h1>
-    <img src="/././drej-billeder/3-skaaaaale.png" alt="" />
-    <p>se hvad jeg tideligere har lavet ...</p>
+    <div class="flex">
+      <h1>tidligere <br /> <span class="skrå-orange">projekter</span></h1>
+      <p>se hvad jeg tideligere har lavet ...</p>
+    </div>
+    <img src="/./drej-billeder/projekt-skål.svg" alt="" />
   </div>
   <div class="projek-link-flex">
     <div class="projekt-link projekt-link-1">
-      <a href="#"
+      <a href="/haslev"
         ><h2>
           <span class="skrå-sort">egeknude</span><br />
           <span class="fed-sort">fra</span><br />
@@ -22,14 +24,14 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
       >
     </div>
     <div class="projekt-link">
-      <a href="#"
+      <a href="/fyen"
         ><h2>
           <span class="skrå-sort">træet</span><br />
           <span class="fed-sort">fra</span>
-          <br />fyen
+          <br /><span class="skrå-orange">fyen</span>
         </h2></a
       >
-      <a href="#"
+      <a href=""
         ><img class="pil-p" src="/./drej-billeder/pil-p.svg" alt="" /></a
       >
     </div>
@@ -39,7 +41,7 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
 <style>
   h1 {
     font-style: italic;
-    font-size: 3rem;
+    font-size: 4rem;
     font-family: "argent-cf", serif;
     font-weight: 300;
     text-transform: uppercase;
@@ -62,7 +64,7 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
     text-transform: uppercase;
   }
   /* fældes spand klassr */
-  .skrå-sort {
+  /* .skrå-sort {
     color: var(--sort);
   }
   .fed-sort {
@@ -72,7 +74,7 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
   }
   .skrå-orange {
     color: var(--mørke-orange);
-  }
+  } */
   .pil-p {
     max-width: 50%;
   }
@@ -86,11 +88,13 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
     border-top: 2px solid var(--mørke-orange);
   }
   .projekter-grid {
-    display: grid;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     padding: 50px 20px 20px 20px;
   }
   img {
-    max-width: 70%;
+    max-width: 60%;
   }
   a {
     display: flex;
@@ -100,7 +104,12 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
     color: var(--mørke-orange);
   }
   @media only screen and (min-width: 800px) {
+    .flex {
+    }
     .projekter-grid {
+      justify-content: center;
+      gap: 100px;
+      flex-direction: row;
       display: flex;
       padding: 50px 20px 20px 20px;
     }

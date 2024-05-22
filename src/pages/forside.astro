@@ -1,138 +1,164 @@
 ---
 import Menylayout from "../komponenter/layouts/Menylayout.astro";
-import "../styles/generel.css";
+// import "../styles/generel.css";
+import Boks from "../komponenter/Boks.astro";
 ---
 
 <Menylayout>
-    <section class="grid">
-      <img
-        class="forside_billede"
-        src="/drej-billeder/Forside_billede.webp"
-        alt=""
-      />
+  <section class="grid">
+    <img
+      class="forside_billede"
+      src="/drej-billeder/Forside_billede.webp"
+      alt=""
+    />
+    <div class="flex">
       <h1 class="h1_forside">
-        "ALT HAR <div class="tekst_orange">
-          <span class="sort_tekst">EN FORTID, EN</span> FORTÆLLING
-        </div>
-         OG EN FREMTID"
+        "ALT HAR EN FORTID, <br /> EN <span class="skrå-orange">FORTÆLLING</span
+        >
+        <br /> OG EN FREMTID"
       </h1>
-    </section>
-    <div class="forside_drej">
+
+      <!-- <div class="forside_drej"> -->
       <p>DREJ BY JK</p>
     </div>
-    <section class="grid1_2">
-      <div class="forside_orange">
-        <div class="orange_tekst">
-          <h2>
-            SKÅLE OG FADE <br />
-            <div class="mission">
-              <span class="sort_tekst">MED EN</span> MISSION
-            </div>
-          </h2>
-        </div>
-      </div>
-      <div class="tekst_forside">
-        <p>
-          Drej skaber smukke skåle og fade af træ. <br />Det fylder mig med
-          glæde, når mine skåle og fade bliver fyldt med salater, frugter og
-          friskbagte boller. Med strikktøj, legetøj, tøjdyr og alt muligt andet.
-  
+    <!-- </div> -->
+  </section>
+  <Boks sorttext="SKÅLE OG FADE" hvidtext="MED EN MISSION">
+    <p>Drej skaber smukke skåle og fade af træ.</p>
+    <p>
+      Det fylder mig med glæde, når mine skåle og fade bliver fyldt med salater,
+      frugter og friskbagte boller. Med strikketøj, legetøj, tøjdyr og alt
+      muligt andet.
+    </p>
+    <p>
+      Jeg skaber ting, der skal bruges. Men jeg håber også, at træets
+      fantastiske former og farver kan minde os om, hvor fascinerende naturen
+      er. Og hvor vigtigt det er, at alle er med til passe godt på den.
+    </p>
+  </Boks>
 
-          <br />Jeg skaber ting, der skal bruges. Men jeg håber også, at træets
-          fantastiske former og farver kan minde os om, hvor fascinerende
-          naturen er. Her at alle er med til at passe godt på dem.
-        </p>
-      </div>
-    </section>
-    <div class="udforsk">
-      <h2>UDFORSK</h2>
-    </div>
-    <section class="grid2_2">
-      <a href=""><img src="/drej-billeder/produkter.svg" alt="" /></a>
-      <a href=""><img src="/drej-billeder/mig.svg" alt="" /></a>
-      <a href=""><img src="/drej-billeder/projekter.svg" alt="" /></a>
-      <a href=""><img src="/drej-billeder/kontakt.svg" alt="" /></a>
-    </section>
- </Menylayout>
+  <div class="udforsk">
+    <h2>UDFORSK</h2>
+  </div>
+  <div class="link-boks">
+    <a href="/produkter" class="image-link">
+      <div class="image-container-pr"></div>
+    </a>
+    <a href="/projekter" class="image-link">
+      <div class="image-container-p"></div>
+    </a>
+    <a href="/om" class="image-link">
+      <div class="image-container-m"></div>
+    </a>
+
+    <a href="/kontakt" class="image-link">
+      <div class="image-container-k"></div>
+    </a>
+  </div>
+</Menylayout>
 
 <style>
-  img {
-    width: 100%;
-    height: auto;
+  /* Grundlæggende styling */
+  .image-link {
+    display: inline-block;
+    text-decoration: none;
+  }
+  /* prjekter */
+  .image-container-p {
+    width: 250px;
+    height: 320px;
+    background-image: url("/drej-billeder/projekter.svg");
+    background-size: cover;
+    background-position: center;
+  }
+  .image-link:hover .image-container-p {
+    background-image: url("/drej-billeder/projekter_overlay.svg");
+  }
+  /* kontakt */
+  .image-container-k {
+    width: 250px;
+    height: 320px;
+    background-image: url("/drej-billeder/kontakt.svg");
+    background-size: cover;
+    background-position: center;
   }
 
-  body {
-    background-color: #e2d6c6;
+  .image-link:hover .image-container-k {
+    background-image: url("/drej-billeder/kontakt_overlay.svg");
+  }
+  /* om */
+  .image-container-m {
+    width: 250px;
+    height: 320px;
+    background-image: url("/drej-billeder/mig.svg");
+    background-size: cover;
+    background-position: center;
   }
 
-  .tekst_orange {
-    color: #e18658;
+  .image-link:hover .image-container-m {
+    background-image: url("/drej-billeder/mig_overlay.svg");
+  }
+  /* produkter*/
+  .image-container-pr {
+    width: 250px;
+    height: 320px;
+    background-image: url("/drej-billeder/produkter.svg");
+    background-size: cover;
+    background-position: center;
   }
 
-  .sort_tekst {
-    color: black;
+  .image-link:hover .image-container-pr {
+    background-image: url("/drej-billeder/produkter_overlay.svg");
   }
-
-  .h1_forside {
-    text-align: left;
-    margin-left: 4rem;
-  }
-
-  .forside_drej {
-    text-align: right;
-    margin-right: 3rem;
-  }
-
-  .mission {
-    color: white;
+  .flex {
+    order: -1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: end;
   }
 
   .forside_billede {
     max-width: 60%;
-    margin-left: 5rem;
   }
 
-  .forside_orange {
-    padding: 2rem;
-    border: solid 1px #e18658;
-    background-color: #e18658;
+  h1 {
+    font-size: 3rem;
   }
 
-  .orange_tekst {
-    margin-left: 2rem;
+  .grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    align-items: center;
   }
-
   .udforsk {
-    margin-left: 4rem;
-    margin-top: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px 10px 20px 30px;
   }
-
-  .tekst_forside {
-    padding: 4rem;
-    border-bottom: solid 2px #e18658;
+  .link-boks {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    border-top: 2px solid var(--mørke-orange);
+    border-bottom: 2px solid var(--mørke-orange);
   }
-
-  .grid2_2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 90%;
-    margin-left: 2rem;
-  }
-
   @media screen and (min-width: 768px) {
-    img {
-      width: 100%;
-      height: auto;
+    .link-boks {
+      border-top: 3px solid var(--mørke-orange);
+      border-bottom: 3px solid var(--mørke-orange);
     }
     .grid {
       display: grid;
+      justify-items: center;
       grid-template-columns: 1fr 1fr;
+      padding: 100px;
     }
     .h1_forside {
-      text-align: left;
-      margin-left: 7rem;
       order: -1;
-      margin-top: 10rem;
     }
 
     .forside_drej {
@@ -140,25 +166,9 @@ import "../styles/generel.css";
       margin-right: 62rem;
     }
 
-    .mission {
-      color: white;
-    }
-
     .forside_billede {
-      max-width: 50%;
+      max-width: 70%;
       margin-left: 4rem;
-    }
-
-    .forside_orange {
-      padding: 2rem;
-      margin-right: 3rem;
-      border: solid 1px #e18658;
-      background-color: #e18658;
-    }
-
-    .orange_tekst {
-      margin-top: 4rem;
-      margin-left: 5rem;
     }
 
     .grid1_2 {
@@ -166,17 +176,6 @@ import "../styles/generel.css";
       grid-template-columns: 1fr 1fr;
       border-top: solid 3px #e18658;
       border-bottom: solid 3px #e18658;
-    }
-
-    .udforsk {
-      margin-left: 7rem;
-      margin-top: 3rem;
-    }
-
-    .tekst_forside {
-      padding: 4rem;
-      margin-right: 5rem;
-      border: none;
     }
 
     .grid2_2 {

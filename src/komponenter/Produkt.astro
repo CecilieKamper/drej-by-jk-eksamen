@@ -1,23 +1,27 @@
 ---
-const { imgg, alt } = Astro.props;
+// const { imgg, alt } = Astro.props;
 
 const { data } = Astro.props;
+console.log(data.id);
 ---
 
 <div class="container">
-  <a href={`produktliste/${data.slug}`}>
-    <img src={imgg} alt={alt} class="små-skåle" />
+  <a href={`produktliste/${data.id}`}>
+    <!-- <a href={`/produktliste/${data.number}`}> -->
+    <img class="skål" src={`/drej-billeder/${data.img2}`} alt="" />
 
     <img src="/./drej-billeder/orangepil.svg" alt="Pil" class="pil" />
   </a>
 </div>
 
 <style>
-  .container {
+  .container a {
     display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 
-  .stor-skål {
+  .skål {
     width: 100%;
     height: auto;
     display: block;

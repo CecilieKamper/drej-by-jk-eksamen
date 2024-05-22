@@ -12,260 +12,219 @@ const data = await fetch(
   }
 ).then((res) => res.json());
 
-// console.log(data);
+console.log(data);
 ---
 
 <Menylayout>
   <section class="grid_1">
-    <section>
-      <h1>Hvert produkt er <span class="orange">UNIKT</span></h1>
+    <div class="flex">
+      <h1>Hvert produkt <br /> er <span class="skrå-orange">UNIKT</span></h1>
       <p>
         Alle produkter er unikke og er nummereret med et unikt nummer. Under
         hvert produkt kan du læse mere om hvor der stammer fra.
       </p>
-    </section>
+    </div>
     <img class="skaal" src="/./drej-billeder/3-skaaaaale.png" alt="" />
   </section>
 
   <div class="grid_2">
     <h2>Sorter efter træsorter</h2>
     <div class="custom-menu">
-        <div class="menu-icon" id="menu-icon">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+      <div class="menu-icon" id="menu-icon">
+        <img class="roter" src="/./drej-billeder/vpilsort.svg" alt="" />
+        <!-- <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div> -->
+      </div>
+      <div class="menu" id="menu">
+        <div class="close-icon" id="close-icon">&times;</div>
+        <div class="menu-items">
+          <a href="#link1"
+            ><img
+              src="drej-billeder/asktekst.svg"
+              alt="Logo 1"
+              class="menu-logo"
+            /></a
+          >
+          <a href="#link2"
+            ><img
+              src="drej-billeder/valnødtekst.svg"
+              alt="Logo 2"
+              class="menu-logo"
+            /></a
+          >
+          <a href="#link3"
+            ><img
+              src="drej-billeder/egeknudetekst.svg"
+              alt="Logo 3"
+              class="menu-logo"
+            /></a
+          >
+          <a href="#link4"
+            ><img
+              src="drej-billeder/elmtekst.svg"
+              alt="Logo 4"
+              class="menu-logo"
+            /></a
+          >
         </div>
-        <div class="menu" id="menu">
-            <div class="close-icon" id="close-icon">&times;</div>
-            <div class="menu-items">
-                <a href="#link1"><img src="drej-billeder/asktekst.svg" alt="Logo 1" class="menu-logo"></a>
-                <a href="#link2"><img src="drej-billeder/valnødtekst.svg" alt="Logo 2" class="menu-logo"></a>
-                <a href="#link3"><img src="drej-billeder/egeknudetekst.svg" alt="Logo 3" class="menu-logo"></a>
-                <a href="#link4"><img src="drej-billeder/elmtekst.svg" alt="Logo 4" class="menu-logo"></a>
-            </div>
-        </div>
+      </div>
     </div>
-</div>
-
-
-
+  </div>
 
   <div class="gridlol">
     {
       data.map((bowl) => {
-        return <Produkt imgg="/./drej-billeder/0-2.webp" data={bowl} />;
+        console.log(bowl);
+        return <Produkt data={bowl} />;
       })
     }
-    <!-- <Produkt imgg="/./drej-billeder/0-2.webp" />
-    <Produkt imgg="/./drej-billeder/0-2.webp" />
-    <Produkt imgg="/./drej-billeder/0-2.webp" />
-    <Produkt imgg="/./drej-billeder/0-2.webp" />
-    <Produkt imgg="/./drej-billeder/0-2.webp" />
-    <Produkt imgg="/./drej-billeder/0-2.webp" />
-    <Produkt imgg="/./drej-billeder/0-2.webp" />
-    <Produkt imgg="/./drej-billeder/0-2.webp" />
-    <Produkt imgg="/./drej-billeder/0-2.webp" /> -->
   </div>
-  <!-- <section class="grid_1">
-   
-  <div class="produkt-liste">
-    <div class="stor-billede-container">
-      <a href="#">
-        <img
-          src="/./drej-billeder/0-2.webp"
-          alt="Stor billede"
-          class="stor-skål"
-        />
-        <img
-          src="/./drej-billeder/orangepil.svg"
-          alt="Pil"
-          class="pil stor"
-        />
-      </a>
-    </div>
-    <div class="små-produktbilleder">
-      <div class="små-billede-container">
-        <a href="#">
-          <img
-            src="/./drej-billeder/3.webp"
-            alt="Lille billede 1"
-            class="små-skåle"
-          />
-          <img
-            src="/./drej-billeder/orangepil.svg"
-            alt="Pil"
-            class="pil"
-          />
-        </a>
-      </div>
-      <div class="små-billede-container">
-        <a href="#">
-          <img
-            src="/./drej-billeder/5.webp"
-            alt="Lille billede 2"
-            class="små-skåle"
-          />
-          <img
-            src="/./drej-billeder/orangepil.svg"
-            alt="Pil"
-            class="pil"
-          />
-        </a>
-      </div>
-      <div class="små-billede-container">
-        <a href="#">
-          <img
-            src="/./drej-billeder/6.webp"
-            alt="Lille billede 3"
-            class="små-skåle"
-          />
-          <img
-            src="/./drej-billeder/orangepil.svg"
-            alt="Pil"
-            class="pil"
-          />
-        </a>
-      </div>
-      <div class="små-billede-container">
-        <a href="#">
-          <img
-            src="/./drej-billeder/7.webp"
-            alt="Lille billede 4"
-            class="små-skåle"
-          />
-          <img
-            src="/./drej-billeder/orangepil.svg"
-            alt="Pil"
-            class="pil"
-          />
-        </a>
-      </div>
-    </div>
-     -->
 </Menylayout>
-
-<footer></footer>
+<!-- <footer></footer> -->
 
 <style>
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* .skaal {
+    max-width: 100%;
  
-/* burgermenu med sortering */
+  } */
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+  h1 {
+    font-size: 3rem;
+  }
 
-header {
-    position: relative;
-}
-
-.grid_2 {
+  .grid_1 {
     display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
+    grid-template-columns: 1fr;
+    padding: 30px;
+    border-bottom: 2px solid var(--mørke-orange);
+    img {
+      max-width: 80%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+  }
+  .roter {
+    rotate: -90deg;
+  }
+  .grid_2 {
+    /* display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      padding: 10px; */
     padding: 10px;
-}
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h2 {
+      font-size: 1.5rem;
+      font-style: normal;
+    }
+  }
 
-.grid_2 h2 {
-    margin: 0;
-}
+  /* header {
+    position: relative;
+} */
 
-.custom-menu .menu-icon {
-    display: none;
+  /* sortering */
+  .custom-menu .menu-icon {
+    /* display: none; */
     flex-direction: column;
     cursor: pointer;
     padding: 10px;
-}
+  }
+  /* icon */
+  /* .bar {
+      width: 25px;
+      height: 3px;
+      background-color: black;
+      margin: 4px 0;
+    } */
 
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    margin: 4px 0;
-}
-
-.custom-menu .menu {
+  .custom-menu .menu {
     display: none;
     position: fixed;
     top: 370px;
     right: 10px;
     width: 77%;
-    height: 17%;
+    height: 20%;
     background-color: #e2d6c6;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border: solid 2px #c1631f;
     z-index: 1000;
-}
+  }
 
-.menu-items {
+  .menu-items {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-}
+  }
 
-.menu-logo {
+  .menu-logo {
     width: 80px;
     height: 60px;
     transition: transform 0.3s;
-}
+  }
 
-.menu-logo:hover {
+  .menu-logo:hover {
     transform: scale(1.1);
-}
+  }
 
-.close-icon {
+  .close-icon {
     position: absolute;
     top: 0px;
     right: 10px;
     font-size: 30px;
     cursor: pointer;
-}
+  }
 
-/* Mobil stil */
-@media (max-width: 768px) {
-    .custom-menu .menu-icon {
-        display: flex;
-        justify-self: end;
-        j
-    }
+  /* Mobil stil */
 
+  .custom-menu {
+    display: flex;
+    justify-self: end;
+  }
+
+  .custom-menu .menu {
+    display: none;
+  }
+
+  /* Desktop stil */
+  @media (min-width: 769px) {
     .custom-menu .menu {
-        display: none;
-    }
-}
-
-/* Desktop stil */
-@media (min-width: 769px) {
-    .custom-menu .menu {
-        display: flex;
-        position: static;
-        width: auto;
-        height: auto;
-        flex-direction: row;
-        background-color: transparent;
-        border: none;
+      display: flex;
+      position: static;
+      width: auto;
+      height: auto;
+      flex-direction: row;
+      background-color: transparent;
+      border: none;
     }
 
     .menu-items {
-        display: flex;
-        flex-direction: row;
+      display: flex;
+      flex-direction: row;
     }
 
     .menu-logo {
-        margin: 0 10px;
+      margin: 0 10px;
     }
 
     .custom-menu .menu-icon,
     .close-icon {
-        display: none;
+      display: none;
     }
-}
+  }
 
-/* Responsivitet */
-@media (min-width: 768px) {
+  /* Responsivitet */
+  /* @media (min-width: 768px) {
     .produkt-liste {
         grid-template-columns: 1fr 1fr;
     }
@@ -277,25 +236,24 @@ header {
     .små-produktbilleder {
         grid-template-columns: repeat(2, 1fr);
     }
-}
-/* Mobil stil */
-@media (max-width: 768px) {
+} */
+  /* Mobil stil */
+  @media (max-width: 768px) {
     .custom-menu .menu-icon {
-        display: flex;
-        justify-self: end;
+      display: flex;
+      justify-self: end;
     }
 
     .custom-menu .menu {
-        display: none;
+      display: none;
     }
-}
-
-
+  }
 
   /* produktlisten */
-  .gridlol{
+  .gridlol {
     display: grid;
     grid-template-columns: repeat(4, minmax(250px, 1fr));
+    grid-auto-flow: dense;
     place-items: center;
     /*  grid-template-rows: repeat(6 1fr);
     gri */
@@ -314,96 +272,54 @@ header {
   .gridlol > :nth-child(5) {
     grid-area: 2/4/3/5;
   }
-  h1 {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  .orange {
-    color: #c1631f;
-    text-transform: uppercase;
-  }
-  h1 {
-    font-size: 20px;
-    text-transform: uppercase;
-  }
-  h2,
-  h3 {
-    text-transform: uppercase;
-  }
-  p {
-    font-size: 10px;
-  }
-  .skaal {
-    max-width: 100%;
-    transition: transform 0.3s ease;
-  }
-  .grid_1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  font-size: 24px;
-  font-weight: bold;
-}
-.orange {
+
+  /* .orange {
   color: #c1631f;
   text-transform: uppercase;
-}
-h1 {
+} */
+  /* h1 {
   font-size: 20px;
   text-transform: uppercase;
-}
-h2,
+} */
+  /* h2,
 h3 {
   text-transform: uppercase;
 }
 p {
   font-size: 10px;
-}
-.skaal {
+} */
+  /* .skaal {
   max-width: 100%;
   transition: transform 0.3s ease;
-}
-.grid_1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
+} */
 
-
-h2 {
-  font-size: 1rem;
-}
-
-  .grid_2 {
-    /* display: flex; */
-    align-items: center; /* Centrer elementer vertikalt */
-  }
-  h2 {
+  /* h2 {
     font-size: 1rem;
-  }
+  } */
 
-  .burger-menu-container {
-    margin-left: auto; /* Flyt containeren med burgermenuen helt til højre */
-  }
+  /* .burger-menu-container {
+      margin-left: auto; 
+    } */
 
-  .produkt-liste {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 10px;
-  }
+  /* .produkt-liste {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 10px;
+    }
 
-  .stor-billede-container {
-    position: relative;
-    padding: 20px;
-    border: 1px solid #c1631f; /* Tilføjet border */
-    box-sizing: border-box;
-  }
-
-  .stor-skål {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+    .stor-billede-container {
+      position: relative;
+      padding: 20px;
+      border: 1px solid #c1631f; /* Tilføjet border */
+  /* box-sizing: border-box;
+    } */
+  /* 
+    .stor-skål {
+      width: 100%;
+      height: auto;
+      display: block;
+    } */
 
   .pil.stor {
     position: absolute;
@@ -411,24 +327,22 @@ h2 {
     bottom: 10px;
   }
 
-  .små-produktbilleder {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
+  /* .små-produktbilleder {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    } */
 
-  .små-billede-container {
-    position: relative;
-    padding: 20px;
-    border: 1px solid #c1631f; /* Tilføjet border */
-    box-sizing: border-box;
-  }
-
-  .små-skåle {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+  /* .små-billede-container {
+      position: relative;
+      padding: 20px;
+      border: 1px solid #c1631f; /* Tilføjet border */
+  /* 
+    .små-skåle {
+      width: 100%;
+      height: auto;
+      display: block;
+    } */
 
   .pil {
     position: absolute;
@@ -440,12 +354,9 @@ h2 {
   .pil:hover {
     transform: scale(1.2); /* Makes the pil 20% larger */
   }
-  .skaal:hover {
-    transform: scale(1.1);
-  }
 
   /* Responsivitet */
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     .produkt-liste {
       grid-template-columns: 1fr 1fr;
     }
@@ -457,25 +368,20 @@ h2 {
     .små-produktbilleder {
       grid-template-columns: repeat(2, 1fr);
     }
-  }
-
-
+  } */
 
   /* burgermenu med sortering af træsorter */
-  .menu-icon {
-    display: flex;
-    justify-self: end;
-  }
+  /* .menu-icon {
+      display: flex;
+      justify-self: end;
+    } */
 
-  .menu {
-    display: none;
-  }
+  /* .menu {
+      display: none;
+    } */
 
-
-
-
-/* Desktop stil */
-@media (min-width: 769px){
+  /* Desktop stil */
+  /* @media (min-width: 769px){
     .custom-menu .menu {
         display: flex;
         position: static;
@@ -499,36 +405,69 @@ h2 {
     .close-icon {
         display: none;
     }
-}
+} */
 
-/* Responsivitet */
-@media (min-width: 768px) {
-    .produkt-liste {
+  /* Responsivitet */
+  @media (min-width: 800px) {
+    .skaal:hover {
+      transform: scale(1.1);
+    }
+    .grid_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+      border-bottom: 3px solid var(--mørke-orange);
+      h1 {
+        padding-bottom: 30px;
+      }
+      .flex {
+        justify-content: center;
+        padding: 50px 0px 50px 100px;
+      }
+      img {
+        max-width: 70%;
+      }
+    }
+    .grid_2 {
+      border-bottom: 3px solid var(--mørke-orange);
+    }
+    .custom-menu .menu {
+      display: flex;
+      position: static;
+      width: auto;
+      height: auto;
+      flex-direction: row;
+      background-color: transparent;
+      border: none;
+    }
+
+    /* .menu-items {
+        display: flex;
+        flex-direction: row;
+      } */
+    /* .menu-logo {
+        margin: 0 10px;
+      } */
+    /* .close-icon {
+        display: none;
+      } */
+    /* .produkt-liste {
         grid-template-columns: 1fr 1fr;
-    }
-
-    .stor-billede-container {
-        grid-column: span 1;
-    }
-
-    .små-produktbilleder {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
+      } */
+  }
 </style>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
     const menuIcon = document.getElementById("menu-icon");
     const closeIcon = document.getElementById("close-icon");
     const menu = document.getElementById("menu");
 
-    menuIcon.addEventListener("click", function() {
-        menu.style.display = "flex";
+    menuIcon.addEventListener("click", function () {
+      menu.style.display = "flex";
     });
 
-    closeIcon.addEventListener("click", function() {
-        menu.style.display = "none";
+    closeIcon.addEventListener("click", function () {
+      menu.style.display = "none";
     });
-});
+  });
 </script>

@@ -1,0 +1,94 @@
+---
+import Menylayout from "../komponenter/layouts/Menylayout.astro";
+import Pro01 from "../komponenter/Pro01.astro";
+import Boks from "../komponenter/Boks.astro";
+import Laas from "../komponenter/Laas.astro";
+import Hover from "../komponenter/Hover.astro";
+import Pil from "../komponenter/Pil.astro";
+import Carosel from "../komponenter/Carosel.astro";
+---
+
+<Menylayout>
+  <Pil href="/projekter" />
+  <Pro01
+    billed="/./drej-billeder/egeknude.png"
+    alttext="egeknudeskål"
+    h11="egeknude"
+    h12="fra"
+    h13="haslev"
+  />
+  <Boks sorttext="fra træ last til" hvidtext=" drejebænk">
+    <p>
+      Vi besøgte Hårdttrælasten i Haslev og købte en imponerende egeknude i
+      september 2019. Efter næsten et års venten begyndte jeg at arbejde på den
+      i maj 2020. Efter at have fjernet porøse områder og skåret den til en mere
+      håndterbar størrelse, drejede jeg en skål ud af den.
+    </p>
+    <p>
+      Efterbehandlingen og tørringen tog et stykke tid, og i oktober begyndte
+      jeg findrejningen med et særligt vinkelanlæg. Skålen blev drejet færdig,
+      pudset og behandlet, og bunden blev drejet til at stå på en lille fod. Jeg
+      endte med kun at bruge epoxy på de største revner og huller, selvom jeg
+      oprindeligt havde planlagt at fylde dem alle.
+    </p>
+  </Boks>
+  <Laas />
+  <div class="grid-3 bagrund-farve">
+    <Hover
+      billed="/./drej-billeder/haslev-1.png"
+      text="Den grovdrejede skål virker nu meget tør, så jeg besluttede at gå igang med findrejningen. Her ses det færdige resultat efter findejningen og larkering af egeknuden fra haslev"
+    />
+    <Hover
+      billed="/./drej-billeder/haslev-2.png"
+      text="Den grovdrejede skål virker nu meget tør, så jeg besluttede at gå igang med findrejningen. Her ses det færdige resultat efter findejningen og larkering af egeknuden fra haslev"
+    />
+    <Hover
+      billed="/./drej-billeder/haslev-3.png"
+      text="Den grovdrejede skål virker nu meget tør, så jeg besluttede at gå igang med findrejningen. Her ses det færdige resultat efter findejningen og larkering af egeknuden fra haslev"
+    />
+    <Hover
+      billed="/./drej-billeder/haslev-4.png"
+      text="Den grovdrejede skål virker nu meget tør, så jeg besluttede at gå igang med findrejningen. Her ses det færdige resultat efter findejningen og larkering af egeknuden fra haslev"
+    />
+    <Hover
+      billed="/./drej-billeder/haslev-5.png"
+      text="Den grovdrejede skål virker nu meget tør, så jeg besluttede at gå igang med findrejningen. Her ses det færdige resultat efter findejningen og larkering af egeknuden fra haslev"
+    />
+    <Hover
+      billed="/./drej-billeder/haslev-6.png"
+      text="Den grovdrejede skål virker nu meget tør, så jeg besluttede at gå igang med findrejningen. Her ses det færdige resultat efter findejningen og larkering af egeknuden fra haslev"
+    />
+  </div>
+  <div class="flex">
+    <Carosel />
+  </div>
+  <div class="obagrund border-2"></div>
+
+  <style>
+    .flex {
+      display: flex;
+      justify-content: center;
+    }
+    .border-2 {
+      border-top: 2px solid var(--mørke-orange);
+    }
+    .obagrund {
+      background-color: #e18658;
+    }
+    .bagrund-farve {
+      display: none;
+    }
+    @media only screen and (min-width: 800px) {
+      .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+        padding: 30px 20px 30px 20px;
+        gap: 10px;
+      }
+      .flex {
+        display: none;
+      }
+    }
+  </style>
+</Menylayout>
