@@ -4,33 +4,40 @@ const { pris, træ, mål, nummer } = Astro.props;
 const { data } = Astro.props;
 ---
 
-<div>
+<div class="boks">
   <h3>INFO</h3>
   <ul class="tabel">
     <li class="row">
-      <div class="spørgsmål">Fødevaregodkendt</div>
-      <div class="svar">Ja</div>
+      <p class="spørgsmål">Fødevaregodkendt</p>
+      <p class="svar">Ja</p>
     </li>
     <li class="row">
-      <div class="spørgsmål">Pris</div>
-      <div class="svar">{pris}</div>
+      <p class="spørgsmål">Pris</p>
+      <p class="svar">{pris}</p>
     </li>
     <li class="row">
-      <div class="spørgsmål">Træ</div>
-      <div class="svar">{træ}</div>
+      <p class="spørgsmål">Træ</p>
+      <p class="svar">{træ}</p>
     </li>
     <li class="row">
-      <div class="spørgsmål">Mål</div>
-      <div class="svar">{mål}</div>
+      <p class="spørgsmål">Mål</p>
+      <p class="svar">{mål}</p>
     </li>
     <li class="row">
-      <div class="spørgsmål">Produktnummer</div>
-      <div class="svar">{nummer}</div>
+      <p class="spørgsmål">Produktnummer</p>
+      <p class="svar">{nummer}</p>
     </li>
   </ul>
 </div>
 
 <style>
+  .boks {
+    padding: 0px 50px 0px 50px;
+    h3 {
+      padding-bottom: 30px;
+    }
+  }
+
   .tabel {
     display: flex;
     flex-direction: column;
@@ -39,21 +46,14 @@ const { data } = Astro.props;
   .tabel {
     display: flex;
     flex-direction: column;
-    padding: 0px 50px 0px 50px;
+    /* padding: 0px 50px 0px 50px; */
   }
 
   .row {
     display: flex;
     justify-content: space-between; /* Placerer svaret helt til højre */
     margin-bottom: 10px; /* Mellemrum mellem hver række */
-    border-bottom: 1px solid black; /* Border under spørgsmålet */
-    padding-bottom: 5px; /* Afstand mellem spørgsmål og border */
-  }
-  .row {
-    display: flex;
-    justify-content: space-between; /* Placerer svaret helt til højre */
-    margin-bottom: 10px; /* Mellemrum mellem hver række */
-    border-bottom: 1px solid black; /* Border under spørgsmålet */
+    border-bottom: 1px solid var(--sort); /* Border under spørgsmålet */
     padding-bottom: 5px; /* Afstand mellem spørgsmål og border */
   }
 
@@ -68,7 +68,7 @@ const { data } = Astro.props;
   }
 
   /* styl til ul skal i general */
-  .info {
+  .info ul li {
     text-transform: uppercase;
     font-family: Arimo, sans-serif;
     padding-left: 50px; /* Gør teksten i h3 til store bogstaver */
@@ -76,16 +76,12 @@ const { data } = Astro.props;
   }
 
   @media (min-width: 769px) {
-    .tabel {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-  @media (min-width: 769px) {
-    .tabel {
-      display: flex;
-      flex-direction: column;
+    .boks {
       padding: 5rem;
+    }
+    .tabel {
+      display: flex;
+      flex-direction: column;
     }
   }
 </style>

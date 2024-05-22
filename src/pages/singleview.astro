@@ -24,7 +24,7 @@ const { myData } = Astro.props;
   </section>
 
   <div class="kontakt-link">
-    <a href="#" class="kontakt-text">
+    <a href="/kontakt" class="kontakt-text">
       <span class="bold">Kontakt</span> for køb
       <img src="/./drej-billeder/pillll.svg" alt="Pil" class="arrow" />
     </a>
@@ -32,9 +32,15 @@ const { myData } = Astro.props;
   <div class="container">
     <h2>Flere produkter</h2>
     <div class="image-container">
-      <img class="flereskal" src="/./drej-billeder/2.webp" alt="" />
-      <img class="flereskal" src="/./drej-billeder/3.webp" alt="" />
-      <img class="flereskal" src="/./drej-billeder/4.webp" alt="" />
+      <a href="/produktliste"
+        ><img class="flereskal" src="/./drej-billeder/2.webp" alt="" /></a
+      >
+      <a href="/produktliste"
+        ><img class="flereskal" src="/./drej-billeder/3.webp" alt="" /></a
+      >
+      <a href="/produktliste"
+        ><img class="flereskal" src="/./drej-billeder/4.webp" alt="" /></a
+      >
     </div>
   </div>
 </Menylayout>
@@ -46,9 +52,6 @@ const { myData } = Astro.props;
     margin-left: 2rem;
     margin-right: 2rem;
   }
-
- 
-
 
   .produkttekst {
     margin: 15%;
@@ -140,7 +143,7 @@ const { myData } = Astro.props;
 
   .image-container .flereskal {
     background-color: #e2d6c6; /* Baggrundsfarve hvid for hvert div-element */
-   /* Polstring for at skabe plads omkring hvert billede */
+    /* Polstring for at skabe plads omkring hvert billede */
   }
 
   @media (min-width: 769px) {

@@ -64,11 +64,11 @@ import Omboks from "../komponenter/Omboks.astro";
           ><img src="/./drej-billeder/insta-footer.png" alt="Instagram" /></a
         >
       </div>
-      <div class="boks_2">
-        <h2 class="kontakt">KONTAKT MIG</h2>
-        <a href="/kontakt">
-          <img class="pil" src="../../drej-billeder/pil.png" alt="" /></a
-        >
+      <div class="kontakt-link">
+        <a href="/kontakt" class="kontakt-text">
+          <span class="bold">Kontakt</span> for køb
+          <img src="/./drej-billeder/pillll.svg" alt="Pil" class="arrow" />
+        </a>
       </div>
     </div>
   </div>
@@ -86,11 +86,46 @@ import Omboks from "../komponenter/Omboks.astro";
 </Menylayout>
 
 <style>
+  .kontakt-link {
+    display: flex; /* Anvend flexbox */
+    justify-content: flex-end; /* Juster indholdet til højre */
+    position: relative; /* Positionerer pseudo-elementet i forhold til dette element */
+    color: black; /* Standardtekstfarve */
+    background-color: var(--lyse-orange);
+  }
+
+  .kontakt-link::after {
+    content: ""; /* Indholdet af pseudo-elementet */
+    position: absolute; /* Positionen er relativ til det nærmeste positionerede forældreelement */
+    left: 0; /* Startposition fra venstre */
+  }
+
+  .kontakt-text {
+    color: black; /* Farve på teksten */
+    text-decoration: none; /* Fjern understregning fra linket */
+    text-transform: uppercase; /* Konverter teksten til store bogstaver */
+    transition: color 0.3s; /* Glat farveskift under hover */
+  }
+  .kontakt-text:hover,
+  .arrow:hover {
+    color: white; /* Farveændring ved hover */
+  }
+
+  .bold {
+    font-weight: bold; /* Gør teksten bold */
+  }
+
+  .arrow {
+    vertical-align: middle; /* Juster pilen vertikalt i midten af teksten */
+    margin-left: 5px; /* Lidt margen mellem teksten og pilen */
+    margin-top: -4px;
+  }
   .flex-kontakt {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     border-bottom: 2px solid var(--mørke-orange);
+
     h4 {
       font-size: 2.4rem;
       padding: 50px 30px 30px 50px;
@@ -123,9 +158,23 @@ import Omboks from "../komponenter/Omboks.astro";
     /* display: grid;
     grid-template-columns: 1fr 1fr; */
     display: flex;
+    align-items: center;
     justify-content: space-between;
     background-color: rgb(225, 134, 88);
     padding: 20px;
+    p {
+      font-style: italic;
+      font-size: 1.5rem;
+      font-family: "argent-cf", serif;
+      font-weight: 200;
+      text-transform: uppercase;
+      color: var(--sort, #000000);
+    }
+    a img {
+      display: flex;
+      padding-top: 20px;
+      align-items: center;
+    }
   }
   a {
     padding-top: 20px;
