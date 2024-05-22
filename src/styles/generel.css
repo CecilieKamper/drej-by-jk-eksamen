@@ -20,7 +20,7 @@ h2 {
   font-style: italic;
   font-size: 2.5rem;
   font-family: "argent-cf", serif;
-  font-weight: 200;
+  font-weight: li;
   text-transform: uppercase;
   color: var(--sort);
 }

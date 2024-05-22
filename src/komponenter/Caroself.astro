@@ -1,0 +1,138 @@
+---
+import Citem from "./Citem.astro";
+---
+
+<div class="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <Citem
+        billed="/./drej-billeder/fyen-1.png"
+        text="Rodende kævlerne klar til afhentning. Kævlerne øverst og nederst til venstre er ask. Nederst til højre ligger rødegen. "
+      />
+    </div>
+    <div class="carousel-item">
+      <Citem
+        billed="/./drej-billeder/fyen-2.png"
+        text="Den store askeklods på bænken. Frihøjden er 30 cm"
+      />
+    </div>
+    <div class="carousel-item">
+      <Citem
+        billed="/./drej-billeder/fyen-3.png"
+        text="Opdeling af stor askeklods til en rondel til et fad og én til en skål."
+      />
+    </div>
+    <div class="carousel-item">
+      <Citem
+        billed="/./drej-billeder/fyen-4.png"
+        text="Den grovdrejede skål blev sat til tørring på øverste hylde i kontoret i 25 lag avispapir 10.01.2019. Temp. 21 grader og RF>50 %. Den 5/3 var vægten konstant, med et vægtab på 28%."
+      />
+    </div>
+    <div class="carousel-item">
+      <Citem
+        billed="/./drej-billeder/fyen-5.png"
+        text="Her er så resultatet, en tør og og hel perfrekt grovdrejet skål uden revner."
+      />
+    </div>
+    <div class="carousel-item">
+      <Citem
+        billed="/./drej-billeder/fyen-6.png"
+        text="Hvor stor er skålen morfar? Den er 46 cm i diametter Otto, men den mangler at få bunden drejet af."
+      />
+    </div>
+    <div class="carousel-item">
+      <Citem
+        billed="/./drej-billeder/fyen-7.png"
+        text="Den færdig lakerede skål måler måler 46,5 x 22,5 cm. Den kunne godt være blevet 49 cm. Men da skålbakkernes max diameter er 470 mm, valgte jeg at dreje skålen ned til 46,5 cm, således at jeg kunne vende skålen, spænde den op på bænken og dreje bunden af"
+      />
+    </div>
+    <button class="carousel-control prev">‹</button>
+    <button class="carousel-control next">›</button>
+  </div>
+</div>
+
+<style>
+  .carousel {
+    position: relative;
+    width: 80%;
+    /* max-width: 300px; */
+    overflow: hidden;
+    /* background-color: #fff; */
+    /* border-radius: 10px; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  }
+
+  .carousel-inner {
+    display: flex;
+    transition: 2s ease-in-out;
+  }
+
+  .carousel-item {
+    min-width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .carousel-item.active {
+    display: flex;
+  }
+
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #333;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .carousel-control.prev {
+    left: 10px;
+  }
+
+  .carousel-control.next {
+    right: 10px;
+  }
+</style>
+<script>
+  // script.js
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector(".carousel");
+    const carouselInner = carousel.querySelector(".carousel-inner");
+    const items = carouselInner.querySelectorAll(".carousel-item");
+    const nextButton = carousel.querySelector(".carousel-control.next");
+    const prevButton = carousel.querySelector(".carousel-control.prev");
+
+    let currentIndex = 0;
+    const totalItems = items.length;
+
+    function showSlide(index) {
+      items.forEach((item, i) => {
+        item.classList.toggle("active", i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalItems;
+      showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+      showSlide(currentIndex);
+    }
+
+    nextButton.addEventListener("click", nextSlide);
+    prevButton.addEventListener("click", prevSlide);
+
+    // Optional: Auto-play functionality
+    // setInterval(nextSlide, 3000);
+  });
+</script>

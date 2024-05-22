@@ -32,7 +32,7 @@ import Carosel from "../komponenter/Carosel.astro";
     </p>
   </Boks>
   <Laas />
-  <!-- <div class="grid-3 bagrund-farve">
+  <div class="grid-3 bagrund-farve">
     <Hover
       billed="/./drej-billeder/haslev-1.png"
       text="Den grovdrejede skål virker nu meget tør, så jeg besluttede at gå igang med findrejningen. Her ses det færdige resultat efter findejningen og larkering af egeknuden fra haslev"
@@ -57,7 +57,7 @@ import Carosel from "../komponenter/Carosel.astro";
       billed="/./drej-billeder/haslev-6.png"
       text="Den grovdrejede skål virker nu meget tør, så jeg besluttede at gå igang med findrejningen. Her ses det færdige resultat efter findejningen og larkering af egeknuden fra haslev"
     />
-  </div> -->
+  </div>
   <div class="flex">
     <Carosel />
   </div>
@@ -74,7 +74,9 @@ import Carosel from "../komponenter/Carosel.astro";
     .obagrund {
       background-color: #e18658;
     }
-
+    .bagrund-farve {
+      display: none;
+    }
     @media only screen and (min-width: 800px) {
       .grid-3 {
         display: grid;
@@ -82,6 +84,9 @@ import Carosel from "../komponenter/Carosel.astro";
         justify-items: center;
         padding: 30px 20px 30px 20px;
         gap: 10px;
+      }
+      .flex {
+        display: none;
       }
     }
   </style>

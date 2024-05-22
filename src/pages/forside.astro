@@ -1,106 +1,95 @@
 ---
 import Menylayout from "../komponenter/layouts/Menylayout.astro";
 import "../styles/generel.css";
+import Boks from "../komponenter/Boks.astro";
 ---
 
 <Menylayout>
-    <section class="grid">
-      <img
-        class="forside_billede"
-        src="/drej-billeder/Forside_billede.webp"
-        alt=""
-      />
-      <h1 class="h1_forside">
-        "ALT HAR <div class="tekst_orange">
-          <span class="sort_tekst">EN FORTID, EN</span> FORTÆLLING
-        </div>
-         OG EN FREMTID"
-      </h1>
-    </section>
-    <div class="forside_drej">
-      <p>DREJ BY JK</p>
-    </div>
-    <section class="grid1_2">
-      <div class="forside_orange">
-        <div class="orange_tekst">
-          <h2>
-            SKÅLE OG FADE <br />
-            <div class="mission">
-              <span class="sort_tekst">MED EN</span> MISSION
-            </div>
-          </h2>
-        </div>
-      </div>
-      <div class="tekst_forside">
-        <p>
-          Drej skaber smukke skåle og fade af træ. <br />Det fylder mig med
-          glæde, når mine skåle og fade bliver fyldt med salater, frugter og
-          friskbagte boller. Med strikktøj, legetøj, tøjdyr og alt muligt andet.
-  
+  <section class="grid">
+    <img
+      class="forside_billede"
+      src="/drej-billeder/Forside_billede.webp"
+      alt=""
+    />
+    <h1 class="h1_forside">
+      "ALT HAR EN FORTID, <br /> EN <span class="skrå-orange">FORTÆLLING</span>
+      <br /> OG EN FREMTID"
+    </h1>
 
-          <br />Jeg skaber ting, der skal bruges. Men jeg håber også, at træets
-          fantastiske former og farver kan minde os om, hvor fascinerende
-          naturen er. Her at alle er med til at passe godt på dem.
-        </p>
-      </div>
-    </section>
-    <div class="udforsk">
-      <h2>UDFORSK</h2>
-    </div>
-    <section class="grid2_2">
-      <a href=""><img src="/drej-billeder/produkter.svg" alt="" /></a>
-      <a href=""><img src="/drej-billeder/mig.svg" alt="" /></a>
-      <a href=""><img src="/drej-billeder/projekter.svg" alt="" /></a>
-      <a href=""><img src="/drej-billeder/kontakt.svg" alt="" /></a>
-    </section>
- </Menylayout>
+    <!-- <div class="forside_drej"> -->
+    <p>DREJ BY JK</p>
+    <!-- </div> -->
+  </section>
+  <Boks sorttext="SKÅLE OG FADE" hvidtext="MED EN MISSION">
+    <p>Drej skaber smukke skåle og fade af træ.</p>
+    <p>
+      Det fylder mig med glæde, når mine skåle og fade bliver fyldt med salater,
+      frugter og friskbagte boller. Med strikketøj, legetøj, tøjdyr og alt
+      muligt andet.
+    </p>
+    <p>
+      Jeg skaber ting, der skal bruges. Men jeg håber også, at træets
+      fantastiske former og farver kan minde os om, hvor fascinerende naturen
+      er. Og hvor vigtigt det er, at alle er med til passe godt på den.
+    </p>
+  </Boks>
+
+  <div class="udforsk">
+    <h2>UDFORSK</h2>
+  </div>
+  <section class="grid2_2">
+    <a href=""><img src="/drej-billeder/produkter.svg" alt="" /></a>
+    <a href=""><img src="/drej-billeder/mig.svg" alt="" /></a>
+    <a href=""><img src="/drej-billeder/projekter.svg" alt="" /></a>
+    <a href=""><img src="/drej-billeder/kontakt.svg" alt="" /></a>
+  </section>
+</Menylayout>
 
 <style>
-  img {
+  /* img {
     width: 100%;
     height: auto;
-  }
+  } */
 
-  body {
+  /* body {
     background-color: #e2d6c6;
-  }
-
+  } */
+  /* 
   .tekst_orange {
     color: #e18658;
-  }
+  } */
 
-  .sort_tekst {
+  /* .sort_tekst {
     color: black;
-  }
+  } */
 
-  .h1_forside {
+  /* .h1_forside {
     text-align: left;
     margin-left: 4rem;
-  }
+  } */
 
-  .forside_drej {
+  /* .forside_drej {
     text-align: right;
     margin-right: 3rem;
-  }
+  } */
 
-  .mission {
+  /* .mission {
     color: white;
-  }
+  } */
 
   .forside_billede {
     max-width: 60%;
-    margin-left: 5rem;
   }
 
-  .forside_orange {
+  /* .forside_orange {
     padding: 2rem;
     border: solid 1px #e18658;
     background-color: #e18658;
-  }
-
+  } */
+  /* 
   .orange_tekst {
     margin-left: 2rem;
-  }
+  } */
 
   .udforsk {
     margin-left: 4rem;
@@ -118,21 +107,22 @@ import "../styles/generel.css";
     max-width: 90%;
     margin-left: 2rem;
   }
-
+  h1 {
+    font-size: 3rem;
+  }
   @media screen and (min-width: 768px) {
-    img {
+    /* img {
       width: 100%;
       height: auto;
-    }
+    } */
     .grid {
       display: grid;
+      justify-items: center;
       grid-template-columns: 1fr 1fr;
+      padding: 100px;
     }
     .h1_forside {
-      text-align: left;
-      margin-left: 7rem;
       order: -1;
-      margin-top: 10rem;
     }
 
     .forside_drej {
@@ -140,26 +130,26 @@ import "../styles/generel.css";
       margin-right: 62rem;
     }
 
-    .mission {
+    /* .mission {
       color: white;
-    }
+    } */
 
     .forside_billede {
       max-width: 50%;
       margin-left: 4rem;
     }
 
-    .forside_orange {
+    /* .forside_orange {
       padding: 2rem;
       margin-right: 3rem;
       border: solid 1px #e18658;
       background-color: #e18658;
-    }
+    } */
 
-    .orange_tekst {
+    /* .orange_tekst {
       margin-top: 4rem;
       margin-left: 5rem;
-    }
+    } */
 
     .grid1_2 {
       display: grid;
@@ -168,16 +158,16 @@ import "../styles/generel.css";
       border-bottom: solid 3px #e18658;
     }
 
-    .udforsk {
+    /* .udforsk {
       margin-left: 7rem;
       margin-top: 3rem;
-    }
+    } */
 
-    .tekst_forside {
+    /* .tekst_forside {
       padding: 4rem;
       margin-right: 5rem;
       border: none;
-    }
+    } */
 
     .grid2_2 {
       display: grid;

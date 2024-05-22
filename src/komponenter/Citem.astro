@@ -14,69 +14,26 @@ const { text, billed, alt } = Astro.props;
   </div>
 </article>
 <style>
-  @media only screen and (max-width: 800px) {
-    .flex {
-      display: flex;
-    }
-    article {
-      background-color: var(--baggrund);
-      z-index: 100;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 30px;
-      margin: 20px;
-      /* border: 2px solid var(--mørke-orange); */
-      p {
-        padding: 20px 20px 20px 20px;
-        font-size: 1.2rem;
-        text-align: center;
-        font-family: Arimo, sans-serif;
-        line-height: 1.5rem;
-      }
-      img {
-      }
-    }
+  .flex {
+    display: flex;
   }
-  @media only screen and (min-width: 800px) {
-    .flex {
-      display: block;
-    }
-    article {
-      display: grid;
-      /* width: 300px;
-      height: 400px; */
-      transition: all 0.2s ease-in-out;
-      place-items: center;
-      position: relative;
-      padding: initial;
-      margin: initial;
-      p {
-        position: absolute;
-        display: none;
-        grid-row: 1;
-        grid-column: 1;
-        padding: 30px;
-        z-index: 100;
-      }
-    }
-    article:hover {
-      background: rgba(225, 134, 88, 0.75);
-      img {
-        z-index: -1;
-      }
-      p {
-        position: absolute;
-        display: block;
-        z-index: 2;
-      }
-    }
-    img:hover {
-      z-index: -1;
+  article {
+    background-color: var(--baggrund);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    margin: 20px;
+    /* border: 2px solid var(--mørke-orange); */
+    p {
+      padding: 20px 20px 20px 20px;
+      font-size: 1.2rem;
+      text-align: center;
+      font-family: Arimo, sans-serif;
+      line-height: 1.5rem;
     }
     img {
-      grid-row: 1;
-      grid-column: 1;
     }
   }
 </style>
