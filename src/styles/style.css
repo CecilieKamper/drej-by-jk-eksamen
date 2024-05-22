@@ -76,4 +76,8 @@ p {
   h1 {
     font-size: 5rem;
   }
+  h2 {
+    font-size: 3.5rem;
+    padding-left: 30px;
+  }
 }

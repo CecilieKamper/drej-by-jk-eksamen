@@ -11,6 +11,11 @@ const data = await fetch(
     },
   }
 ).then((res) => res.json());
+<<<<<<< HEAD
+=======
+          
+// console.log({data});
+>>>>>>> 6c6e55c4ae403a7e59f17861c8759e23d8e19c35
 
 console.log(data);
 ---
@@ -75,6 +80,7 @@ console.log(data);
   <div class="gridlol">
     {
       data.map((bowl) => {
+        console.log(bowl);
         return <Produkt data={bowl} />;
       })
     }
