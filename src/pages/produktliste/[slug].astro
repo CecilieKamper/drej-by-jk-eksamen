@@ -1,7 +1,4 @@
 ---
-import Menylayout from "../../komponenter/layouts/Menylayout.astro";
-import Info from "../../komponenter/Info.astro";
-
 export async function getStaticPaths() {
   const data = await fetch(
     "https://uskcthmuobdstnsivsiv.supabase.co/rest/v1/drej",
@@ -16,18 +13,20 @@ export async function getStaticPaths() {
 
   return data.map((bowl) => {
     return {
-      params: { number: bowl.number },
+      params: { slug: bowl.number },
       props: { myData: bowl },
     };
   });
 }
 const { myData } = Astro.props;
+import Menylayout from "../../komponenter/layouts/Menylayout.astro";
+import Info from "../../komponenter/Info.astro";
 ---
 
 <Menylayout>
   <section class="singleview">
     <img class="skal1" src={myData.img1} alt="" />
-    <img class="skal2" src={myData.img2} alt="" />
+    <img class="skal2" src={`/drej-billeder/${myData.img2}`} alt="" />
     <img class="skal3" src={myData.img3} alt="" />
   </section>
   <section class="grid_3">
