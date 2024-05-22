@@ -1,5 +1,12 @@
+---
+interface Props {
+  href: string;
+}
+const { href } = Astro.props;
+---
+
 <div class="pil">
-  <a href=""><img src="/drej-billeder/pil.svg" alt="" /></a>
+  <a href={href}><img src="/drej-billeder/pil.svg" alt="" /></a>
 </div>
 
 <style>

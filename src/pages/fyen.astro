@@ -6,9 +6,11 @@ import Laas from "../komponenter/Laas.astro";
 import Hover from "../komponenter/Hover.astro";
 import Citem from "../komponenter/Citem.astro";
 import Caroself from "../komponenter/Caroself.astro";
+import Pil from "../komponenter/Pil.astro";
 ---
 
 <Menylayout>
+  <Pil href="/projekter" />
   <Pro01
     billed="/./drej-billeder/egeknude.png"
     alttext="egeknudeskål"
@@ -122,6 +124,9 @@ import Caroself from "../komponenter/Caroself.astro";
       }
       .flex {
         display: none;
+      }
+      .bagrund-farve {
+        background-color: #e18658;
       }
     }
   </style>

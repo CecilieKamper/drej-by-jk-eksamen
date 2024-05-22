@@ -5,7 +5,7 @@
 <header>
   <nav>
     <nav class="navbar">
-      <div class="logo">DREJ BY JK</div>
+      <div class="logo"><a href="/forside">DREJ BY JK</a></div>
       <div class="burger-menu" id="burger-menu">
         <div class="line"></div>
         <div class="line"></div>
@@ -17,7 +17,6 @@
         <li><a href="/om">Mød Mig</a></li>
       </ul>
     </nav>
-    
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -29,109 +28,109 @@
         });
       });
     </script>
-<style>
+    <style>
+      .navbar {
+        display: flex;
+        justify-content: space-between; /* Placerer logoet til venstre og navigationslinks til højre */
+        align-items: center;
+        background-color: #e2d6c6;
+        color: #000000;
+        padding: 1.5rem;
+        border-bottom: solid 3px #c1631f;
+        z-index: 1000;
+      }
 
-.navbar {
-  display: flex;
-  justify-content: space-between; /* Placerer logoet til venstre og navigationslinks til højre */
-  align-items: center;
-  background-color: #e2d6c6;
-  color: #000000;
-  padding: 1.5rem;
-  border-bottom: solid 3px #c1631f;
-  z-index: 1000;
-}
+      .logo a {
+        color: var(--sort);
+        text-decoration: none;
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+      .logo a:hover {
+        color: #c1631f;
+      }
 
-.logo {
-  font-size: 1.5em;
-  font-weight: bold;
-}
+      .burger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+      }
 
-.burger-menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  
-}
+      .burger-menu .line {
+        width: 100%;
+        height: 3px;
+        background-color: rgb(4, 4, 4);
+      }
 
-.burger-menu .line {
-  width: 100%;
-  height: 3px;
-  background-color: rgb(4, 4, 4);
-}
+      .nav-links {
+        font-family: arimo, sans-serif;
+        text-transform: uppercase;
+        list-style: none;
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 4px;
+        background-color: #e2d6c6;
+        border: solid 2px #c1631f;
+        margin: 0;
+        padding: 0;
+        z-index: 1000;
+      }
 
-.nav-links {
-  list-style: none;
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  position: absolute;
-  top: 50px;
-  right: 20px;
-  width: 200px;
-  padding: 10px;
-  border-radius: 4px;
-  background-color: #e2d6c6;
-  border: solid 2px #c1631f;
-  margin: 0;
-  padding: 0;
-  z-index: 1000;
-}
+      .nav-links.show {
+        display: flex;
+      }
 
-.nav-links.show {
-  display: flex;
-}
+      .nav-links a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        padding: 8px 16px;
+        position: relative;
+      }
 
-.nav-links a {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  padding: 8px 16px;
-  position: relative;
-}
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        display: block;
+        margin-top: 5px;
+        right: 0;
+        background: #c1631f;
+        transition: width 0.3s;
+      }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  display: block;
-  margin-top: 5px;
-  right: 0;
-  background: #c1631f;
-  transition: width 0.3s;
-}
+      .nav-links a:hover::after {
+        width: 100%;
+        left: 0;
+        background: #c1631f;
+      }
 
-.nav-links a:hover::after {
-  width: 100%;
-  left: 0;
-  background: #c1631f;
-}
+      /* Desktopvisning */
+      @media (min-width: 769px) {
+        .burger-menu {
+          display: none;
+        }
 
-.logo:hover {
-  color: #c1631f;
-}
-
-/* Desktopvisning */
-@media (min-width: 769px) {
-  .burger-menu {
-    display: none;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    position: static;
-    width: auto;
-    padding: 0;
-    background-color: transparent;
-    border: none;
-  }
-}
-
-</style>
-
+        .nav-links {
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+          position: static;
+          width: auto;
+          padding: 0;
+          background-color: transparent;
+          border: none;
+        }
+      }
+    </style>
+  </nav>
 </header>

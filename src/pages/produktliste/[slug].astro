@@ -13,12 +13,14 @@ export async function getStaticPaths() {
 
   return data.map((bowl) => {
     return {
-      params: { slug: bowl.number },
+      params: { slug: bowl.id },
       props: { myData: bowl },
     };
   });
 }
 const { myData } = Astro.props;
+console.log(myData);
+
 import Menylayout from "../../komponenter/layouts/Menylayout.astro";
 import Info from "../../komponenter/Info.astro";
 ---
@@ -26,7 +28,8 @@ import Info from "../../komponenter/Info.astro";
 <Menylayout>
   <section class="singleview">
     <img class="skal1" src={myData.img1} alt="" />
-    <img class="skal2" src={`/drej-billeder/${myData.img2}`} alt="" />
+    <img class="skal2" src={myData.img2} alt="" />
+    <!-- <img class="skal2" src={`/drej-billeder/${myData.}`} alt="" /> -->
     <img class="skal3" src={myData.img3} alt="" />
   </section>
   <section class="grid_3">

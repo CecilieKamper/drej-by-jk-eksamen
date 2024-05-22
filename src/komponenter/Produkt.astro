@@ -1,11 +1,13 @@
 ---
-const { imgg, alt } = Astro.props;
+// const { imgg, alt } = Astro.props;
 
 const { data } = Astro.props;
+console.log(data.id);
 ---
 
 <div class="container">
-  <a href={`produktliste/${data.number}`}>
+  <a href={`produktliste/${data.id}`}>
+    <!-- <a href={`/produktliste/${data.number}`}> -->
     <img src={`/drej-billeder/${data.img2}`} alt="" />
 
     <img src="/./drej-billeder/orangepil.svg" alt="Pil" class="pil" />

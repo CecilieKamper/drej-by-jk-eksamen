@@ -7,7 +7,9 @@ import Omboks from "../komponenter/Omboks.astro";
 <Menylayout>
   <section class="grid_1_1">
     <div class="titel">
-      <h1 class="desk_h1">MØD MANDEN <br /> BAG DREJ</h1>
+      <h1 class="desk_h1">
+        MØD MANDEN <br /> BAG <span class="skrå-orange"> DREJ</span>
+      </h1>
     </div>
     <div>
       <img class="jens" src="../../drej-billeder/drej.webp" alt="" />
@@ -63,27 +65,25 @@ import Omboks from "../komponenter/Omboks.astro";
         >
       </div>
       <div class="boks_2">
-        <a href="/kontakt"
-          ><h2 class="kontakt">KONTAKT MIG</h2>
+        <h2 class="kontakt">KONTAKT MIG</h2>
+        <a href="/kontakt">
           <img class="pil" src="../../drej-billeder/pil.png" alt="" /></a
         >
       </div>
     </div>
   </div>
-  =======
+  <section class="grid_1_1_1">
+    <div class="billede">
+      <img src="../../drej-billeder/jens.webp" alt="" />
+    </div>
+    <div class="billede">
+      <img src="../../drej-billeder/salg.webp" alt="" />
+    </div>
+    <div class="billede">
+      <img src="../../drej-billeder/skur.webp" alt="" />
+    </div>
+  </section>
 </Menylayout>
-
-<section class="grid_1_1_1">
-  <div class="billede">
-    <img src="../../drej-billeder/jens.webp" alt="" />
-  </div>
-  <div class="billede">
-    <img src="../../drej-billeder/salg.webp" alt="" />
-  </div>
-  <div class="billede">
-    <img src="../../drej-billeder/skur.webp" alt="" />
-  </div>
-</section>
 
 <style>
   .flex-kontakt {
@@ -110,21 +110,27 @@ import Omboks from "../komponenter/Omboks.astro";
   }
 
   .grid_1_1 {
+    padding: 30px 30px 0px 30px;
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr 1fr;
     h1 {
-      padding-top: 50px;
+      padding-top: 20px;
     }
   }
 
   .boks_2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    display: flex;
+    justify-content: space-between;
     background-color: rgb(225, 134, 88);
-    padding: 1rem;
+    padding: 20px;
   }
-
+  a {
+    padding-top: 20px;
+    align-items: center;
+  }
   .jens {
     max-width: 95%;
   }
@@ -153,6 +159,10 @@ import Omboks from "../komponenter/Omboks.astro";
   .boks_2 a {
     text-decoration: none;
     display: grid;
+  }
+  .boks_2 {
+    display: flex;
+    justify-content: space-between;
   }
   .kontakt:hover {
     color: white;
@@ -192,6 +202,7 @@ import Omboks from "../komponenter/Omboks.astro";
       border-right: 3px solid rgb(193, 99, 31);
       border-top: 3px solid rgb(193, 99, 31);
     }
+
     .billede {
       display: flex;
       justify-content: center;

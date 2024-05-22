@@ -31,7 +31,7 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
           <br /><span class="skrå-orange">fyen</span>
         </h2></a
       >
-      <a href="#"
+      <a href=""
         ><img class="pil-p" src="/./drej-billeder/pil-p.svg" alt="" /></a
       >
     </div>
@@ -89,11 +89,12 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
   }
   .projekter-grid {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
     padding: 50px 20px 20px 20px;
   }
   img {
-    max-width: 70%;
+    max-width: 60%;
   }
   a {
     display: flex;
@@ -107,6 +108,8 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
     }
     .projekter-grid {
       justify-content: center;
+      gap: 100px;
+      flex-direction: row;
       display: flex;
       padding: 50px 20px 20px 20px;
     }
