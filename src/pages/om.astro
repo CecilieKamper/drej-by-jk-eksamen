@@ -2,6 +2,7 @@
 import Boks from "../komponenter/Boks.astro";
 import Menylayout from "../komponenter/layouts/Menylayout.astro";
 import Omboks from "../komponenter/Omboks.astro";
+import Kontaktlink from "../komponenter/Kontaktlink.astro";
 ---
 
 <Menylayout>
@@ -64,11 +65,8 @@ import Omboks from "../komponenter/Omboks.astro";
           ><img src="/./drej-billeder/insta-footer.png" alt="Instagram" /></a
         >
       </div>
-      <div class="kontakt-link">
-        <a href="/kontakt" class="kontakt-text">
-          <span class="bold">Kontakt</span> for køb
-          <img src="/./drej-billeder/pillll.svg" alt="Pil" class="arrow" />
-        </a>
+      <div class="farve">
+        <Kontaktlink />
       </div>
     </div>
   </div>
@@ -86,45 +84,15 @@ import Omboks from "../komponenter/Omboks.astro";
 </Menylayout>
 
 <style>
-  .kontakt-link {
-    display: flex; /* Anvend flexbox */
-    justify-content: flex-end; /* Juster indholdet til højre */
-    position: relative; /* Positionerer pseudo-elementet i forhold til dette element */
-    color: black; /* Standardtekstfarve */
+  /* kontakt */
+  .farve {
     background-color: var(--lyse-orange);
-  }
-
-  .kontakt-link::after {
-    content: ""; /* Indholdet af pseudo-elementet */
-    position: absolute; /* Positionen er relativ til det nærmeste positionerede forældreelement */
-    left: 0; /* Startposition fra venstre */
-  }
-
-  .kontakt-text {
-    color: black; /* Farve på teksten */
-    text-decoration: none; /* Fjern understregning fra linket */
-    text-transform: uppercase; /* Konverter teksten til store bogstaver */
-    transition: color 0.3s; /* Glat farveskift under hover */
-  }
-  .kontakt-text:hover,
-  .arrow:hover {
-    color: white; /* Farveændring ved hover */
-  }
-
-  .bold {
-    font-weight: bold; /* Gør teksten bold */
-  }
-
-  .arrow {
-    vertical-align: middle; /* Juster pilen vertikalt i midten af teksten */
-    margin-left: 5px; /* Lidt margen mellem teksten og pilen */
-    margin-top: -4px;
   }
   .flex-kontakt {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    border-bottom: 2px solid var(--mørke-orange);
+    border-bottom: var(--border-2px);
 
     h4 {
       font-size: 2.4rem;
@@ -132,11 +100,11 @@ import Omboks from "../komponenter/Omboks.astro";
     }
   }
   .streg-1 {
-    border-bottom: 2px solid var(--mørke-orange);
+    border-bottom: var(--border-2px);
   }
 
   .streg-2 {
-    border-bottom: 2px solid var(--mørke-orange);
+    border-bottom: var(--border-2px);
   }
   .grid {
     align-items: stretch;
@@ -145,18 +113,17 @@ import Omboks from "../komponenter/Omboks.astro";
   }
 
   .grid_1_1 {
-    padding: 30px 30px 0px 30px;
+    padding: 50px 30px 0px 30px;
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr 1fr;
+    /* border-bottom: var(--border-2px); */
     h1 {
-      padding-top: 20px;
+      padding-top: 50px;
     }
   }
 
   .boks_2 {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -176,70 +143,48 @@ import Omboks from "../komponenter/Omboks.astro";
       align-items: center;
     }
   }
-  a {
-    padding-top: 20px;
-    align-items: center;
-  }
-  .jens {
-    max-width: 95%;
-  }
-
-  .sociale {
-    max-width: 10%;
-    gap: 10rem;
-    margin-bottom: 5%;
-  }
 
   .medier {
-    padding-right: 20px;
+    padding-right: 50px;
     display: flex;
+    gap: 10px;
     justify-content: end;
   }
-
-  a .pil {
-    max-width: 25%;
-    justify-self: center;
-  }
-
-  .billede {
-    margin-bottom: 8%;
-    margin-top: 8%;
-  }
-  .boks_2 a {
-    text-decoration: none;
-    display: grid;
-  }
-  .boks_2 {
+  .grid_1_1_1 {
+    padding: 30px 50px 30px 50px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: var(--border-2px);
+    img {
+      max-width: 60%;
+      align-self: center;
+    }
   }
-  .kontakt:hover {
-    color: white;
-  }
-  a img {
-    max-width: 100%;
-
-    gap: 10rem;
-    margin-bottom: 5%;
+  .billede {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   @media screen and (min-width: 768px) {
     /* streger til dektop */
     .flex-kontakt {
-      border-bottom: 3px solid var(--mørke-orange);
+      border-bottom: var(--border-3px);
     }
     .streg-1 {
-      border-bottom: 3px solid var(--mørke-orange);
-      border-right: 3px solid var(--mørke-orange);
+      border-bottom: var(--border-3px);
+      border-right: var(--border-3px);
     }
 
     .streg-2 {
-      border-bottom: 3px solid var(--mørke-orange);
+      border-bottom: var(--border-3px);
     }
     .grid_1_1_1 {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       margin-top: 4%;
-      border-bottom: 3px solid rgb(193, 99, 31);
+      border-bottom: var(--border-3px);
     }
     .grid {
       align-items: stretch;
@@ -248,15 +193,12 @@ import Omboks from "../komponenter/Omboks.astro";
     }
     .boks {
       padding: 5rem;
-      border-right: 3px solid rgb(193, 99, 31);
-      border-top: 3px solid rgb(193, 99, 31);
+      border-right: var(--border-3px);
+      border-top: var(--border-3px);
     }
 
-    .billede {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 18%;
+    h1 {
+      padding-top: 100px;
     }
   }
 </style>

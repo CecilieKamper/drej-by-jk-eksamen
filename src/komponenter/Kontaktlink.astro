@@ -1,0 +1,52 @@
+---
+const { text } = Astro.props;
+---
+
+<div class="kontakt-link">
+  <a href="/kontakt" class="kontakt-text">
+    Kontakt <span class="tynd">{text}</span></a
+  >
+  <a class="grid" href="/kontakt"
+    ><img src="/./drej-billeder/pilkontakt.svg" alt="Pil" class="arrow" /></a
+  >
+</div>
+<style>
+  .kontakt-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px 30px 50px;
+    /* background-color: var(--lyse-orange); */
+  }
+  .kontakt-text {
+    color: var(--sort); /* Farve på teksten */
+    text-decoration: none; /* Fjern understregning fra linket */
+    text-transform: uppercase; /* Konverter teksten til store bogstaver */
+    transition: color 0.3s; /* Glat farveskift under hover */
+    font-size: 3rem;
+  }
+  .grid {
+    display: grid;
+    place-items: center;
+  }
+  .kontakt-text:hover {
+    color: var(--lysegrå);
+  }
+  .arrow {
+    transition: filter 0.3s; /* Smooth color change for SVG */
+  }
+  .kontakt-link:hover .arrow {
+    filter: brightness(0) saturate(100%) invert(93%) sepia(5%) saturate(434%)
+      hue-rotate(321deg) brightness(94%) contrast(83%); /* Adjust filter to change color */
+  }
+  @media screen and (min-width: 768px) {
+    .kontakt-link {
+      padding: 30px 70px 30px 50px;
+      /* background-color: var(--lyse-orange); */
+    }
+  }
+</style>
+<!-- farverne sort  -->
+<!-- overgangene rammer forskleig -->
+<!-- p inde i a tag -->

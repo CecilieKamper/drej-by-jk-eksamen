@@ -26,449 +26,373 @@ console.log(data);
     </div>
     <img class="skaal" src="/./drej-billeder/3-skaaaaale.png" alt="" />
   </section>
-
-  <div class="grid_2">
+  <div class="soter-nav border">
     <h2>Sorter efter træsorter</h2>
-    <div class="custom-menu">
-      <div class="menu-icon" id="menu-icon">
-        <img class="roter" src="/./drej-billeder/vpilsort.svg" alt="" />
-        <!-- <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div> -->
+    <div class="dropdown-soter">
+      <!-- <div class="open-close">
+        <img class="roter-open" src="/./drej-billeder/vpilsort.svg" alt="" />
+        <img class="roter-close" src="/./drej-billeder/vpilsort.svg" alt="" />
+      </div> -->
+      <div class="open-close">
+        <img  src="/./drej-billeder/open.svg" alt="" />
       </div>
-      <div class="menu" id="menu">
-        <div class="close-icon" id="close-icon">&times;</div>
-        <div class="menu-items">
-          <a href="#link1"
-            ><img
-              src="drej-billeder/asktekst.svg"
-              alt="Logo 1"
-              class="menu-logo"
-            /></a
-          >
-          <a href="#link2"
-            ><img
-              src="drej-billeder/valnødtekst.svg"
-              alt="Logo 2"
-              class="menu-logo"
-            /></a
-          >
-          <a href="#link3"
-            ><img
-              src="drej-billeder/egeknudetekst.svg"
-              alt="Logo 3"
-              class="menu-logo"
-            /></a
-          >
-          <a href="#link4"
-            ><img
-              src="drej-billeder/elmtekst.svg"
-              alt="Logo 4"
-              class="menu-logo"
-            /></a
-          >
+      <!-- <div class="close-icon" id="close-icon">&times;</div> -->
+      <div class="sorter-liste-c">
+      <div class="sorter-liste">
+        <div class="sorter-item" id="alt">
+          <img src="drej-billeder/alle.svg" alt="Logo 1" />
+          <p>alle</p>
         </div>
-      </div>
+        <div class="sorter-item" id="ask">
+          <img src="drej-billeder/ask-logo.svg" alt="Logo 1" />
+          <p>ask</p>
+        </div>
+        <div class="sorter-item" id="valnød">
+          <img src="drej-billeder/valnød-logo.svg" alt="Logo 1" />
+          <p>valnød</p>
+        </div>
+        <div class="sorter-item" id="egeknude">
+          <img src="drej-billeder/egeknude-logo.svg" alt="Logo 1" />
+          <p>egeknude</p>
+        </div>
+        <div class="sorter-item" id="elm">
+          <img src="drej-billeder/elm-logo.svg" alt="Logo 1" />
+          <p>elm</p>
+        </div>
+      </div></div>
     </div>
   </div>
 
-  <div class="gridlol">
-    {
-      data.map((bowl) => {
+
+<div id="alt" class="gridlol alt">
+  {
+    data.map((bowl) => {
+      console.log(bowl);
+      return <Produkt data={bowl} />;
+    })
+  }
+</div>
+<div id="ask" class="gridlol ask">
+  {
+    data.map((bowl) => {
+      if (bowl.wood === "Ask") {
         console.log(bowl);
         return <Produkt data={bowl} />;
-      })
-    }
-  </div>
-</Menylayout>
-<!-- <footer></footer> -->
-
-<style>
-  .flex {
-    display: flex;
-    flex-direction: column;
+      }
+    })
   }
-
-  /* .skaal {
-    max-width: 100%;
- 
-  } */
-
-  h1 {
-    font-size: 3rem;
+</div>
+<div id="valnød" class="gridlol valnød">
+  
+  {
+    data.map((bowl) => {
+      if (bowl.wood === "Valnød") {
+        console.log(bowl);
+        return <Produkt data={bowl} />;
+      }
+    })
   }
-
-  .grid_1 {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 30px;
-    border-bottom: 2px solid var(--mørke-orange);
-    img {
-      max-width: 80%;
-      height: auto;
-      transition: transform 0.3s ease;
-    }
+</div>
+<div id="egeknude" class="gridlol egeknude">
+  {
+    data.map((bowl) => {
+      if (bowl.wood === "Egeknude") {
+        console.log(bowl);
+        return <Produkt data={bowl} />;
+      }
+    })
+  } 
+</div>
+<div id="elm" class="gridlol elm">
+  {
+    data.map((bowl) => {
+      if (bowl.wood === "Elm") {
+        console.log(bowl);
+        return <Produkt data={bowl} />;
+      }
+    })
   }
-  .roter {
-    rotate: -90deg;
-  }
-  .grid_2 {
-    /* display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      padding: 10px; */
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    h2 {
-      font-size: 1.5rem;
-      font-style: normal;
-    }
-  }
+</div>
+  </Menylayout>
 
-  /* header {
-    position: relative;
-} */
 
-  /* sortering */
-  .custom-menu .menu-icon {
-    /* display: none; */
-    flex-direction: column;
-    cursor: pointer;
-    padding: 10px;
-  }
-  /* icon */
-  /* .bar {
-      width: 25px;
-      height: 3px;
-      background-color: black;
-      margin: 4px 0;
-    } */
+  <style>
+    /* åben luk klasser til java */
+.border{
+  border-bottom: var(--border-2px);
 
-  .custom-menu .menu {
-    display: none;
-    position: fixed;
-    top: 370px;
-    right: 10px;
-    width: 77%;
-    height: 20%;
-    background-color: #e2d6c6;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: solid 2px #c1631f;
-    z-index: 1000;
-  }
-
-  .menu-items {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .menu-logo {
-    width: 80px;
-    height: 60px;
-    transition: transform 0.3s;
-  }
-
-  .menu-logo:hover {
-    transform: scale(1.1);
-  }
-
-  .close-icon {
-    position: absolute;
-    top: 0px;
-    right: 10px;
-    font-size: 30px;
-    cursor: pointer;
-  }
-
-  /* Mobil stil */
-
-  .custom-menu {
-    display: flex;
-    justify-self: end;
-  }
-
-  .custom-menu .menu {
-    display: none;
-  }
-
-  /* Desktop stil */
-  @media (min-width: 769px) {
-    .custom-menu .menu {
-      display: flex;
-      position: static;
-      width: auto;
-      height: auto;
-      flex-direction: row;
-      background-color: transparent;
-      border: none;
-    }
-
-    .menu-items {
-      display: flex;
-      flex-direction: row;
-    }
-
-    .menu-logo {
-      margin: 0 10px;
-    }
-
-    .custom-menu .menu-icon,
-    .close-icon {
-      display: none;
-    }
-  }
-
-  /* Responsivitet */
-  /* @media (min-width: 768px) {
-    .produkt-liste {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .stor-billede-container {
-        grid-column: span 1;
-    }
-
-    .små-produktbilleder {
-        grid-template-columns: repeat(2, 1fr);
-    }
-} */
-  /* Mobil stil */
-  @media (max-width: 768px) {
-    .custom-menu .menu-icon {
-      display: flex;
-      justify-self: end;
-    }
-
-    .custom-menu .menu {
-      display: none;
-    }
-  }
-
-  /* produktlisten */
-  .gridlol {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(250px, 1fr));
-    grid-auto-flow: dense;
-    place-items: center;
-    border-bottom: 2px solid var(--mørke-orange);
-    /*  grid-template-rows: repeat(6 1fr);
-    gri */
-  }
-  .gridlol {
-    div:first-child {
-      grid-row: span 2;
-      grid-column: span 2;
-    }
-
-    div:nth-child(8) {
-      grid-row: span 2;
-      grid-column: span 2;
-    }
-  }
-  .gridlol > :nth-child(5) {
-    grid-area: 2/4/3/5;
-  }
-
-  /* .orange {
-  color: #c1631f;
-  text-transform: uppercase;
-} */
-  /* h1 {
-  font-size: 20px;
-  text-transform: uppercase;
-} */
-  /* h2,
-h3 {
-  text-transform: uppercase;
 }
-p {
-  font-size: 10px;
-} */
-  /* .skaal {
-  max-width: 100%;
-  transition: transform 0.3s ease;
-} */
-
-  /* h2 {
-    font-size: 1rem;
-  } */
-
-  /* .burger-menu-container {
-      margin-left: auto; 
+    .show {
+      display: block;
+    }
+    .sorter-liste-c {
+      display: none;
+    }
+    /* .roter-open {
+      rotate: 90deg;
+      display: grid;
+      place-items: center;
     } */
+    .roter-close {
+      rotate: -180deg;
+      display: grid;
+      place-items: center;
+    }
 
-  /* .produkt-liste {
+    /* sorter menu mobil*/
+
+    .sorter-liste {
+      max-width: 400px;
+  height: 400px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+   
+    }
+    .open-close {
+      padding: 20px;
       display: grid;
       grid-template-columns: 1fr;
-      gap: 10px;
-      padding: 10px;
+ 
+  
     }
-
-    .stor-billede-container {
-      position: relative;
-      padding: 20px;
-      border: 1px solid #c1631f; /* Tilføjet border */
-  /* box-sizing: border-box;
-    } */
-  /* 
-    .stor-skål {
-      width: 100%;
-      height: auto;
-      display: block;
-    } */
-
-  .pil.stor {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-  }
-
-  /* .små-produktbilleder {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    } */
-
-  /* .små-billede-container {
-      position: relative;
-      padding: 20px;
-      border: 1px solid #c1631f; /* Tilføjet border */
-  /* 
-    .små-skåle {
-      width: 100%;
-      height: auto;
-      display: block;
-    } */
-
-  .pil {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-
-    transition: transform 0.3s ease; /* Transition for smooth scaling */
-  }
-  .pil:hover {
-    transform: scale(1.2); /* Makes the pil 20% larger */
-  }
-
-  /* Responsivitet */
-  /* @media (min-width: 768px) {
-    .produkt-liste {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .stor-billede-container {
-      grid-column: span 1;
-    }
-
-    .små-produktbilleder {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  } */
-
-  /* burgermenu med sortering af træsorter */
-  /* .menu-icon {
+    .sorter-item {
+      /* padding: 10px;
       display: flex;
-      justify-self: end;
-    } */
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center; */
+      display: grid;
+      grid-template-columns: 1fr;
+      
+      transition: transform 0.3s;
 
-  /* .menu {
-      display: none;
-    } */
-
-  /* Desktop stil */
-  /* @media (min-width: 769px){
-    .custom-menu .menu {
-        display: flex;
-        position: static;
-        width: auto;
-        height: auto;
-        flex-direction: row;
-        background-color: transparent;
-        border: none;
+      display: grid;
+      place-items: center;
     }
-
-    .menu-items {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .menu-logo {
-        margin: 0 10px;
-    }
-
-    .custom-menu .menu-icon,
-    .close-icon {
-        display: none;
-    }
-} */
-
-  /* Responsivitet */
-  @media (min-width: 800px) {
-    .skaal:hover {
+    .sorter-item:hover {
       transform: scale(1.1);
     }
+
+    .dropdown-soter{
+      position: absolute;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      background-color: var(--baggrund);
+
+    }
+    .soter-nav{
+      display: flex;
+      flex-direction: column;
+      padding: 10px 20px 10px 20px;
+justify-content: center;  
+    }
+    h2{
+      font-size: 2rem;
+    }
+    /* fordside */
+    .flex {
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
     .grid_1 {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      justify-items: center;
-      border-bottom: 3px solid var(--mørke-orange);
-      h1 {
-        padding-bottom: 30px;
-      }
-      .flex {
-        justify-content: center;
-        padding: 50px 0px 50px 100px;
-      }
+      grid-template-columns: 1fr;
+      padding: 30px;
+      border-bottom: 2px solid var(--mørke-orange);
       img {
-        max-width: 70%;
+        max-width: 80%;
+        height: auto;
+        transition: transform 0.3s ease;
       }
     }
+    /* idk */
     .grid_2 {
-      border-bottom: 3px solid var(--mørke-orange);
-    }
-    .custom-menu .menu {
+      padding: 10px;
       display: flex;
-      position: static;
-      width: auto;
-      height: auto;
-      flex-direction: row;
-      background-color: transparent;
-      border: none;
+      align-items: center;
+      justify-content: space-between;
+      h2 {
+        font-size: 1.5rem;
+        font-style: normal;
+      }
+    }
+    .gridlol {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
 
-    /* .menu-items {
+    .pil.stor {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+    }
+
+    .pil {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+
+      transition: transform 0.3s ease; /* Transition for smooth scaling */
+    }
+    .pil:hover {
+      transform: scale(1.2); /* Makes the pil 20% larger */
+    }
+
+    /* Responsivitet */
+    @media (min-width: 800px) {
+      /* nav sorter */
+      .soter-nav {
         display: flex;
+        justify-content: space-between;
         flex-direction: row;
-      } */
-    /* .menu-logo {
-        margin: 0 10px;
-      } */
-    /* .close-icon {
+      padding: 20px 20px 20px 20px;
+        /* hvorfor går den ud over */
+      }
+      .sorter-liste {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        padding: 0px;
+       max-width: auto; 
+     height: auto;
+      }
+      .open-close {
         display: none;
-      } */
-    /* .produkt-liste {
+      }
+      .sorter-item {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* width: 80px;
+        height: 60px; */
+        transition: transform 0.3s;
+      }
+      /* øverst */
+      .skaal:hover {
+        transform: scale(1.1);
+      }
+      .grid_1 {
+        display: grid;
         grid-template-columns: 1fr 1fr;
-      } */
-  }
-</style>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuIcon = document.getElementById("menu-icon");
-    const closeIcon = document.getElementById("close-icon");
-    const menu = document.getElementById("menu");
+        justify-items: center;
+        border-bottom: 3px solid var(--mørke-orange);
+        h1 {
+          padding-bottom: 30px;
+        }
+        .flex {
+          justify-content: center;
+          padding: 50px 0px 50px 100px;
+        }
+        img {
+          max-width: 70%;
+        }
+      }
 
-    menuIcon.addEventListener("click", function () {
-      menu.style.display = "flex";
-    });
+    /* produktlisten */
+    .gridlol {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(250px, 1fr));
+      grid-auto-flow: dense;
+      place-items: center;
+      border-bottom: 2px solid var(--mørke-orange); */
+      grid-template-rows: repeat(6 1fr);
+   
+    } 
+  .gridlol {
+      div:first-child {
+        grid-row: span 2;
+        grid-column: span 2;
+        .skål {
+          width: 150%;
+        }
+      }
 
-    closeIcon.addEventListener("click", function () {
-      menu.style.display = "none";
-    });
+      div:nth-child(8) {
+        grid-row: span 2;
+        grid-column: span 2;
+      }
+   
+    .gridlol > :nth-child(5) {
+      grid-area: 2/4/3/5;
+    } 
+      }
+      .grid_2 {
+        border-bottom: 3px solid var(--mørke-orange);
+      }
+
+    }
+  </style>
+  <script>
+    // document.addEventListener("DOMContentLoaded", function () {
+    //   const menuIcon = document.getElementById("menu-icon");
+    //   const closeIcon = document.getElementById("close-icon");
+    //   const menu = document.getElementById("menu");
+
+    //   menuIcon.addEventListener("click", function () {
+    //     menu.style.display = "flex";
+    //   });
+
+    //   closeIcon.addEventListener("click", function () {
+    //     menu.style.display = "none";
+    //   });
+    // });
+    // document.addEventListener("DOMContentLoaded", () => {
+    //   const openClose = document.querySelector(".open-close");
+    //   const openIcon = document.querySelector(".roter-open");
+    //   const closeIcon = document.querySelector(".roter-close");
+    //   const sorterListe = document.querySelector(".sorter-liste");
+
+    //   openClose.addEventListener("click", () => {
+
+    //     const openClose = openClose.classList.toggle(".roter-close");
+    
+    //   });
+    // });
+
+
+      document.querySelectorAll(".sorter-item").forEach(elm=>{
+        elm.addEventListener("click",klikFunction)
+
+      })
+
+      function klikFunction(evt){
+          document.querySelectorAll(".gridlol").forEach(elm=>{
+        elm.style.display = "none"
+
+      })
+          console.log("KLIK",evt.currentTarget.id)
+          document.querySelector(`.${evt.currentTarget.id}`).style.display = "block";
+      }
+    document.addEventListener("DOMContentLoaded", () => {
+  const openClose = document.querySelector(".open-close");
+  const sorterListe = document.querySelector(".sorter-liste-c");
+
+  openClose.addEventListener("click", () => {
+    console.log("KLIK")
+    // sorterListe.classList.toggle("show");
+    if (sorterListe.style.display === "block"){
+      sorterListe.style.display = "none"
+    }else{
+
+      sorterListe.style.display = "block"
+
+    }
+    
+    openClose.classList.toggle("roter-close");
   });
-</script>
+  
+});
+// sorterliste skal åbne og lukke når man klikker på opencolse
+// opencolse skal skifte icon når man klikker på den samtidig med at den åvner og lukker 
+    // eventlisner der togler show
+    // når man klikker på logo i conet der passer til den given map så skal den skifte detil den
+    // eventlisner der togler roter clos ogsom skifter når den er lukket
+  </script>
+</div>

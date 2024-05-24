@@ -5,6 +5,8 @@
   --lyse-orange: #e18658;
   --lysegrå: #ece4de;
   --mørkegrå: #cec0b5;
+  --border-2px: 2px solid var(--mørke-orange);
+  --border-3px: 3px solid var(--mørke-orange);
 }
 
 /* syling til mobil */
@@ -89,7 +91,7 @@ body {
   background-color: var(--baggrund);
 }
 html {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 /* styling til desktop */
