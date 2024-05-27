@@ -40,23 +40,23 @@ console.log(data);
       <div class="sorter-liste-c">
       <div class="sorter-liste">
         <div class="sorter-item" id="alt">
-          <img src="drej-billeder/alle.svg" alt="Logo 1" />
+          <img src="drej-billeder/alle-i.svg" alt="Logo 1" />
           <p>alle</p>
         </div>
         <div class="sorter-item" id="ask">
-          <img src="drej-billeder/ask-logo.svg" alt="Logo 1" />
+          <img src="drej-billeder/ask-i.svg" alt="Logo 1" />
           <p>ask</p>
         </div>
         <div class="sorter-item" id="valnød">
-          <img src="drej-billeder/valnød-logo.svg" alt="Logo 1" />
+          <img src="drej-billeder/valnød-i.svg" alt="Logo 1" />
           <p>valnød</p>
         </div>
         <div class="sorter-item" id="egeknude">
-          <img src="drej-billeder/egeknude-logo.svg" alt="Logo 1" />
+          <img src="drej-billeder/egeknude-i.svg" alt="Logo 1" />
           <p>egeknude</p>
         </div>
         <div class="sorter-item" id="elm">
-          <img src="drej-billeder/elm-logo.svg" alt="Logo 1" />
+          <img src="drej-billeder/elm-i.svg" alt="Logo 1" />
           <p>elm</p>
         </div>
       </div></div>
@@ -113,16 +113,16 @@ console.log(data);
     })
   }
 </div>
-<!-- er ret sikker på der ik skal være 2 ider  -->
+<!-- her er det maping som er til at sorrtere men det virker ik idelt -->
+<!-- 1. tror ik der kan være id her for bruger det samme længere op -->
+<!-- grid virker ik når man har klikket på dem -->
   </Menylayout>
 
 
   <style>
     /* åben luk klasser til java */
-.border{
-  border-bottom: var(--border-2px);
-
-}
+    .border{
+      border-bottom: var(--border-2px);}
     .show {
       display: block;
     }
@@ -143,51 +143,49 @@ console.log(data);
     /* sorter menu mobil*/
 
     .sorter-liste {
-      max-width: 400px;
-  height: 400px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      max-width: 100vh;
    
     }
     .open-close {
       padding: 20px;
       display: grid;
       grid-template-columns: 1fr;
+      position: absolute;
  
   
     }
-    .sorter-item {
-      /* padding: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: center; */
-      display: grid;
-      grid-template-columns: 1fr;
-      
-      transition: transform 0.3s;
 
-      display: grid;
-      place-items: center;
-    }
     .sorter-item:hover {
       transform: scale(1.1);
     }
-
+    .sorter-item {
+      justify-items: center;
+      display: grid;
+      grid-template-columns: 1fr;
+      transition: transform 0.3s;
+      align-content: space-between;
+    }
+    .sorter-item p:last-of-type {
+      line-height: normal;
+      text-transform: uppercase;
+      margin: 0px;
+      padding: 0px;   }
     .dropdown-soter{
-      position: absolute;
+      /* idk med position her måske er det bedre at fjeren den så den skubber siden ned */
+      /* position: absolute; */
       right: 10px;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
       background-color: var(--baggrund);
-
     }
     .soter-nav{
       display: flex;
       flex-direction: column;
       padding: 10px 20px 10px 20px;
-justify-content: center;  
+      justify-content: center;  
     }
     h2{
       font-size: 2rem;
@@ -256,6 +254,7 @@ justify-content: center;
         display: flex;
         justify-content: space-between;
         flex-direction: row;
+        align-items: center;
       padding: 20px 20px 20px 20px;
         /* hvorfor går den ud over */
       }
@@ -268,19 +267,12 @@ justify-content: center;
         padding: 0px;
        max-width: auto; 
      height: auto;
+     width: fit-content;
       }
       .open-close {
         display: none;
       }
-      .sorter-item {
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* width: 80px;
-        height: 60px; */
-        transition: transform 0.3s;
-      }
+   
       /* øverst */
       .skaal:hover {
         transform: scale(1.1);
@@ -324,14 +316,20 @@ justify-content: center;
         }
       }
 
+      div:nth-child(5) {
+        grid-row: span 2;
+        grid-column: span 2;
+      }
       div:nth-child(8) {
         grid-row: span 2;
         grid-column: span 2;
       }
+      div:nth-child(11) {
+        grid-row: span 2;
+        grid-column: span 2;
+      }
    
-    .gridlol > :nth-child(5) {
-      grid-area: 2/4/3/5;
-    } 
+
       }
       .grid_2 {
         border-bottom: 3px solid var(--mørke-orange);
@@ -340,32 +338,6 @@ justify-content: center;
     }
   </style>
   <script>
-    // document.addEventListener("DOMContentLoaded", function () {
-    //   const menuIcon = document.getElementById("menu-icon");
-    //   const closeIcon = document.getElementById("close-icon");
-    //   const menu = document.getElementById("menu");
-
-    //   menuIcon.addEventListener("click", function () {
-    //     menu.style.display = "flex";
-    //   });
-
-    //   closeIcon.addEventListener("click", function () {
-    //     menu.style.display = "none";
-    //   });
-    // });
-    // document.addEventListener("DOMContentLoaded", () => {
-    //   const openClose = document.querySelector(".open-close");
-    //   const openIcon = document.querySelector(".roter-open");
-    //   const closeIcon = document.querySelector(".roter-close");
-    //   const sorterListe = document.querySelector(".sorter-liste");
-
-    //   openClose.addEventListener("click", () => {
-
-    //     const openClose = openClose.classList.toggle(".roter-close");
-    
-    //   });
-    // });
-
 
       document.querySelectorAll(".sorter-item").forEach(elm=>{
         elm.addEventListener("click",klikFunction)
