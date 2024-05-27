@@ -5,12 +5,9 @@ const { text, billed, alt } = Astro.props;
 <article>
   <img src={billed} alt={alt} />
   <div class="flex">
-    <!-- <img src="/./drej-billeder/vpilsort.svg" alt="" /> -->
-
     <p>
       {text}
     </p>
-    <!-- <img src="/./drej-billeder/hpilsort.svg" alt="" /> -->
   </div>
 </article>
 <style>
@@ -25,15 +22,12 @@ const { text, billed, alt } = Astro.props;
     align-items: center;
     padding: 30px;
     margin: 20px;
-    /* border: 2px solid var(--mørke-orange); */
+
     p {
       padding: 20px 20px 20px 20px;
       font-size: 1.2rem;
       text-align: center;
-      font-family: Arimo, sans-serif;
       line-height: 1.5rem;
-    }
-    img {
     }
   }
 </style>
