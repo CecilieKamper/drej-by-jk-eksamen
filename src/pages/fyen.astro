@@ -72,11 +72,11 @@ import Pil from "../komponenter/Pil.astro";
     .flex {
       display: flex;
       justify-content: center;
-      border-bottom: 2px solid var(--mørke-orange);
+      border-bottom: var(--border-2px);
     }
     .bagrund-farve {
       display: none;
-      border-bottom: 2px solid var(--mørke-orange);
+      border-bottom: var(--border-2px);
     }
 
     .obagrund {
@@ -100,12 +100,13 @@ import Pil from "../komponenter/Pil.astro";
       }
       .flex {
         display: none;
-        border-bottom: 3px solid var(--mørke-orange);
+        border-bottom: var(--border-3px);
       }
       .bagrund-farve {
         background-color: #e18658;
-        border-bottom: 3px solid var(--mørke-orange);
+        border-bottom: var(--border-3px);
       }
+      /* bagrund farve og hover skal være ens på fyen og haslev */
     }
   </style>
   <script>

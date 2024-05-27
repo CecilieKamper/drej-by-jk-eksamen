@@ -21,6 +21,9 @@ const { billed, alttext, h11, h12, h13 } = Astro.props;
     align-content: space-evenly;
     align-items: center;
   }
+  img {
+    max-width: 80%;
+  }
 
   @media only screen and (min-width: 800px) {
     div {
@@ -28,6 +31,9 @@ const { billed, alttext, h11, h12, h13 } = Astro.props;
     }
     h1 {
       font-size: 5rem;
+    }
+    img {
+      max-width: 100%;
     }
   }
 </style>

@@ -68,10 +68,9 @@ import Carosel from "../komponenter/Carosel.astro";
     .flex {
       display: flex;
       justify-content: center;
-      border-bottom: 2px solid var(--mørke-orange);
     }
     .border-2 {
-      border-top: 2px solid var(--mørke-orange);
+      border-top: var(--border-2px);
     }
     .obagrund {
       background-color: #e18658;
@@ -89,7 +88,9 @@ import Carosel from "../komponenter/Carosel.astro";
       }
       .flex {
         display: none;
-        border-bottom: 3px solid var(--mørke-orange);
+      }
+      .border-2 {
+        border-top: var(--border-3px);
       }
     }
   </style>
