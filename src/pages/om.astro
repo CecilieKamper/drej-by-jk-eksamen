@@ -58,11 +58,11 @@ import Kontaktlink from "../komponenter/Kontaktlink.astro";
       <div class="medier">
         <a
           href="https://www.facebook.com/profile.php?id=61559874926503&rdid=aXCWmXzfn2HaHiFW&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2FwMnQqBHEcr61M1NK"
-          ><img src="/./drej-billeder/face-footer.png" alt="Facebook" /></a
+          ><img src="/./drej-billeder/facebook.webp" alt="Facebook" /></a
         >
         <a
           href="https://www.instagram.com/drej_by_jk/?utm_source=ig_web_button_share_sheet"
-          ><img src="/./drej-billeder/insta-footer.png" alt="Instagram" /></a
+          ><img src="/./drej-billeder/insta.webp" alt="Instagram" /></a
         >
       </div>
       <div class="farve">
@@ -145,10 +145,17 @@ import Kontaktlink from "../komponenter/Kontaktlink.astro";
   }
 
   .medier {
-    padding-right: 50px;
     display: flex;
-    gap: 10px;
     justify-content: end;
+    img {
+      max-width: 50%;
+    }
+    a {
+      display: grid;
+      place-items: center;
+      padding: 0px;
+      margin: 0px;
+    }
   }
   .grid_1_1_1 {
     padding: 30px 50px 30px 50px;
