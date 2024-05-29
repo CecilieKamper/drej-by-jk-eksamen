@@ -27,16 +27,15 @@ console.log(data);
     <img class="skaal" src="/./drej-billeder/3-skaaaaale.webp" alt="" />
   </section>
   <div class="soter-nav border">
+    <div class="burger-c">
     <h2>Sorter efter træsorter</h2>
+    <div class="open-close">
+      <img  src="/./drej-billeder/open.svg" alt="" />
+    </div>
+  </div>
     <div class="dropdown-soter">
-      <!-- <div class="open-close">
-        <img class="roter-open" src="/./drej-billeder/vpilsort.svg" alt="" />
-        <img class="roter-close" src="/./drej-billeder/vpilsort.svg" alt="" />
-      </div> -->
-      <div class="open-close">
-        <img  src="/./drej-billeder/open.svg" alt="" />
-      </div>
-      <!-- <div class="close-icon" id="close-icon">&times;</div> -->
+
+
       <div class="sorter-liste-c">
       <div class="sorter-liste">
         <div class="sorter-item" id="alt">
@@ -59,7 +58,7 @@ console.log(data);
           <img src="drej-billeder/elm-i.svg" alt="Logo 1" />
           <p>elm</p>
         </div>
-      </div></div>
+      </div></div> 
     </div>
   </div>
 <!-- burgermenu sidder meget dråligt til mobil -->
@@ -72,7 +71,7 @@ console.log(data);
     })
   }
 </div>
-<div id="ask" class="gridlol ask">
+<div id="" class="gridlol ask sort">
   {
     data.map((bowl) => {
       if (bowl.wood === "Ask") {
@@ -82,7 +81,7 @@ console.log(data);
     })
   }
 </div>
-<div id="valnød" class="gridlol valnød">
+<div id="valnød" class="gridlol valnød sort">
   
   {
     data.map((bowl) => {
@@ -93,7 +92,7 @@ console.log(data);
     })
   }
 </div>
-<div id="egeknude" class="gridlol egeknude">
+<div id="egeknude" class="gridlol egeknude sort">
   {
     data.map((bowl) => {
       if (bowl.wood === "Egeknude") {
@@ -103,7 +102,7 @@ console.log(data);
     })
   } 
 </div>
-<div id="elm" class="gridlol elm">
+<div id="elm" class="gridlol elm sort">
   {
     data.map((bowl) => {
       if (bowl.wood === "Elm") {
@@ -129,11 +128,7 @@ console.log(data);
     .sorter-liste-c {
       display: none;
     }
-    /* .roter-open {
-      rotate: 90deg;
-      display: grid;
-      place-items: center;
-    } */
+
     .roter-close {
       rotate: -180deg;
       display: grid;
@@ -141,20 +136,21 @@ console.log(data);
     }
 
     /* sorter menu mobil*/
-
+.burger-c{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
     .sorter-liste {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      max-width: 100vh;
-   
+  align-content: center;
     }
     .open-close {
       padding: 20px;
       display: grid;
       grid-template-columns: 1fr;
-      position: absolute;
- 
-  
     }
 
     .sorter-item:hover {
@@ -329,6 +325,7 @@ console.log(data);
       div:nth-child(8) {
         grid-row: span 2;
         grid-column: span 2;
+        object-fit: cover;
       }
       div:nth-child(11) {
         grid-row: span 2;
@@ -344,6 +341,10 @@ console.log(data);
     }
   </style>
   <script>
+      document.querySelectorAll(".sort").forEach(elm=>{
+         elm.style.display = "none"
+         
+      })
 
       document.querySelectorAll(".sorter-item").forEach(elm=>{
         elm.addEventListener("click",klikFunction)
@@ -352,11 +353,11 @@ console.log(data);
 
       function klikFunction(evt){
           document.querySelectorAll(".gridlol").forEach(elm=>{
-        elm.style.display = "none"
+         elm.style.display = "none"
 
       })
           console.log("KLIK",evt.currentTarget.id)
-          document.querySelector(`.${evt.currentTarget.id}`).style.display = "block";
+          document.querySelector(`.${evt.currentTarget.id}`).style.display = "grid";
       }
     document.addEventListener("DOMContentLoaded", () => {
   const openClose = document.querySelector(".open-close");

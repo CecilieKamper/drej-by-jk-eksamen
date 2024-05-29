@@ -5,31 +5,46 @@ console.log(data.id);
 
 <div class="container">
   <a href={`produktliste/${data.id}`}>
-    <img class="skål" src={`/drej-billeder/${data.img2}`} alt="" />
-
-    <img class="pil" src="/./drej-billeder/orangepil.svg" alt="Pil" />
+    <div class="grid">
+      <img class="skål" src={`/drej-billeder/${data.img2}`} alt="" />
+      <img class="pil" src="/./drej-billeder/orangepil.svg" alt="Pil" />
+    </div>
   </a>
 </div>
 
 <style>
   .container a {
     background-color: var(--baggrund);
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding: 20px;
+    padding: 20px; */
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: stretch;
   }
 
   .skål {
-    width: 100%;
-    height: auto;
+    /* width: 100%;
+    height: auto; */
     display: block;
+    object-fit: cover;
+    grid-column: 1fr;
   }
 
   .pil {
     /* skal være støre generelt */
-    display: flex;
+    grid-column: 1fr;
+    object-fit: cover;
+    justify-self: flex-end;
+    /* padding: 20px 0px 20px 0px; */
+    /* display: flex;
     align-items: flex-end;
+    justify-content: flex-end; */
     transition: ease-in-out 0.4s;
   }
 
