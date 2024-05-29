@@ -76,6 +76,9 @@ fonte classer */
 .skrå-orange {
   color: var(--mørke-orange);
 }
+.skrå-hvid {
+  color: var(--lysegrå);
+}
 .logo {
   font-family: Arimo, sans-serif;
   font-size: 1.5em;
@@ -102,5 +105,8 @@ html {
   h2 {
     font-size: 3.5rem;
     padding-left: 30px;
+  }
+  h1 {
+    font-size: 5rem;
   }
 }

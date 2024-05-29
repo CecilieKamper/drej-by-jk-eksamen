@@ -2,7 +2,7 @@
 const { sorttext, hvidtext } = Astro.props;
 ---
 
-<section>
+<div class="boks">
   <div class="orangebagrund border-1">
     <h2>
       <span class="skrå-sort">{sorttext}</span><br /><span class="skrå-hvid">
@@ -13,7 +13,7 @@ const { sorttext, hvidtext } = Astro.props;
   <div class="text">
     <slot />
   </div>
-</section>
+</div>
 <style>
   .text {
     padding: 30px 50px 30px 50px;
@@ -25,7 +25,7 @@ const { sorttext, hvidtext } = Astro.props;
     font-weight: 200;
   }
 
-  section {
+  .boks {
     display: grid;
     grid-template-columns: 1fr;
     border-top: var(--border-2px);
@@ -51,7 +51,7 @@ const { sorttext, hvidtext } = Astro.props;
     .border-1 {
       border-bottom: 0px solid;
     }
-    section {
+    .boks {
       grid-template-columns: 1fr 1fr;
       border-top: var(--border-3px);
       border-bottom: var(--border-3px);

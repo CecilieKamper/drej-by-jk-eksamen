@@ -28,7 +28,7 @@ import Pil from "../../komponenter/Pil.astro";
 import Kontaktlink from "../../komponenter/Kontaktlink.astro";
 ---
 
-<Menylayout>
+<Menylayout title="produkt">
   <Pil herf="/produktliste" />
 
   <section class="singleview">
@@ -60,14 +60,14 @@ import Kontaktlink from "../../komponenter/Kontaktlink.astro";
       <Kontaktlink />
     </div>
   </div>
-  <div class="container">
+  <!-- <div class="container">
     <h3>Flere produkter</h3>
     <div class="image-container">
       <img class="flereskal" src="/./drej-billeder/2.webp" alt="" />
       <img class="flereskal" src="/./drej-billeder/3.webp" alt="" />
       <img class="flereskal" src="/./drej-billeder/4.webp" alt="" />
     </div>
-  </div>
+  </div> -->
 </Menylayout>
 <style>
   .skal3 {
@@ -147,6 +147,9 @@ import Kontaktlink from "../../komponenter/Kontaktlink.astro";
     background-color: #e2d6c6; /* Baggrundsfarve hvid for hvert div-element */
     padding: 10px; /* Polstring for at skabe plads omkring hvert billede */
   }
+  .k-kontainer {
+    border-bottom: var(--border-2px);
+  }
 
   @media (min-width: 769px) {
     /* skåle øverst grid og billeder */
@@ -187,6 +190,7 @@ import Kontaktlink from "../../komponenter/Kontaktlink.astro";
     .k-kontainer {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+      border-bottom: var(--border-3px);
     }
     .k-item {
       grid-column: 3;

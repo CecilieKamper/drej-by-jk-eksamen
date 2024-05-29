@@ -15,7 +15,7 @@ const data = await fetch(
 console.log(data);
 ---
 
-<Menylayout>
+<Menylayout title="produkter">
   <section class="grid_1">
     <div class="flex">
       <h1>Hvert produkt <br /> er <span class="skrå-orange">UNIKT</span></h1>
@@ -28,15 +28,13 @@ console.log(data);
   </section>
   <div class="soter-nav border">
     <div class="burger-c">
-    <h2>Sorter efter træsorter</h2>
-    <div class="open-close">
-      <img  src="/./drej-billeder/open.svg" alt="" />
+      <h2>Sorter efter træsorter</h2>
+      <div class="open-close">
+        <img src="/./drej-billeder/open.svg" alt="" />
+      </div>
     </div>
-  </div>
-    <div class="dropdown-soter">
 
-
-      <div class="sorter-liste-c">
+    <div class="sorter-liste-c">
       <div class="sorter-liste">
         <div class="sorter-item" id="alt">
           <img src="drej-billeder/alle-i.svg" alt="Logo 1" />
@@ -58,244 +56,240 @@ console.log(data);
           <img src="drej-billeder/elm-i.svg" alt="Logo 1" />
           <p>elm</p>
         </div>
-      </div></div> 
+      </div>
     </div>
   </div>
-<!-- burgermenu sidder meget dråligt til mobil -->
+  <!-- burgermenu sidder meget dråligt til mobil -->
 
-<div id="alt" class="gridlol alt">
-  {
-    data.map((bowl) => {
-      console.log(bowl);
-      return <Produkt data={bowl} />;
-    })
-  }
-</div>
-<div id="" class="gridlol ask sort">
-  {
-    data.map((bowl) => {
-      if (bowl.wood === "Ask") {
+  <div id="alt" class="gridlol alt">
+    {
+      data.map((bowl) => {
         console.log(bowl);
         return <Produkt data={bowl} />;
-      }
-    })
-  }
-</div>
-<div id="valnød" class="gridlol valnød sort">
-  
-  {
-    data.map((bowl) => {
-      if (bowl.wood === "Valnød") {
-        console.log(bowl);
-        return <Produkt data={bowl} />;
-      }
-    })
-  }
-</div>
-<div id="egeknude" class="gridlol egeknude sort">
-  {
-    data.map((bowl) => {
-      if (bowl.wood === "Egeknude") {
-        console.log(bowl);
-        return <Produkt data={bowl} />;
-      }
-    })
-  } 
-</div>
-<div id="elm" class="gridlol elm sort">
-  {
-    data.map((bowl) => {
-      if (bowl.wood === "Elm") {
-        console.log(bowl);
-        return <Produkt data={bowl} />;
-      }
-    })
-  }
-</div>
-<!-- her er det maping som er til at sorrtere men det virker ik idelt -->
-<!-- 1. tror ik der kan være id her for bruger det samme længere op -->
-<!-- grid virker ik når man har klikket på dem -->
-  </Menylayout>
+      })
+    }
+  </div>
+  <div id="" class="gridlol ask sort">
+    {
+      data.map((bowl) => {
+        if (bowl.wood === "Ask") {
+          console.log(bowl);
+          return <Produkt data={bowl} />;
+        }
+      })
+    }
+  </div>
+  <div id="valnød" class="gridlol valnød sort">
+    {
+      data.map((bowl) => {
+        if (bowl.wood === "Valnød") {
+          console.log(bowl);
+          return <Produkt data={bowl} />;
+        }
+      })
+    }
+  </div>
+  <div id="egeknude" class="gridlol egeknude sort">
+    {
+      data.map((bowl) => {
+        if (bowl.wood === "Egeknude") {
+          console.log(bowl);
+          return <Produkt data={bowl} />;
+        }
+      })
+    }
+  </div>
+  <div id="elm" class="gridlol elm sort">
+    {
+      data.map((bowl) => {
+        if (bowl.wood === "Elm") {
+          console.log(bowl);
+          return <Produkt data={bowl} />;
+        }
+      })
+    }
+  </div>
+  <!-- her er det maping som er til at sorrtere men det virker ik idelt -->
+  <!-- 1. tror ik der kan være id her for bruger det samme længere op -->
+  <!-- grid virker ik når man har klikket på dem -->
+</Menylayout>
 
+<style>
+  /* åben luk klasser til java */
+  .border {
+    border-bottom: var(--border-2px);
+  }
+  .show {
+    display: block;
+  }
+  .sorter-liste-c {
+    display: none;
+  }
 
-  <style>
-    /* åben luk klasser til java */
-    .border{
-      border-bottom: var(--border-2px);}
-    .show {
-      display: block;
+  .roter-close {
+    rotate: -180deg;
+    display: grid;
+    place-items: center;
+  }
+
+  /* sorter menu mobil*/
+  .burger-c {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--baggrund);
+  }
+  .sorter-liste {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-content: center;
+  }
+  .open-close {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .sorter-item:hover {
+    transform: scale(1.1);
+  }
+  .sorter-item {
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    transition: transform 0.3s;
+    align-content: space-between;
+  }
+  .sorter-item p:last-of-type {
+    line-height: normal;
+    text-transform: uppercase;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .soter-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px 10px 20px;
+    justify-content: center;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  /* fordside */
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .grid_1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 30px;
+    border-bottom: 2px solid var(--mørke-orange);
+    img {
+      max-width: 80%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  /* idk */
+  .grid_2 {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h2 {
+      font-size: 1.5rem;
+      font-style: normal;
+    }
+  }
+  .gridlol {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background-color: var(--mørke-orange);
+    border-bottom: var(--border-2px);
+  }
+  .gridlol .elm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background-color: var(--mørke-orange);
+  }
+  /* føler ik det her grid virker i mobil og billederen er meget store  */
+  .pil.stor {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .pil {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+
+    transition: transform 0.3s ease; /* Transition for smooth scaling */
+  }
+  .pil:hover {
+    transform: scale(1.2); /* Makes the pil 20% larger */
+  }
+
+  /* Responsivitet */
+  @media (min-width: 800px) {
+    /* nav sorter */
+    .border {
+      border-bottom: var(--border-3px);
+    }
+    .soter-nav {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+      padding: 20px 20px 20px 20px;
+      /* hvorfor går den ud over */
     }
     .sorter-liste-c {
+      display: block;
+    }
+    .sorter-liste {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      padding: 0px;
+      max-width: auto;
+      height: auto;
+      width: fit-content;
+    }
+    .open-close {
       display: none;
     }
 
-    .roter-close {
-      rotate: -180deg;
-      display: grid;
-      place-items: center;
-    }
-
-    /* sorter menu mobil*/
-.burger-c{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
-}
-    .sorter-liste {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-  align-content: center;
-    }
-    .open-close {
-      padding: 20px;
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-
-    .sorter-item:hover {
+    /* øverst */
+    .skaal:hover {
       transform: scale(1.1);
     }
-    .sorter-item {
-      justify-items: center;
-      display: grid;
-      grid-template-columns: 1fr;
-      transition: transform 0.3s;
-      align-content: space-between;
-    }
-    .sorter-item p:last-of-type {
-      line-height: normal;
-      text-transform: uppercase;
-      margin: 0px;
-      padding: 0px;   }
-    .dropdown-soter{
-      /* idk med position her måske er det bedre at fjeren den så den skubber siden ned */
-      /* position: absolute; */
-      right: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      background-color: var(--baggrund);
-    }
-    .soter-nav{
-      display: flex;
-      flex-direction: column;
-      padding: 10px 20px 10px 20px;
-      justify-content: center;  
-    }
-    h2{
-      font-size: 2rem;
-    }
-    /* fordside */
-    .flex {
-      display: flex;
-      flex-direction: column;
-    }
-
-    h1 {
-      font-size: 3rem;
-    }
-
     .grid_1 {
       display: grid;
-      grid-template-columns: 1fr;
-      padding: 30px;
-      border-bottom: 2px solid var(--mørke-orange);
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+      border-bottom: 3px solid var(--mørke-orange);
+
+      h1 {
+        padding-bottom: 30px;
+      }
+      .flex {
+        justify-content: center;
+        padding: 50px 0px 50px 100px;
+      }
       img {
-        max-width: 80%;
-        height: auto;
-        transition: transform 0.3s ease;
+        max-width: 70%;
       }
     }
-
-    /* idk */
-    .grid_2 {
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      h2 {
-        font-size: 1.5rem;
-        font-style: normal;
-      }
-    }
-    .gridlol {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2px;
-      background-color: var(--mørke-orange);
-    }
-    .gridlol .elm {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2px;
-      background-color: var(--mørke-orange);
-    }
-/* føler ik det her grid virker i mobil og billederen er meget store  */
-    .pil.stor {
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
-    }
-
-    .pil {
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
-
-      transition: transform 0.3s ease; /* Transition for smooth scaling */
-    }
-    .pil:hover {
-      transform: scale(1.2); /* Makes the pil 20% larger */
-    }
-
-    /* Responsivitet */
-    @media (min-width: 800px) {
-      /* nav sorter */
-      .soter-nav {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        align-items: center;
-      padding: 20px 20px 20px 20px;
-        /* hvorfor går den ud over */
-      }
-      .sorter-liste-c {
-      display: block;
-    }
-      .sorter-liste {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        padding: 0px;
-       max-width: auto; 
-     height: auto;
-     width: fit-content;
-      }
-      .open-close {
-        display: none;
-      }
-   
-      /* øverst */
-      .skaal:hover {
-        transform: scale(1.1);
-      }
-      .grid_1 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-items: center;
-        border-bottom: 3px solid var(--mørke-orange);
-
-        h1 {
-          padding-bottom: 30px;
-        }
-        .flex {
-          justify-content: center;
-          padding: 50px 0px 50px 100px;
-        }
-        img {
-          max-width: 70%;
-        }
-      }
 
     /* produktlisten */
     .gridlol {
@@ -303,12 +297,11 @@ console.log(data);
       gap: 3px;
       grid-template-columns: repeat(4, minmax(250px, 1fr));
       grid-auto-flow: dense;
-      
-      border-bottom: 2px solid var(--mørke-orange); */
+
+      border-bottom: 3px solid var(--mørke-orange);
       grid-template-rows: repeat(6 1fr);
       background-color: var(--mørke-orange);
-     
-    } 
+    }
     .gridlol {
       a:first-child {
         grid-row: span 2;
@@ -317,7 +310,7 @@ console.log(data);
           width: 150%;
         } */
       }
-/* 
+      /* 
       div:nth-child(5) {
         grid-row: span 2;
         grid-column: span 2;
@@ -331,57 +324,47 @@ console.log(data);
         grid-row: span 2;
         grid-column: span 2;
       }
-   
-
-      }
-      .grid_2 {
-        border-bottom: 3px solid var(--mørke-orange);
-      }
-
     }
-  </style>
-  <script>
-      document.querySelectorAll(".sort").forEach(elm=>{
-         elm.style.display = "none"
-         
-      })
-
-      document.querySelectorAll(".sorter-item").forEach(elm=>{
-        elm.addEventListener("click",klikFunction)
-
-      })
-
-      function klikFunction(evt){
-          document.querySelectorAll(".gridlol").forEach(elm=>{
-         elm.style.display = "none"
-
-      })
-          console.log("KLIK",evt.currentTarget.id)
-          document.querySelector(`.${evt.currentTarget.id}`).style.display = "grid";
-      }
-    document.addEventListener("DOMContentLoaded", () => {
-  const openClose = document.querySelector(".open-close");
-  const sorterListe = document.querySelector(".sorter-liste-c");
-
-  openClose.addEventListener("click", () => {
-    console.log("KLIK")
-    // sorterListe.classList.toggle("show");
-    if (sorterListe.style.display === "block"){
-      sorterListe.style.display = "none"
-    }else{
-
-      sorterListe.style.display = "block"
-
+    .grid_2 {
+      border-bottom: 3px solid var(--mørke-orange);
     }
-    
-    openClose.classList.toggle("roter-close");
+  }
+</style>
+<script>
+  document.querySelectorAll(".sort").forEach((elm) => {
+    elm.style.display = "none";
   });
-  
-});
-// sorterliste skal åbne og lukke når man klikker på opencolse
-// opencolse skal skifte icon når man klikker på den samtidig med at den åvner og lukker 
-    // eventlisner der togler show
-    // når man klikker på logo i conet der passer til den given map så skal den skifte detil den
-    // eventlisner der togler roter clos ogsom skifter når den er lukket
-  </script>
-</div>
+
+  document.querySelectorAll(".sorter-item").forEach((elm) => {
+    elm.addEventListener("click", klikFunction);
+  });
+
+  function klikFunction(evt) {
+    document.querySelectorAll(".gridlol").forEach((elm) => {
+      elm.style.display = "none";
+    });
+    console.log("KLIK", evt.currentTarget.id);
+    document.querySelector(`.${evt.currentTarget.id}`).style.display = "grid";
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    const openClose = document.querySelector(".open-close");
+    const sorterListe = document.querySelector(".sorter-liste-c");
+
+    openClose.addEventListener("click", () => {
+      console.log("KLIK");
+      // sorterListe.classList.toggle("show");
+      if (sorterListe.style.display === "block") {
+        sorterListe.style.display = "none";
+      } else {
+        sorterListe.style.display = "block";
+      }
+
+      openClose.classList.toggle("roter-close");
+    });
+  });
+  // sorterliste skal åbne og lukke når man klikker på opencolse
+  // opencolse skal skifte icon når man klikker på den samtidig med at den åvner og lukker
+  // eventlisner der togler show
+  // når man klikker på logo i conet der passer til den given map så skal den skifte detil den
+  // eventlisner der togler roter clos ogsom skifter når den er lukket
+</script>

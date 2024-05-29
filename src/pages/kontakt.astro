@@ -2,7 +2,7 @@
 import Menylayout from "../komponenter/layouts/Menylayout.astro";
 ---
 
-<Menylayout>
+<Menylayout title="kontakt">
   <section>
     <h1 class="h1_kontakt">KONTAKT <span class="os">OS</span></h1>
     <h3 class="h2_kontakt">
@@ -26,109 +26,108 @@ import Menylayout from "../komponenter/layouts/Menylayout.astro";
           <button type="submit">KONTAKT OS</button>
         </form>
       </div>
-
-      <style>
-        .h1_kontakt {
-          margin-top: 2rem;
-          margin-left: 5rem;
-        }
-
-        .os {
-          color: #e18658;
-        }
-
-        .h2_kontakt {
-          margin-left: 7rem;
-        }
-
-        .kontakt_billede {
-          display: none;
-        }
-
-        .border_kontakt {
-          border: solid 2px #e18658;
-          background-color: #e18658;
-          padding: 4rem;
-          margin-top: 2rem;
-        }
-
-        .navn {
-          color: #e2d6c6;
-          border-bottom: solid 2px #e2d6c6;
-          padding-bottom: 2rem;
-        }
-
-        .email {
-          color: #e2d6c6;
-          border-bottom: solid 2px #e2d6c6;
-          padding-bottom: 2rem;
-          padding-top: 2rem;
-        }
-
-        .kontakt_os form {
-          display: flex;
-          flex-direction: column;
-          align-items: left;
-          gap: 5px;
-        }
-
-        .kontakt_os input,
-        .kontakt_os button {
-          width: 50%; /* Gør input og knap bredde til 50% af containeren */
-          padding: 8px;
-          border: 2px solid #e18658;
-          border-radius: 4px;
-        }
-
-        .kontakt_os button {
-          margin-top: 10px; /* Tilføj lidt mellemrum mellem input og knap */
-          background-color: #c1631f;
-          color: #ffffff;
-          cursor: pointer;
-          width: 10rem;
-          height: 4rem;
-          border-radius: 10%;
-        }
-
-        @media screen and (min-width: 768px) {
-          .h1_kontakt {
-            margin-top: 2rem;
-            margin-left: 7rem;
-          }
-
-          .os {
-            color: #e18658;
-          }
-
-          .h2_kontakt {
-            margin-left: 10rem;
-          }
-
-          .kontaktgrid2_2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            margin-top: 5rem;
-          }
-
-          .kontakt_billede {
-            display: block;
-          }
-
-          .border_kontakt {
-            border: solid 2px #e18658;
-            background-color: #e18658;
-          }
-
-          .kontakt_os {
-            border: solid 2px #e2d6c6;
-            background-color: #e2d6c6;
-            margin-top: 1rem;
-            padding: 1rem;
-
-            border-radius: 25px;
-          }
-        }
-      </style>
     </div>
   </section>
 </Menylayout>
+<style>
+  .h1_kontakt {
+    margin-top: 2rem;
+    margin-left: 5rem;
+  }
+
+  .os {
+    color: #e18658;
+  }
+
+  .h2_kontakt {
+    margin-left: 7rem;
+  }
+
+  .kontakt_billede {
+    display: none;
+  }
+
+  .border_kontakt {
+    border: solid 2px #e18658;
+    background-color: #e18658;
+    padding: 4rem;
+    margin-top: 2rem;
+  }
+
+  .navn {
+    color: #e2d6c6;
+    border-bottom: solid 2px #e2d6c6;
+    padding-bottom: 2rem;
+  }
+
+  .email {
+    color: #e2d6c6;
+    border-bottom: solid 2px #e2d6c6;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+
+  .kontakt_os form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 5px;
+  }
+
+  .kontakt_os input,
+  .kontakt_os button {
+    width: 50%; /* Gør input og knap bredde til 50% af containeren */
+    padding: 8px;
+    border: 2px solid #e18658;
+    border-radius: 4px;
+  }
+
+  .kontakt_os button {
+    margin-top: 10px; /* Tilføj lidt mellemrum mellem input og knap */
+    background-color: #c1631f;
+    color: #ffffff;
+    cursor: pointer;
+    width: 10rem;
+    height: 4rem;
+    border-radius: 10%;
+  }
+
+  @media screen and (min-width: 768px) {
+    .h1_kontakt {
+      margin-top: 2rem;
+      margin-left: 7rem;
+    }
+
+    .os {
+      color: #e18658;
+    }
+
+    .h2_kontakt {
+      margin-left: 10rem;
+    }
+
+    .kontaktgrid2_2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 5rem;
+    }
+
+    .kontakt_billede {
+      display: block;
+    }
+
+    .border_kontakt {
+      border: solid 2px #e18658;
+      background-color: #e18658;
+    }
+
+    .kontakt_os {
+      border: solid 2px #e2d6c6;
+      background-color: #e2d6c6;
+      margin-top: 1rem;
+      padding: 1rem;
+
+      border-radius: 25px;
+    }
+  }
+</style>

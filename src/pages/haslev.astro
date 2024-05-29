@@ -8,7 +8,7 @@ import Pil from "../komponenter/Pil.astro";
 import Carosel from "../komponenter/Carosel.astro";
 ---
 
-<Menylayout>
+<Menylayout title="haslev">
   <Pil href="/projekter" />
   <Pro01
     billed="/./drej-billeder/egeknude.webp"
@@ -17,7 +17,7 @@ import Carosel from "../komponenter/Carosel.astro";
     h12="fra"
     h13="haslev"
   />
-  <Boks sorttext="fra træ last til" hvidtext=" drejebænk">
+  <Boks sorttext="fra trælast til" hvidtext=" drejebænk">
     <p>
       Vi besøgte Hårdttrælasten i Haslev og købte en imponerende egeknude i
       september 2019. Efter næsten et års venten begyndte jeg at arbejde på den
@@ -33,7 +33,7 @@ import Carosel from "../komponenter/Carosel.astro";
     </p>
   </Boks>
   <Laas />
-  <div class="grid-3 bagrund-farve">
+  <div class="grid-3">
     <Hover
       billed="/./drej-billeder/haslev-1.webp"
       text="Den grovdrejede skål virker nu meget tør, så jeg besluttede at gå igang med findrejningen. Her ses det færdige resultat efter findejningen og larkering af egeknuden fra haslev"
@@ -62,36 +62,33 @@ import Carosel from "../komponenter/Carosel.astro";
   <div class="flex">
     <Carosel />
   </div>
-  <div class="obagrund border-2"></div>
+  <div class="border-2"></div>
+</Menylayout>
+<style>
+  .flex {
+    display: flex;
+    justify-content: center;
+  }
+  .border-2 {
+    border-top: var(--border-2px);
+  }
 
-  <style>
+  .grid-3 {
+    display: none;
+  }
+  @media only screen and (min-width: 800px) {
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-items: center;
+      padding: 30px 20px 30px 20px;
+      gap: 10px;
+    }
     .flex {
-      display: flex;
-      justify-content: center;
-    }
-    .border-2 {
-      border-top: var(--border-2px);
-    }
-    .obagrund {
-      background-color: #e18658;
-    }
-    .bagrund-farve {
       display: none;
     }
-    @media only screen and (min-width: 800px) {
-      .grid-3 {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-items: center;
-        padding: 30px 20px 30px 20px;
-        gap: 10px;
-      }
-      .flex {
-        display: none;
-      }
-      .border-2 {
-        border-top: var(--border-3px);
-      }
+    .border-2 {
+      border-top: var(--border-3px);
     }
-  </style>
-</Menylayout>
+  }
+</style>

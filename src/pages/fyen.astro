@@ -32,7 +32,7 @@ import Pil from "../komponenter/Pil.astro";
     </p>
   </Boks>
   <Laas />
-  <div class="grid-3 bagrund-farve">
+  <div class="grid-3">
     <Hover
       billed="/./drej-billeder/fyen-1.webp"
       text="Rodende kævlerne klar til afhentning. Kævlerne øverst og nederst til venstre er ask. Nederst til højre ligger rødegen. "
@@ -66,83 +66,36 @@ import Pil from "../komponenter/Pil.astro";
     <Caroself />
   </div>
 
-  <div class="obagrund border-2"></div>
-
-  <style>
-    .flex {
-      display: flex;
-      justify-content: center;
-      border-bottom: var(--border-2px);
-    }
-    .bagrund-farve {
-      display: none;
-      border-bottom: var(--border-2px);
-    }
-
-    .obagrund {
-      background-color: #e18658;
-    }
-
-    p {
-      font-family: Arimo, sans-serif;
-      font-size: 1rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 1.5rem;
-    }
-    @media only screen and (min-width: 800px) {
-      .grid-3 {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-items: center;
-        padding: 30px 20px 30px 20px;
-        gap: 10px;
-      }
-      .flex {
-        display: none;
-        border-bottom: var(--border-3px);
-      }
-      .bagrund-farve {
-        background-color: #e18658;
-        border-bottom: var(--border-3px);
-      }
-      /* bagrund farve og hover skal være ens på fyen og haslev */
-    }
-  </style>
-  <script>
-    // script.js
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const carousel = document.querySelector(".carousel");
-      const carouselInner = carousel.querySelector(".carousel-inner");
-      const items = carouselInner.querySelectorAll(".carousel-item");
-      const nextButton = carousel.querySelector(".carousel-control.next");
-      const prevButton = carousel.querySelector(".carousel-control.prev");
-
-      let currentIndex = 0;
-      const totalItems = items.length;
-
-      function showSlide(index) {
-        items.forEach((item, i) => {
-          item.classList.toggle("active", i === index);
-        });
-      }
-
-      function nextSlide() {
-        currentIndex = (currentIndex + 1) % totalItems;
-        showSlide(currentIndex);
-      }
-
-      function prevSlide() {
-        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-        showSlide(currentIndex);
-      }
-
-      nextButton.addEventListener("click", nextSlide);
-      prevButton.addEventListener("click", prevSlide);
-
-      // Optional: Auto-play functionality
-      // setInterval(nextSlide, 3000);
-    });
-  </script>
+  <div class="border-2"></div>
 </Menylayout>
+<style>
+  .flex {
+    display: flex;
+    justify-content: center;
+  }
+
+  .border-2 {
+    border-top: var(--border-2px);
+  }
+
+  .grid-3 {
+    display: none;
+  }
+
+  @media only screen and (min-width: 800px) {
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      justify-items: center;
+      padding: 30px 20px 30px 20px;
+      gap: 10px;
+    }
+    .flex {
+      display: none;
+    }
+
+    .border-2 {
+      border-top: var(--border-3px);
+    }
+  }
+</style>
