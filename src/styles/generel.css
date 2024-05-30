@@ -1,6 +1,6 @@
 :root {
   --baggrund: #e2d6c6;
-  --sort: #000000;
+  --sort: #2c2a29;
   --mørke-orange: #c1631f;
   --lyse-orange: #e18658;
   --lysegrå: #ece4de;
@@ -77,7 +77,7 @@ fonte classer */
   color: var(--mørke-orange);
 }
 .skrå-hvid {
-  color: var(--lysegrå);
+  color: #fff;
 }
 .logo {
   font-family: Arimo, sans-serif;

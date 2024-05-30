@@ -13,38 +13,27 @@ console.log(data.id);
 <style>
   a {
     background-color: var(--baggrund);
-    /* display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 20px; */
     display: grid;
     grid-template-columns: 1fr;
   }
   .grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1;
     justify-items: stretch;
   }
 
   .skål {
-    /* width: 100%;
-    height: auto; */
     display: block;
     object-fit: cover;
-    grid-column: 1fr;
+    grid-column: 1;
   }
 
   .pil {
-    /* skal være støre generelt */
     width: 30px;
-    grid-column: 1fr;
+    grid-column: 1;
     object-fit: cover;
     justify-self: flex-end;
     padding: 0px 10px 10px 0px;
-    /* padding: 20px 0px 20px 0px; */
-    /* display: flex;
-    align-items: flex-end;
-    justify-content: flex-end; */
     transition: ease-in-out 0.2s;
   }
 

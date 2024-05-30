@@ -59,9 +59,8 @@ console.log(data);
       </div>
     </div>
   </div>
-  <!-- burgermenu sidder meget dråligt til mobil -->
 
-  <div id="alt" class="gridlol alt">
+  <div class="gridlol alt">
     {
       data.map((bowl) => {
         console.log(bowl);
@@ -69,7 +68,7 @@ console.log(data);
       })
     }
   </div>
-  <div id="" class="gridlol ask sort">
+  <div class="gridlol ask sort">
     {
       data.map((bowl) => {
         if (bowl.wood === "Ask") {
@@ -79,7 +78,7 @@ console.log(data);
       })
     }
   </div>
-  <div id="valnød" class="gridlol valnød sort">
+  <div class="gridlol valnød sort">
     {
       data.map((bowl) => {
         if (bowl.wood === "Valnød") {
@@ -89,7 +88,7 @@ console.log(data);
       })
     }
   </div>
-  <div id="egeknude" class="gridlol egeknude sort">
+  <div class="gridlol egeknude sort">
     {
       data.map((bowl) => {
         if (bowl.wood === "Egeknude") {
@@ -99,7 +98,7 @@ console.log(data);
       })
     }
   </div>
-  <div id="elm" class="gridlol elm sort">
+  <div class="gridlol elm sort">
     {
       data.map((bowl) => {
         if (bowl.wood === "Elm") {
@@ -109,9 +108,6 @@ console.log(data);
       })
     }
   </div>
-  <!-- her er det maping som er til at sorrtere men det virker ik idelt -->
-  <!-- 1. tror ik der kan være id her for bruger det samme længere op -->
-  <!-- grid virker ik når man har klikket på dem -->
 </Menylayout>
 
 <style>
@@ -222,11 +218,14 @@ console.log(data);
     gap: 2px;
     background-color: var(--mørke-orange);
   }
-  /* føler ik det her grid virker i mobil og billederen er meget store  */
+
   .pil.stor {
     position: absolute;
     right: 10px;
     bottom: 10px;
+  }
+  a.fed {
+    font-weight: bolder;
   }
 
   .pil {
@@ -306,15 +305,8 @@ console.log(data);
       a:first-child {
         grid-row: span 2;
         grid-column: span 2;
-        /* .skål {
-          width: 150%;
-        } */
       }
-      /* 
-      div:nth-child(5) {
-        grid-row: span 2;
-        grid-column: span 2;
-      } */
+
       a:nth-child(8) {
         grid-row: span 2;
         grid-column: span 2;
@@ -362,9 +354,4 @@ console.log(data);
       openClose.classList.toggle("roter-close");
     });
   });
-  // sorterliste skal åbne og lukke når man klikker på opencolse
-  // opencolse skal skifte icon når man klikker på den samtidig med at den åvner og lukker
-  // eventlisner der togler show
-  // når man klikker på logo i conet der passer til den given map så skal den skifte detil den
-  // eventlisner der togler roter clos ogsom skifter når den er lukket
 </script>
