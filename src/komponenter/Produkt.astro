@@ -3,7 +3,7 @@ const { data } = Astro.props;
 console.log(data.id);
 ---
 
-<a href={`/${data.id}`}>
+<a href={`/produktliste/${data.id}`}>
   <div class="grid">
     <img class="skål" src={`/drej-billeder/${data.img2}`} alt="" />
     <img class="pil" src="/./drej-billeder/orangepil.svg" alt="Pil" />
