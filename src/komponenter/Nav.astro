@@ -32,7 +32,7 @@ const links = [
     const burgerMenu = document.getElementById("burger-menu");
     const navLinks = document.getElementById("nav-links");
     const currentPath = window.location.pathname;
-    const navLinkElements = document.querySelectorAll(".nav-link");
+    const navLinkElements = document.querySelectorAll("nav-link");
 
     navLinkElements.forEach((link) => {
       if (link.getAttribute("data-path") === currentPath) {
