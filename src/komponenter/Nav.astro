@@ -3,6 +3,7 @@ const links = [
   { href: "/produktliste", label: "Produkter" },
   { href: "/projekter", label: "Projekter" },
   { href: "/om", label: "Mød Mig" },
+  { href: "/workshop", label: "Workshop" },
 ];
 ---
 
@@ -32,12 +33,11 @@ const links = [
     const burgerMenu = document.getElementById("burger-menu");
     const navLinks = document.getElementById("nav-links");
     const currentPath = window.location.pathname;
-    const navLinkElements = document.querySelectorAll("nav-link");
+    const navLinkElements = document.querySelectorAll(".nav-link");
 
     navLinkElements.forEach((link) => {
       if (link.getAttribute("data-path") === currentPath) {
         link.classList.add("active");
-
       }
     });
 
@@ -47,7 +47,7 @@ const links = [
   });
 </script>
 <style>
-  .nav-link .active {
+  .nav-link.active {
     color: var(--mørke-orange);
   }
 

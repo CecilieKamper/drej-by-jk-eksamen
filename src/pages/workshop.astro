@@ -1,0 +1,114 @@
+---
+import Menylayout from "../komponenter/layouts/Menylayout.astro";
+import Kontaktlink from "../komponenter/Omboks.astro";
+---
+
+<Menylayout>
+  <h1>workshop</h1>
+  <section class="grid_1_1">
+    <div class="farveboks">
+      <h2>Kom og vær med til at dreje en skål</h2>
+    </div>
+    <div>
+      <p>
+        Fra lørdag d. 1 Juni til og med lørdag d. 17 August, kan du finde os på
+        Tisvilde loppemarked hver lørdag mellem klokken 09.00 til 14.00.
+        <br />
+        <br />
+         Som noget nyt i år kan du komme og være med til at udforme din helt
+        egen personlige skål. Jeg bringer mit værktøj med, så du skal kun bringe
+        dig selv og en kreativ ide til din skål.
+      </p>
+    </div>
+  </section>
+  <section class="grid_1_1_1_1">
+    <div><img src="../../drej-billeder/barn.webp" alt="" /></div>
+    <div><img src="../../drej-billeder/klods.webp" alt="" /></div>
+    <div><img src="../../drej-billeder/marked.webp" alt="" /></div>
+    <div><img src="../../drej-billeder/jensk.webp" alt="" /></div>
+  </section>
+  <h1 class="loppe">PLAKAT TIL LOPPEMARKED</h1>
+  <div class="container">
+    <img class="plakat" src="../../drej-billeder/plakat.png" alt="" />
+  </div>
+</Menylayout>
+
+<style>
+  body {
+    margin: 1rem;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    color: var(--mørke-orange, #c1631f);
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    line-height: 1.5rem;
+  }
+
+  .grid_1_1_1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-bottom: #c1631f 3px solid;
+    background-color: #e18658;
+    margin-top: 1rem;
+  }
+
+  .loppe {
+    margin-top: 5rem;
+  }
+
+  .plakat {
+    border: #c1631f 3px solid;
+    margin-bottom: 5rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .grid_1_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: #c1631f 3px solid;
+      border-bottom: #c1631f 3px solid;
+      border-left: #c1631f 3px solid;
+      border-right: #c1631f 3px solid;
+    }
+
+    .grid_1_1_1_1 {
+      background-color: #e2d6c6;
+    }
+
+    .farveboks {
+      background-color: #e18658;
+      padding: 3rem;
+      border-right: #c1631f 3px solid;
+    }
+    p {
+      padding: 2rem;
+      padding-top: 3rem;
+    }
+
+    h2 {
+      color: var(--sort, #2c2a29);
+      margin-bottom: 3rem;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .plakat {
+      max-width: 30%;
+    }
+  }
+</style>
